@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A18 · Publish and hand over</title><link rel="stylesheet" href="../assets/app.css">
+<script src="../assets/steps.js"></script><script src="../assets/shell.js"></script></head>
+<body data-step="A18" data-device="desktop">
+
+<div class="screen">
+  <nav class="side side--settings">
+    <div class="brand"><b>Dhaulagiri Courtyard</b><span>Settings · sandbox</span></div>
+    <div class="sec">Structure</div>
+    <a href="#"><svg class="ic"><use href="#i-tree"/></svg>Departments</a>
+    <a href="#"><svg class="ic"><use href="#i-key"/></svg>Roles &amp; access</a>
+    <div class="sec">Data</div>
+    <a href="#"><svg class="ic"><use href="#i-layers"/></svg>Objects &amp; fields</a>
+    <a href="#"><svg class="ic"><use href="#i-users"/></svg>Identity rule</a>
+    <a href="#"><svg class="ic"><use href="#i-panel"/></svg>Record layouts</a>
+    <div class="sec">Process</div>
+    <a href="#"><svg class="ic"><use href="#i-right"/></svg>Workflows</a>
+    <a href="#"><svg class="ic"><use href="#i-bed"/></svg>Rooms &amp; rates</a>
+    <a href="#"><svg class="ic"><use href="#i-link"/></svg>Handoff rules</a>
+    <div class="sec">People see</div>
+    <a href="#"><svg class="ic"><use href="#i-filter"/></svg>Saved views</a>
+    <a href="#"><svg class="ic"><use href="#i-list"/></svg>Navigation</a>
+    <div class="sec">Go live</div>
+    <a href="#"><svg class="ic"><use href="#i-upload"/></svg>Import</a>
+    <a href="#"><svg class="ic"><use href="#i-user"/></svg>Users</a>
+    <a href="#"><svg class="ic"><use href="#i-check"/></svg>Test run</a>
+    <a class="on" href="#"><svg class="ic"><use href="#i-send"/></svg>Publish</a>
+    <div class="foot">Aashish Poudel · Impl. lead</div>
+  </nav>
+  <div class="main">
+    <div class="mode-banner mode-banner--settings"><svg class="ic"><use href="#i-gear"/></svg><b>SETTINGS · DRAFT</b> Changes are not live until Publish.</div>
+    <div class="topbar">
+      <div class="modes"><span>Work</span><span>Analyze</span><span class="on settings">Settings</span></div>
+      <div class="search"><svg class="ic"><use href="#i-search"/></svg>Search settings</div>
+      <div class="grow"></div>
+      <div class="avatar">AP</div>
+    </div>
+    <div class="content">
+      <div class="pagehead">
+        <div class="grow"><div class="eyebrow">Go live</div><h1>Publish and hand over</h1>
+          <p>Launch checks, what changes in production, then Sunita changes three things unaided.</p></div>
+        
+      </div>
+      <section class="state" data-state="ready" data-label="Ready">
+        <div class="grid2" style="grid-template-columns:1fr 1fr;align-items:start">
+          <div class="card"><div class="card-h"><h3>Launch checks</h3><span class="grow"></span><span class="chip chip--pine">9 of 9 pass</span></div>
+            <table class="tbl"><tbody>
+              <tr><td class="center" style="width:36px"><svg class="ic" style="color:var(--pine)"><use href="#i-check"/></svg></td><td>Every stage has an owner and someone who can advance it</td></tr>
+              <tr><td class="center"><svg class="ic" style="color:var(--pine)"><use href="#i-check"/></svg></td><td>No rule loops</td></tr>
+              <tr><td class="center"><svg class="ic" style="color:var(--pine)"><use href="#i-check"/></svg></td><td>52 rooms mapped to 4 types</td></tr>
+              <tr><td class="center"><svg class="ic" style="color:var(--pine)"><use href="#i-check"/></svg></td><td>4,212 guests imported, 12 pairs decided</td></tr>
+              <tr><td class="center"><svg class="ic" style="color:var(--pine)"><use href="#i-check"/></svg></td><td>65 users, no shared logins</td></tr>
+              <tr><td class="center"><svg class="ic" style="color:var(--pine)"><use href="#i-check"/></svg></td><td>Guest ID hidden or masked for 7 roles</td></tr>
+              <tr><td class="center"><svg class="ic" style="color:var(--pine)"><use href="#i-check"/></svg></td><td>11 sidebars previewed</td></tr>
+              <tr><td class="center"><svg class="ic" style="color:var(--pine)"><use href="#i-check"/></svg></td><td>End-to-end test passed (3 defects, all fixed)</td></tr>
+              <tr><td class="center"><svg class="ic" style="color:var(--pine)"><use href="#i-check"/></svg></td><td>Billing permit number recorded</td></tr>
+            </tbody></table></div>
+          <div class="stack">
+            <div class="card"><div class="card-h"><h3>Sandbox to production</h3><span class="grow"></span><span class="chip chip--slate">first publish</span></div>
+              <table class="tbl"><thead><tr><th>What ships</th><th>Production now</th><th>After Publish</th></tr></thead><tbody>
+                <tr><td>Departments</td><td class="muted">none</td><td><span class="chip chip--pine">18 units</span></td></tr>
+                <tr><td>Roles</td><td class="muted">none</td><td><span class="chip chip--pine">11</span></td></tr>
+                <tr><td>Objects</td><td class="muted">none</td><td><span class="chip chip--pine">5</span></td></tr>
+                <tr><td>Workflow stages</td><td class="muted">none</td><td><span class="chip chip--pine">6 + 2 exits</span></td></tr>
+                <tr><td>Rules</td><td class="muted">none</td><td><span class="chip chip--pine">12</span></td></tr>
+                <tr><td>Saved views</td><td class="muted">none</td><td><span class="chip chip--pine">9</span></td></tr>
+              </tbody></table></div>
+            <div class="note note--warn"><svg class="ic"><use href="#i-alert"/></svg><span>Once published, field keys are locked. Later changes go through a new draft version.</span></div>
+            <button class="btn btn--settings btn--lg" data-show="handover"><svg class="ic"><use href="#i-send"/></svg>Publish to production</button>
+          </div>
+        </div>
+      </section>
+
+<section class="state" data-state="failing" data-label="Checks failing">
+        <div class="grid2" style="grid-template-columns:1fr 340px;align-items:start">
+          <div class="card"><div class="card-h"><h3>Launch checks</h3><span class="grow"></span><span class="chip chip--pine">8 pass</span><span class="chip chip--rose">1 fails</span></div>
+            <table class="tbl"><tbody>
+              <tr><td class="center" style="width:36px"><svg class="ic"><use href="#i-check"/></svg></td><td>Every stage has an owner and someone who can advance it</td><td><span class="chip chip--pine">pass</span></td></tr>
+              <tr><td class="center"><svg class="ic"><use href="#i-check"/></svg></td><td>No rule loops</td><td><span class="chip chip--pine">pass</span></td></tr>
+              <tr><td class="center"><svg class="ic"><use href="#i-check"/></svg></td><td>52 rooms mapped to 4 types</td><td><span class="chip chip--pine">pass</span></td></tr>
+              <tr><td class="center"><svg class="ic"><use href="#i-check"/></svg></td><td>4,212 guests imported, 12 pairs decided</td><td><span class="chip chip--pine">pass</span></td></tr>
+              <tr><td class="center"><svg class="ic"><use href="#i-check"/></svg></td><td>65 users, no shared logins</td><td><span class="chip chip--pine">pass</span></td></tr>
+              <tr><td class="center"><svg class="ic"><use href="#i-check"/></svg></td><td>Guest ID hidden or masked for 7 roles</td><td><span class="chip chip--pine">pass</span></td></tr>
+              <tr><td class="center"><svg class="ic"><use href="#i-check"/></svg></td><td>11 sidebars previewed</td><td><span class="chip chip--pine">pass</span></td></tr>
+              <tr><td class="center"><svg class="ic"><use href="#i-check"/></svg></td><td>End-to-end test passed (3 defects, all fixed)</td><td><span class="chip chip--pine">pass</span></td></tr>
+              <tr class="late"><td class="center"><svg class="ic" style="color:var(--rose)"><use href="#i-alert"/></svg></td><td><b>Billing permit number recorded</b><div class="small muted">No permit number yet. Without it, bills stay switched off.</div></td><td><span class="chip chip--rose">fails</span></td></tr>
+            </tbody></table></div>
+          <div class="stack">
+            <div class="note note--err"><svg class="ic"><use href="#i-lock"/></svg><div><b>Publish is disabled.</b><br>Reason: billing permit number is missing.<div class="row" style="margin-top:8px"><a class="btn" href="#" data-go="A17b">Open billing permit checklist</a></div></div></div>
+            <button class="btn btn--settings btn--lg" disabled><svg class="ic"><use href="#i-send"/></svg>Publish to production</button>
+            <button class="btn btn--ghost" data-show="ready">Preview: permit recorded</button>
+          </div>
+        </div>
+      </section>
+
+<section class="state" data-state="handover" data-label="Handover passed">
+        <div class="note note--ok" style="margin-bottom:12px"><svg class="ic"><use href="#i-check"/></svg><span><b>Live since 16:05.</b> Hotel Dhaulagiri Courtyard is on production. Handover test passed: Sunita made three changes without help.</span></div>
+        <div class="grid2" style="grid-template-columns:1fr 340px;align-items:start">
+          <div class="card"><div class="card-h"><h3>Handover test · Sunita Karki, unaided</h3><span class="grow"></span><span class="muted small">Aashish and Bikash watched</span></div>
+            <table class="tbl"><thead><tr><th>#</th><th>Change</th><th>Result</th></tr></thead><tbody>
+              <tr><td class="num">1</td><td><b>Add a field to Reservation</b><div class="small muted">Airport pickup, yes / no</div></td><td><span class="chip chip--pine">Unaided</span></td></tr>
+              <tr><td class="num">2</td><td><b>Change the Prepare-room deadline</b><div class="small muted">Before arrival → 2 hours before arrival</div></td><td><span class="chip chip--pine">Unaided</span></td></tr>
+              <tr><td class="num">3</td><td><b>Add a user</b><div class="small muted">Invite one new housekeeper by SMS</div></td><td><span class="chip chip--pine">Unaided</span></td></tr>
+            </tbody></table></div>
+          <div class="stack">
+            <div class="card"><div class="card-h"><h3>What shipped</h3></div><div class="card-b"><dl class="kv">
+              <dt>Departments</dt><dd>18 units</dd><dt>Roles</dt><dd>11</dd><dt>Objects</dt><dd>5</dd>
+              <dt>Stages</dt><dd>6 + 2 exits</dd><dt>Rules</dt><dd>12</dd><dt>Views</dt><dd>9</dd></dl></div></div>
+            <a class="btn btn--primary btn--lg" href="#" data-go="B01">Go to Part B<svg class="ic"><use href="#i-right"/></svg></a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+</body></html>

@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A08 · Set the guest identity rule</title><link rel="stylesheet" href="../assets/app.css">
+<script src="../assets/steps.js"></script><script src="../assets/shell.js"></script></head>
+<body data-step="A08" data-device="desktop">
+
+<div class="screen">
+  <nav class="side side--settings">
+    <div class="brand"><b>Dhaulagiri Courtyard</b><span>Settings · sandbox</span></div>
+    <div class="sec">Structure</div>
+    <a href="#"><svg class="ic"><use href="#i-tree"/></svg>Departments</a>
+    <a href="#"><svg class="ic"><use href="#i-key"/></svg>Roles &amp; access</a>
+    <div class="sec">Data</div>
+    <a href="#"><svg class="ic"><use href="#i-layers"/></svg>Objects &amp; fields</a>
+    <a class="on" href="#"><svg class="ic"><use href="#i-users"/></svg>Identity rule</a>
+    <a href="#"><svg class="ic"><use href="#i-panel"/></svg>Record layouts</a>
+    <div class="sec">Process</div>
+    <a href="#"><svg class="ic"><use href="#i-right"/></svg>Workflows</a>
+    <a href="#"><svg class="ic"><use href="#i-bed"/></svg>Rooms &amp; rates</a>
+    <a href="#"><svg class="ic"><use href="#i-link"/></svg>Handoff rules</a>
+    <div class="sec">People see</div>
+    <a href="#"><svg class="ic"><use href="#i-filter"/></svg>Saved views</a>
+    <a href="#"><svg class="ic"><use href="#i-list"/></svg>Navigation</a>
+    <div class="sec">Go live</div>
+    <a href="#"><svg class="ic"><use href="#i-upload"/></svg>Import</a>
+    <a href="#"><svg class="ic"><use href="#i-user"/></svg>Users</a>
+    <a href="#"><svg class="ic"><use href="#i-check"/></svg>Test run</a>
+    <a href="#"><svg class="ic"><use href="#i-send"/></svg>Publish</a>
+    <div class="foot">Aashish Poudel · Impl. lead</div>
+  </nav>
+  <div class="main">
+    <div class="mode-banner mode-banner--settings"><svg class="ic"><use href="#i-gear"/></svg><b>SETTINGS · DRAFT</b> Changes are not live until Publish. 10 unpublished changes.</div>
+    <div class="topbar">
+      <div class="modes"><span>Work</span><span>Analyze</span><span class="on settings">Settings</span></div>
+      <div class="search"><svg class="ic"><use href="#i-search"/></svg>Search settings</div>
+      <div class="grow"></div>
+      <div class="avatar">AP</div>
+    </div>
+    <div class="content">
+      <div class="pagehead">
+        <div class="grow"><div class="eyebrow">Data</div><h1>Set the guest identity rule</h1>
+          <p>How the system decides that a new booking is a guest we already know. Exact matches join; doubtful ones wait for a person.</p></div>
+        <button class="btn btn--settings"><svg class="ic"><use href="#i-plus"/></svg>Add rule</button>
+      </div>
+      <section class="state" data-state="matched" data-label="Matched">
+        <div class="grid2" style="grid-template-columns:1fr 360px;align-items:start"><div><div class="card"><div class="card-h"><h3>Guest · match rules, tried in this order</h3><span class="grow"></span><span class="muted small"><svg class="ic"><use href="#i-drag"/></svg> drag to reorder</span></div>
+          <table class="tbl"><thead><tr><th style="width:36px">#</th><th>Rule</th><th>Match</th><th>Format</th><th>When it matches</th></tr></thead><tbody>
+<tr class="sel"><td class="mono"><b>1</b></td><td><b>Phone</b> <span class="chip chip--solid"><svg class="ic"><use href="#i-check"/></svg>hit</span></td><td><span class="chip chip--slate">exact</span></td><td class="muted small">Strip spaces and dashes, add +977</td><td>Join the existing guest</td></tr>
+<tr><td class="mono"><b>2</b></td><td><b>Email</b></td><td><span class="chip chip--slate">exact</span></td><td class="muted small">Lowercase, trim spaces</td><td>Join the existing guest</td></tr>
+<tr><td class="mono"><b>3</b></td><td><b>ID number</b></td><td><span class="chip chip--slate">exact</span></td><td class="muted small">Remove spaces, same ID type</td><td>Join the existing guest</td></tr>
+<tr><td class="mono"><b>4</b></td><td><b>Name + date of birth</b></td><td><span class="chip chip--brass">similar name (90%)</span></td><td class="muted small">Compare spelling, ignore case</td><td><span class="chip chip--brass"><svg class="ic"><use href="#i-flag"/></svg>Queue for review. Never auto-merge</span></td></tr>
+          </tbody></table></div>
+        <div class="stack" style="margin-top:14px">
+          <div class="note note--warn"><svg class="ic"><use href="#i-alert"/></svg><span><b>Why names are not identity.</b> Many guests share a name, and one guest spells it several ways. A name alone can only suggest a match, so rule 4 sends the pair to a person and never merges by itself.</span></div>
+          <div class="note note--info"><svg class="ic"><use href="#i-phone"/></svg><span><b>Shared family phone.</b> One number can belong to a whole family. If a phone matches more than one guest, the match goes to review instead of picking one.</span></div>
+        </div></div><div class="stack"><div class="card"><div class="card-h"><h3>Live test</h3><span class="grow"></span><span class="muted small">Sample only, nothing is saved</span></div><div class="card-b stack">
+<div class="field"><label>Name</label><div class="input">Ramesh Adhikari</div></div><div class="field"><label>Phone</label><div class="input">+977 9856-041237</div></div><div class="field"><label>Email</label><div class="input ro"><span class="muted">not entered</span></div></div><div class="field"><label>ID number</label><div class="input ro"><span class="muted">not entered</span></div></div>
+<div class="field"><label>Date of birth</label><div class="input ro"><span class="muted">not entered</span></div></div>
+<div class="row"><button class="btn btn--settings"><svg class="ic"><use href="#i-play"/></svg>Run test</button><span class="grow"></span><button class="btn" data-show="ambiguous">Try “Sita Gurung”</button></div></div></div>
+<div class="card"><div class="card-h"><h3>Result</h3></div><div class="card-b stack">
+<div class="note note--ok"><svg class="ic"><use href="#i-check"/></svg><div><b>Matched on phone.</b> Joins guest <span class="mono">G-01842</span> Ramesh Adhikari. 1 previous stay (Mar 2025).</div></div>
+<div><div class="row" style="align-items:flex-start;padding:7px 0;border-bottom:1px solid var(--line-soft)"><span class="mono" style="width:18px">1</span><div class="grow small">Phone <span class="mono">+977 9856-041237</span> becomes <span class="mono">+9779856041237</span>. Exact match found.</div><span class="chip chip--pine">hit</span></div><div class="row" style="align-items:flex-start;padding:7px 0;border-bottom:1px solid var(--line-soft)"><span class="mono" style="width:18px">2</span><div class="grow small">Email not needed</div><span class="chip">skipped</span></div><div class="row" style="align-items:flex-start;padding:7px 0;border-bottom:1px solid var(--line-soft)"><span class="mono" style="width:18px">3</span><div class="grow small">ID number not needed</div><span class="chip">skipped</span></div><div class="row" style="align-items:flex-start;padding:7px 0;border-bottom:1px solid var(--line-soft)"><span class="mono" style="width:18px">4</span><div class="grow small">Name + date of birth not needed</div><span class="chip">skipped</span></div></div>
+</div></div></div></div>
+      </section>
+      <section class="state" data-state="ambiguous" data-label="Ambiguous">
+        <div class="grid2" style="grid-template-columns:1fr 360px;align-items:start"><div><div class="card"><div class="card-h"><h3>Guest · match rules, tried in this order</h3><span class="grow"></span><span class="muted small"><svg class="ic"><use href="#i-drag"/></svg> drag to reorder</span></div>
+          <table class="tbl"><thead><tr><th style="width:36px">#</th><th>Rule</th><th>Match</th><th>Format</th><th>When it matches</th></tr></thead><tbody>
+<tr><td class="mono"><b>1</b></td><td><b>Phone</b></td><td><span class="chip chip--slate">exact</span></td><td class="muted small">Strip spaces and dashes, add +977</td><td>Join the existing guest</td></tr>
+<tr><td class="mono"><b>2</b></td><td><b>Email</b></td><td><span class="chip chip--slate">exact</span></td><td class="muted small">Lowercase, trim spaces</td><td>Join the existing guest</td></tr>
+<tr><td class="mono"><b>3</b></td><td><b>ID number</b></td><td><span class="chip chip--slate">exact</span></td><td class="muted small">Remove spaces, same ID type</td><td>Join the existing guest</td></tr>
+<tr class="sel"><td class="mono"><b>4</b></td><td><b>Name + date of birth</b> <span class="chip chip--solid"><svg class="ic"><use href="#i-flag"/></svg>test lands here</span></td><td><span class="chip chip--brass">similar name (90%)</span></td><td class="muted small">Compare spelling, ignore case</td><td><span class="chip chip--brass"><svg class="ic"><use href="#i-flag"/></svg>Queue for review. Never auto-merge</span></td></tr>
+          </tbody></table></div>
+        <div class="stack" style="margin-top:14px">
+          <div class="note note--warn"><svg class="ic"><use href="#i-alert"/></svg><span><b>Why names are not identity.</b> Many guests share a name, and one guest spells it several ways. A name alone can only suggest a match, so rule 4 sends the pair to a person and never merges by itself.</span></div>
+          <div class="note note--info"><svg class="ic"><use href="#i-phone"/></svg><span><b>Shared family phone.</b> One number can belong to a whole family. If a phone matches more than one guest, the match goes to review instead of picking one.</span></div>
+        </div></div><div class="stack"><div class="card"><div class="card-h"><h3>Live test</h3><span class="grow"></span><span class="muted small">Sample only, nothing is saved</span></div><div class="card-b stack">
+<div class="field"><label>Name</label><div class="input">Sita Gurung</div></div><div class="field"><label>Phone</label><div class="input ro"><span class="muted">not entered</span></div></div><div class="field"><label>Email</label><div class="input ro"><span class="muted">not entered</span></div></div><div class="field"><label>ID number</label><div class="input ro"><span class="muted">not entered</span></div></div>
+<div class="field"><label>Date of birth</label><div class="input ro"><span class="muted">not entered</span></div></div>
+<div class="row"><button class="btn btn--settings"><svg class="ic"><use href="#i-play"/></svg>Run test</button><span class="grow"></span><button class="btn" data-show="matched">Try Ramesh Adhikari</button></div></div></div>
+<div class="card"><div class="card-h"><h3>Result</h3></div><div class="card-b stack">
+<div class="note note--warn"><svg class="ic"><use href="#i-flag"/></svg><div><b>Goes to review. Not merged.</b> Name-only similarity 93% is above the 90% threshold, but a name is not identity. A person decides: merge or keep both.</div></div>
+<div><div class="row" style="align-items:flex-start;padding:7px 0;border-bottom:1px solid var(--line-soft)"><span class="mono" style="width:18px">1</span><div class="grow small">No phone entered</div><span class="chip">skipped</span></div><div class="row" style="align-items:flex-start;padding:7px 0;border-bottom:1px solid var(--line-soft)"><span class="mono" style="width:18px">2</span><div class="grow small">No email entered</div><span class="chip">skipped</span></div><div class="row" style="align-items:flex-start;padding:7px 0;border-bottom:1px solid var(--line-soft)"><span class="mono" style="width:18px">3</span><div class="grow small">No ID number entered</div><span class="chip">skipped</span></div><div class="row" style="align-items:flex-start;padding:7px 0;border-bottom:1px solid var(--line-soft)"><span class="mono" style="width:18px">4</span><div class="grow small">Name “Sita Gurung” against existing guests: <b class="mono">93%</b>. No date of birth to confirm.</div><span class="chip chip--brass">review</span></div></div>
+</div></div></div></div>
+      </section>
+    </div>
+  </div>
+</div>
+
+</body></html>

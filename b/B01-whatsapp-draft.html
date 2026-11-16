@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>B01 · WhatsApp message becomes an AI draft</title><link rel="stylesheet" href="../assets/app.css">
+<script src="../assets/steps.js"></script><script src="../assets/shell.js"></script></head>
+<body data-step="B01" data-device="desktop">
+
+<div class="screen">
+  <nav class="side">
+    <div class="brand"><b>Dhaulagiri Courtyard</b><span>Front desk</span></div>
+    <div class="sec">Work</div>
+    <a href="#" data-go="B04"><svg class="ic"><use href="#i-inbox"/></svg>My Work<span class="n">3</span></a>
+    <a class="on" href="#" data-go="B01"><svg class="ic"><use href="#i-ai"/></svg>Pending drafts<span class="n">4</span></a>
+    <a href="#"><svg class="ic"><use href="#i-cal"/></svg>Arrivals today</a>
+    <a href="#"><svg class="ic"><use href="#i-door"/></svg>Departures today</a>
+    <a href="#"><svg class="ic"><use href="#i-bed"/></svg>In-house</a>
+    <a href="#"><svg class="ic"><use href="#i-layers"/></svg>Pipeline</a>
+    <a href="#"><svg class="ic"><use href="#i-map"/></svg>Room status</a>
+    <div class="foot">Prakash Tamang · Front Desk Agent</div>
+  </nav>
+  <div class="main">
+    <div class="topbar">
+      <div class="modes"><span class="on">Work</span><span>Analyze</span><span>Settings</span></div>
+      <div class="search"><svg class="ic"><use href="#i-search"/></svg>Search guest, phone, room…</div>
+      <div class="grow"></div>
+      <div class="avatar">PT</div>
+    </div>
+    <div class="content">
+<div class="pagehead"><div class="grow"><div class="eyebrow">Work · 15 Nov 2026, 09:20</div><h1>Pending drafts</h1>
+<p>Messages from guests that the AI has turned into booking drafts. Nothing is booked until you confirm.</p></div><span class="chip chip--solid">4 waiting</span></div>
+<section class="state" data-state="ready" data-label="Draft ready">
+<div class="grid2" style="grid-template-columns:480px 1fr;align-items:start">
+<div class="card"><div class="card-h"><h3>Queue</h3><span class="grow"></span><span class="muted small">4 waiting · oldest first</span></div>
+<table class="tbl"><thead><tr><th>From</th><th>Message</th><th>State</th></tr></thead><tbody>
+<tr class="sel"><td><b>Ramesh Adhikari</b><div class="muted small">WhatsApp · 09:12</div></td><td class="small">Namaste dai, Mangsir 12 dekhi 14 samma deluxe room chahiyo…</td><td><span class="chip chip--brass">Draft ready</span></td></tr>
+<tr><td><b>Priya Sharma</b><div class="muted small">Messenger</div></td><td class="small">Hello, I need a standard room from 28 Nov for my husband and me…</td><td><span class="chip chip--rose">Needs info</span></td></tr>
+<tr><td><b>Anjali Mahato</b><div class="muted small">Viber</div></td><td class="small">Hajur, Mangsir 20 tira 2 room chahiyo, 4 jana…</td><td><span class="chip chip--rose">Needs info</span></td></tr>
+<tr><td><b>Hans Wieland</b><div class="muted small">Pasted text</div></td><td class="small">Hello, do you offer airport pickup from Tribhuvan airport…</td><td><span class="chip chip--brass">Draft ready</span></td></tr>
+</tbody></table></div>
+<div class="card"><div class="card-h"><h3>Ramesh Adhikari</h3><span class="chip chip--brass">Draft ready</span><span class="grow"></span><span class="muted small">draft made 09:12</span></div>
+<div class="card-b stack">
+<div><div class="eyebrow" style="margin-bottom:6px">Message, word for word</div><div class="msg">Namaste dai, Mangsir 12 dekhi 14 samma deluxe room chahiyo, 2 jana thulo 1 jana baccha. Breakfast sahit. Extra bed milcha? - Ramesh Adhikari<div class="mono small muted" style="margin-top:4px">WhatsApp · +977 9856-041237 · received 09:12</div></div></div>
+<div><div class="eyebrow" style="margin-bottom:6px">What the AI understood</div>
+<table class="tbl" style="border:1px solid var(--line);border-radius:6px"><tbody>
+<tr><td>Guest name</td><td><b>Ramesh Adhikari</b></td><td class="num"><span class="conf " style="--v:98%"><i></i>98</span></td></tr>
+<tr><td>Check-in</td><td><b>28 Nov 2026</b> <span class="chip chip--slate">Mangsir 12, 2083 BS</span></td><td class="num"><span class="conf " style="--v:94%"><i></i>94</span></td></tr>
+<tr><td>Check-out</td><td><b>30 Nov 2026</b> <span class="chip chip--slate">Mangsir 14, 2083 BS</span></td><td class="num"><span class="conf " style="--v:94%"><i></i>94</span></td></tr>
+<tr><td>Room type</td><td><b>Deluxe</b></td><td class="num"><span class="conf " style="--v:97%"><i></i>97</span></td></tr>
+<tr><td>Guests</td><td><b>2 adults, 1 child</b></td><td class="num"><span class="conf " style="--v:91%"><i></i>91</span></td></tr>
+<tr><td>Rate plan</td><td><b>B&amp;B</b> <span class="muted small">"Breakfast sahit"</span></td><td class="num"><span class="conf " style="--v:96%"><i></i>96</span></td></tr>
+<tr><td>Agent</td><td><b>None (direct)</b></td><td class="num"><span class="conf " style="--v:99%"><i></i>99</span></td></tr>
+<tr><td>Requests</td><td><b>Extra bed</b> <span class="muted small">for the child</span></td><td class="num"><span class="conf low" style="--v:88%"><i></i>88</span></td></tr>
+</tbody></table></div>
+<div class="row"><span class="muted small grow">Dates were read as Bikram Sambat and converted. Check them against the message.</span>
+<button class="btn btn--primary btn--lg" data-go="B02"><svg class="ic"><use href="#i-right"/></svg>Review</button></div>
+</div></div>
+</div></section>
+
+<section class="state" data-state="needs" data-label="Needs info">
+<div class="grid2" style="grid-template-columns:480px 1fr;align-items:start">
+<div class="card"><div class="card-h"><h3>Queue</h3><span class="grow"></span><span class="muted small">4 waiting · oldest first</span></div>
+<table class="tbl"><thead><tr><th>From</th><th>Message</th><th>State</th></tr></thead><tbody>
+<tr><td><b>Ramesh Adhikari</b><div class="muted small">WhatsApp · 09:12</div></td><td class="small">Namaste dai, Mangsir 12 dekhi 14 samma deluxe room chahiyo…</td><td><span class="chip chip--brass">Draft ready</span></td></tr>
+<tr class="sel"><td><b>Priya Sharma</b><div class="muted small">Messenger</div></td><td class="small">Hello, I need a standard room from 28 Nov for my husband and me…</td><td><span class="chip chip--rose">Needs info</span></td></tr>
+<tr><td><b>Anjali Mahato</b><div class="muted small">Viber</div></td><td class="small">Hajur, Mangsir 20 tira 2 room chahiyo, 4 jana…</td><td><span class="chip chip--rose">Needs info</span></td></tr>
+<tr><td><b>Hans Wieland</b><div class="muted small">Pasted text</div></td><td class="small">Hello, do you offer airport pickup from Tribhuvan airport…</td><td><span class="chip chip--brass">Draft ready</span></td></tr>
+</tbody></table></div>
+<div class="card"><div class="card-h"><h3>Priya Sharma</h3><span class="chip chip--rose">Needs info</span><span class="grow"></span><span class="muted small">Messenger</span></div>
+<div class="card-b stack">
+<div><div class="eyebrow" style="margin-bottom:6px">Message, word for word</div><div class="msg">Hello, I need a standard room from 28 Nov for my husband and me…<div class="mono small muted" style="margin-top:4px">Messenger · first words shown</div></div></div>
+<div><div class="eyebrow" style="margin-bottom:6px">What the AI understood</div>
+<table class="tbl" style="border:1px solid var(--line);border-radius:6px"><tbody>
+<tr><td>Guest name</td><td><b>Priya Sharma</b></td><td class="num"><span class="conf " style="--v:90%"><i></i>90</span></td></tr>
+<tr><td>Check-in</td><td><b>28 Nov 2026</b></td><td class="num"><span class="conf " style="--v:93%"><i></i>93</span></td></tr>
+<tr class="late"><td>Check-out</td><td><b class="miss">Missing</b> <span class="muted small">not in the message</span></td><td class="num"><span class="conf none" style="--v:0%"><i></i>0</span></td></tr>
+<tr><td>Room type</td><td><b>Standard</b></td><td class="num"><span class="conf " style="--v:95%"><i></i>95</span></td></tr>
+<tr><td>Guests</td><td><b>2 adults</b> <span class="muted small">"my husband and me"</span></td><td class="num"><span class="conf low" style="--v:86%"><i></i>86</span></td></tr>
+</tbody></table></div>
+<div class="note note--warn"><svg class="ic"><use href="#i-alert"/></svg><span>Check-out date is missing, so this draft cannot be reviewed yet. Ask the guest.</span></div>
+<div><div class="eyebrow" style="margin-bottom:6px">Suggested reply</div>
+<div class="card" style="background:var(--wash)"><div class="card-b stack">
+<div>Hello Priya, thank you for writing. Which date would you like to check out? Once we know, we can hold a Standard room from 28 Nov.</div>
+<div class="ne" style="font-weight:500">नमस्ते प्रिया जी, सम्पर्क गर्नुभएकोमा धन्यवाद। तपाईं कुन मितिमा चेक-आउट गर्नुहुन्छ? मिति थाहा भएपछि २८ नोभेम्बरदेखि स्ट्यान्डर्ड कोठा होल्ड गर्न सकिन्छ।</div>
+</div></div></div>
+<div class="row"><span class="note note--info grow" style="padding:6px 10px"><svg class="ic"><use href="#i-lock"/></svg><span>Auto-send is off — admin setting. Copy the reply and send it yourself.</span></span>
+<button class="btn btn--primary btn--lg"><svg class="ic"><use href="#i-copy"/></svg>Copy reply</button></div>
+</div></div>
+</div></section>
+
+<section class="state" data-state="down" data-label="AI unavailable">
+<div class="note note--err" style="margin-bottom:14px"><svg class="ic"><use href="#i-alert"/></svg><div class="grow"><b>AI drafting is unavailable.</b> Use the normal reservation form until it is back. Messages still arrive and are listed word for word.</div><button class="btn btn--primary"><svg class="ic"><use href="#i-plus"/></svg>Open reservation form</button></div>
+<div class="grid2" style="grid-template-columns:480px 1fr;align-items:start">
+<div class="card"><div class="card-h"><h3>Queue</h3><span class="grow"></span><span class="muted small">4 waiting · oldest first</span></div>
+<table class="tbl"><thead><tr><th>From</th><th>Message</th><th>State</th></tr></thead><tbody>
+<tr class="sel"><td><b>Ramesh Adhikari</b><div class="muted small">WhatsApp · 09:12</div></td><td class="small">Namaste dai, Mangsir 12 dekhi 14 samma deluxe room chahiyo…</td><td><span class="chip chip--rose">AI unavailable</span></td></tr>
+<tr><td><b>Priya Sharma</b><div class="muted small">Messenger</div></td><td class="small">Hello, I need a standard room from 28 Nov for my husband and me…</td><td><span class="chip chip--rose">AI unavailable</span></td></tr>
+<tr><td><b>Anjali Mahato</b><div class="muted small">Viber</div></td><td class="small">Hajur, Mangsir 20 tira 2 room chahiyo, 4 jana…</td><td><span class="chip chip--rose">AI unavailable</span></td></tr>
+<tr><td><b>Hans Wieland</b><div class="muted small">Pasted text</div></td><td class="small">Hello, do you offer airport pickup from Tribhuvan airport…</td><td><span class="chip chip--rose">AI unavailable</span></td></tr>
+</tbody></table></div>
+<div class="card"><div class="card-h"><h3>Ramesh Adhikari</h3><span class="chip chip--rose">AI unavailable</span><span class="grow"></span><span class="muted small">WhatsApp</span></div>
+<div class="card-b stack">
+<div><div class="eyebrow" style="margin-bottom:6px">Message, word for word</div><div class="msg">Namaste dai, Mangsir 12 dekhi 14 samma deluxe room chahiyo, 2 jana thulo 1 jana baccha. Breakfast sahit. Extra bed milcha? - Ramesh Adhikari<div class="mono small muted" style="margin-top:4px">WhatsApp · +977 9856-041237 · received 09:12</div></div></div>
+<div class="empty" style="padding:24px 12px;background:var(--wash);border-radius:6px"><svg class="ic"><use href="#i-offline"/></svg><div>No draft was made for this message.</div><div class="small" style="margin-top:4px">Read it above and enter the booking in the normal form.</div></div>
+<div class="row"><a class="btn" href="#"><svg class="ic"><use href="#i-pen"/></svg>Enter this booking manually</a></div>
+</div></div>
+</div></section>
+
+<section class="state" data-state="empty" data-label="Empty queue">
+<div class="card"><div class="empty"><svg class="ic"><use href="#i-check"/></svg><h2 style="color:var(--ink-2)">No drafts waiting</h2><p style="margin-top:4px">New WhatsApp, Viber and Messenger enquiries appear here as soon as they arrive.</p></div></div>
+</section>
+    </div>
+  </div>
+</div>
+
+</body></html>

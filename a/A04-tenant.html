@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A04 · Tenant and blueprint</title><link rel="stylesheet" href="../assets/app.css">
+<script src="../assets/steps.js"></script><script src="../assets/shell.js"></script></head>
+<body data-step="A04" data-device="desktop">
+
+<div class="screen">
+  <nav class="side">
+    <div class="brand"><b>Platform</b><span>1M Solutions · internal</span></div>
+    <a href="#"><svg class="ic"><use href="#i-building"/></svg>Tenants</a>
+    <a class="on" href="#"><svg class="ic"><use href="#i-plus"/></svg>New tenant</a>
+    <a href="#"><svg class="ic"><use href="#i-layers"/></svg>Blueprints</a>
+    <a href="#"><svg class="ic"><use href="#i-chart"/></svg>Quotas</a>
+    <a href="#"><svg class="ic"><use href="#i-key"/></svg>Support access</a>
+    <div class="foot">Aashish Poudel · Impl. lead</div>
+  </nav>
+  <div class="main">
+    <div class="mode-banner mode-banner--platform"><svg class="ic"><use href="#i-lock"/></svg><b>PLATFORM · our team only</b> Hotel staff never see this screen.</div>
+    <div class="topbar">
+      <div class="search"><svg class="ic"><use href="#i-search"/></svg>Search tenants</div>
+      <div class="grow"></div>
+      <div class="avatar">AP</div>
+    </div>
+    <div class="content">
+      <div class="pagehead">
+        <div class="grow"><div class="eyebrow">Tenants</div><h1>New tenant</h1>
+          <p>Create the tenant and its legal entity, then install the Hotel blueprint into a sandbox.</p></div>
+      </div>
+
+      <section class="state" data-state="blueprint" data-label="Choose blueprint">
+        <div class="grid2" style="grid-template-columns:1fr 1fr">
+          <div class="stack">
+            <div class="card"><div class="card-h"><h3>1. Tenant</h3></div><div class="card-b stack">
+              <div class="field"><label>Tenant name</label><div class="input">Hotel Dhaulagiri Courtyard</div></div>
+              <div class="field"><label>Data region</label><div class="input sel">Nepal data centre</div></div>
+              <div class="field"><label>Fiscal year</label><div class="input">2083/84 <span class="muted small">(mid-July to mid-July)</span></div></div>
+            </div></div>
+            <div class="card"><div class="card-h"><h3>2. Legal entity</h3><span class="grow"></span><span class="chip chip--pine">1 of 1</span></div><div class="card-b stack">
+              <div class="field"><label>Legal entity name</label><div class="input">Dhaulagiri Courtyard Pvt. Ltd.</div></div>
+              <div class="grid2">
+                <div class="field"><label>PAN</label><div class="input mono">609845213</div></div>
+                <div class="field"><label>VAT</label><div class="input"><span class="check on"></span>VAT registered</div></div>
+              </div>
+              <div class="help">PAN goes on every bill. Without it, bills cannot be issued (A11, A17b).</div>
+            </div></div>
+          </div>
+          <div class="stack">
+            <div class="card"><div class="card-h"><h3>3. Blueprint</h3></div><div class="card-b" style="padding:0">
+              <table class="tbl">
+                <thead><tr><th></th><th>Blueprint</th><th class="num">Objects</th><th class="num">Stages</th><th class="num">Rules</th><th class="num">Views</th></tr></thead>
+                <tbody>
+                  <tr class="sel"><td><span class="check on"></span></td><td><b>Hotel</b></td><td class="num">5</td><td class="num">8</td><td class="num">12</td><td class="num">9</td></tr>
+                </tbody>
+              </table>
+            </div></div>
+            <div class="note note--info"><svg class="ic"><use href="#i-layers"/></svg><span>Installs into a <b>sandbox</b>. Nothing is live until Publish (A18). Everything installed can be edited in Settings.</span></div>
+            <div class="row" style="justify-content:flex-end;margin-top:4px">
+              <button class="btn" data-show="pan">What if the PAN is missing?</button>
+              <button class="btn btn--primary btn--lg" data-show="installed"><svg class="ic"><use href="#i-check"/></svg>Create tenant and install</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="state" data-state="pan" data-label="PAN missing">
+        <div class="grid2" style="grid-template-columns:1fr 1fr">
+          <div class="stack">
+            <div class="card"><div class="card-h"><h3>2. Legal entity</h3></div><div class="card-b stack">
+              <div class="field"><label>Legal entity name</label><div class="input">Dhaulagiri Courtyard Pvt. Ltd.</div></div>
+              <div class="grid2">
+                <div class="field"><label>PAN</label><div class="input err"></div><div class="help" style="color:var(--rose)">PAN is required.</div></div>
+                <div class="field"><label>VAT</label><div class="input"><span class="check on"></span>VAT registered</div></div>
+              </div>
+            </div></div>
+          </div>
+          <div class="stack">
+            <div class="note note--err"><svg class="ic"><use href="#i-alert"/></svg><div><b>Cannot create the tenant without a PAN.</b><br>Every bill must carry the legal entity's PAN, so the billing permit (A17b) could not be applied for. Ask Bikash or Rajesh for the PAN certificate.</div></div>
+            <div class="row" style="justify-content:flex-end"><button class="btn btn--primary" disabled>Create tenant and install</button><button class="btn" data-show="blueprint">Back</button></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="state" data-state="installed" data-label="Installed">
+        <div class="note note--ok" style="margin-bottom:14px"><svg class="ic"><use href="#i-check"/></svg><span><b>Sandbox created</b> for Hotel Dhaulagiri Courtyard. Right in shape, wrong in details: the next steps trim it to the real hotel.</span></div>
+        <div class="grid2" style="grid-template-columns:1fr 1fr">
+          <div class="card"><div class="card-h"><h3>What arrived</h3></div><div class="card-b" style="padding:0">
+            <table class="tbl"><tbody>
+              <tr><td>Objects</td><td class="num">5</td><td class="muted">Guest, Reservation, Room, Folio, Task</td></tr>
+              <tr><td>Stages</td><td class="num">8</td><td class="muted">6 stages + 2 exits</td></tr>
+              <tr><td>Rules</td><td class="num">12</td><td class="muted">Standard check-in playbook</td></tr>
+              <tr><td>Views</td><td class="num">9</td><td class="muted">Arrivals today, Pending drafts, ...</td></tr>
+              <tr><td>Departments</td><td class="num">default tree</td><td class="muted">to be edited in A05</td></tr>
+            </tbody></table>
+          </div></div>
+          <div class="stack">
+            <div class="card"><div class="card-h"><h3>Tenant</h3></div><div class="card-b"><dl class="kv">
+              <dt>Name</dt><dd>Hotel Dhaulagiri Courtyard</dd>
+              <dt>Legal entity</dt><dd>Dhaulagiri Courtyard Pvt. Ltd.</dd>
+              <dt>PAN</dt><dd class="mono">609845213 · VAT registered</dd>
+              <dt>Fiscal year</dt><dd>2083/84</dd>
+              <dt>Region</dt><dd>Nepal data centre</dd>
+              <dt>Environment</dt><dd><span class="chip chip--brass">sandbox</span></dd>
+              <dt>Admin access</dt><dd>Sunita Karki, Front Office Manager</dd>
+            </dl></div></div>
+            <div class="row" style="justify-content:flex-end"><button class="btn btn--settings btn--lg" data-go="A05"><svg class="ic"><use href="#i-gear"/></svg>Open Settings</button></div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+</body></html>

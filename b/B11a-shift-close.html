@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>B11a · Shift close and day end</title><link rel="stylesheet" href="../assets/app.css">
+<script src="../assets/steps.js"></script><script src="../assets/shell.js"></script></head>
+<body data-step="B11a" data-device="desktop">
+
+<div class="screen">
+  <nav class="side">
+    <div class="brand"><b>Dhaulagiri Courtyard</b><span>Front desk</span></div>
+    <div class="sec">Work</div>
+    <a class="on" href="#"><svg class="ic"><use href="#i-inbox"/></svg>My Work<span class="n">3</span></a>
+    <a href="#"><svg class="ic"><use href="#i-ai"/></svg>Pending drafts<span class="n">4</span></a>
+    <a href="#"><svg class="ic"><use href="#i-cal"/></svg>Arrivals today</a>
+    <a href="#"><svg class="ic"><use href="#i-door"/></svg>Departures today</a>
+    <a href="#"><svg class="ic"><use href="#i-bed"/></svg>In-house</a>
+    <a href="#"><svg class="ic"><use href="#i-layers"/></svg>Pipeline</a>
+    <a href="#"><svg class="ic"><use href="#i-map"/></svg>Room status</a>
+    <div class="foot">Prakash Tamang · Front Desk Agent</div>
+  </nav>
+  <div class="main">
+    <div class="topbar">
+      <div class="modes"><span class="on">Work</span><span>Analyze</span><span>Settings</span></div>
+      <div class="search"><svg class="ic"><use href="#i-search"/></svg>Search guest, phone, room…</div>
+      <div class="grow"></div>
+      <div class="avatar">PT</div>
+    </div>
+    <div class="content">
+<section class="state" data-state="shift" data-label="Shift close">
+<div class="pagehead"><div class="grow"><div class="eyebrow">Shift close · 30 Nov 2026, 22:00</div><h1>Close your shift · Prakash Tamang</h1>
+<p>Count the drawer and the slips. The system shows what it expected; you enter what you counted.</p></div><span class="chip chip--brass">Shift open</span></div>
+<div class="grid2" style="grid-template-columns:1fr 340px;align-items:start">
+<div class="stack">
+<div class="card"><div class="card-h"><h3>Expected vs counted, by payment method</h3><span class="grow"></span><span class="muted small">Shift totals, NPR</span></div>
+<table class="tbl"><thead><tr><th>Method</th><th class="num" style="text-align:right">Expected</th><th class="num" style="text-align:right">Counted</th><th class="num" style="text-align:right">Difference</th></tr></thead><tbody>
+<tr class="late"><td><svg class="ic"><use href="#i-cash"/></svg> <b>Cash</b></td><td class="num">18,400.00</td><td class="num"><span class="input changed" style="display:inline-flex;min-height:28px;justify-content:flex-end;width:110px">18,200.00</span></td><td class="num" style="color:var(--rose)"><b>−200.00</b></td></tr>
+<tr><td><svg class="ic"><use href="#i-card"/></svg> Card</td><td class="num">42,500.00</td><td class="num">42,500.00</td><td class="num muted">0.00</td></tr>
+<tr><td><svg class="ic"><use href="#i-qr"/></svg> Fonepay QR</td><td class="num">54,196.50</td><td class="num">54,196.50</td><td class="num muted">0.00</td></tr>
+<tr><td><svg class="ic"><use href="#i-phone"/></svg> eSewa</td><td class="num">6,800.00</td><td class="num">6,800.00</td><td class="num muted">0.00</td></tr>
+<tr><td><svg class="ic"><use href="#i-phone"/></svg> Khalti</td><td class="num">3,200.00</td><td class="num">3,200.00</td><td class="num muted">0.00</td></tr>
+<tr><td><svg class="ic"><use href="#i-building"/></svg> Bank</td><td class="num">0.00</td><td class="num">0.00</td><td class="num muted">0.00</td></tr>
+</tbody></table></div>
+<div class="grid4">
+<div class="kpi"><div class="eyebrow">Bills issued</div><div class="v mono">9</div><div class="d">this shift</div></div>
+<div class="kpi"><div class="eyebrow">Credit notes</div><div class="v mono">1</div><div class="d">CN-8384-0042</div></div>
+<div class="kpi"><div class="eyebrow">Tax sync pending</div><div class="v mono" style="color:var(--pine)">0</div><div class="d">all bills synced</div></div>
+<div class="kpi"><div class="eyebrow">Open guest bills (folios)</div><div class="v mono">4</div><div class="d">in-house guests</div></div>
+</div>
+</div>
+<div class="stack">
+<div class="note note--err"><svg class="ic"><use href="#i-alert"/></svg><div><b>Cash is NPR 200.00 short.</b> A reason is required before you can close the shift.</div></div>
+<div class="card"><div class="card-h"><h3>Reason for the difference</h3></div><div class="card-b stack">
+<div class="field"><span class="lbl">Reason <span class="muted">(choose one)</span></span><div class="input sel"><b>Counting error</b></div>
+<div class="row wrap"><span class="chip">Change given incorrectly</span><span class="chip chip--pine">Counting error</span><span class="chip">Cash not yet banked</span><span class="chip">Unknown, accounts to review</span></div></div>
+<div class="field"><span class="lbl">Note <span class="muted">(optional)</span></span><div class="input">Short by 200.00, drawer recounted twice</div></div>
+<button class="btn btn--primary btn--lg" style="width:100%;justify-content:center" data-show="dayend"><svg class="ic"><use href="#i-lock"/></svg>Close shift</button>
+<span class="help">After closing, this shift's totals cannot be changed. The duty manager closes the day next.</span>
+</div></div>
+</div></div>
+</section>
+
+<section class="state" data-state="dayend" data-label="Day end">
+<div class="pagehead"><div class="grow"><div class="eyebrow">Day end · 30 Nov 2026, 22:10</div><h1>Day end · Anil Gurung, Duty Manager</h1>
+<p>Check that every shift is closed and every bill has reached the tax office, then lock the day.</p></div><span class="chip chip--brass">Day open</span></div>
+<div class="note note--info" style="margin-bottom:14px"><svg class="ic"><use href="#i-user"/></svg><span>Signed in: <b>Anil Gurung · Duty Manager</b></span></div>
+<div class="grid2" style="grid-template-columns:1fr 1fr;align-items:start">
+<div class="stack">
+<div class="card"><div class="card-h"><h3>Checks before locking</h3></div><div class="card-b stack">
+<div class="row"><svg class="ic"><use href="#i-check"/></svg><span class="grow">Shift · Front desk · Prakash Tamang</span><span class="chip chip--pine">Closed 22:04</span></div>
+<div class="row"><svg class="ic"><use href="#i-check"/></svg><span class="grow">Shift · Accounts · Rajesh Dangol</span><span class="chip chip--pine">Closed 17:30</span></div>
+<div class="row"><svg class="ic"><use href="#i-check"/></svg><span class="grow">Unsynced bills</span><span class="chip chip--pine">0</span></div>
+<div class="row"><svg class="ic"><use href="#i-check"/></svg><span class="grow">Credit notes today</span><span class="chip">1</span></div>
+</div></div>
+<div class="card"><div class="card-h"><h3>Open guest bills (folios)</h3><span class="grow"></span><span class="chip">4 carry over</span></div><div class="card-b stack">
+<div class="note note--info"><svg class="ic"><use href="#i-bed"/></svg><span>In-house guests keep their guest bill open overnight. That is normal and does not block day end.</span></div>
+<table class="tbl"><tbody>
+<tr><td><b>Emma Fischer</b></td><td class="muted">In-house · Booking.com</td><td><span class="chip">carries over</span></td></tr>
+<tr><td><b>Suman &amp; Sarita Joshi</b></td><td class="muted">Courtyard Suite 503</td><td><span class="chip">carries over</span></td></tr>
+<tr><td><b>Lhakpa Dolma Sherpa</b></td><td class="muted">In-house · agency</td><td><span class="chip">carries over</span></td></tr>
+<tr><td class="muted" colspan="3">+ 34 more in-house guests</td></tr>
+</tbody></table></div></div>
+</div>
+<div class="stack">
+<div class="card"><div class="card-h"><h3>Day totals by payment method</h3><span class="grow"></span><span class="muted small">The day's totals, NPR</span></div>
+<table class="tbl"><tbody>
+<tr><td><svg class="ic"><use href="#i-cash"/></svg> Cash</td><td class="num">61,400.00</td></tr>
+<tr><td><svg class="ic"><use href="#i-card"/></svg> Card</td><td class="num">118,200.00</td></tr>
+<tr><td><svg class="ic"><use href="#i-qr"/></svg> Fonepay QR</td><td class="num">154,196.50</td></tr>
+<tr><td><svg class="ic"><use href="#i-phone"/></svg> eSewa</td><td class="num">14,300.00</td></tr>
+<tr><td><svg class="ic"><use href="#i-phone"/></svg> Khalti</td><td class="num">8,900.00</td></tr>
+<tr><td><svg class="ic"><use href="#i-building"/></svg> Bank</td><td class="num">40,000.00</td></tr>
+</tbody></table></div>
+<div class="note note--warn"><svg class="ic"><use href="#i-lock"/></svg><span>After locking, the day's bills and payments cannot change. Corrections go in as credit notes on a later day.</span></div>
+<button class="btn btn--primary btn--lg" style="width:100%;justify-content:center" data-show="locked"><svg class="ic"><use href="#i-lock"/></svg>Lock the day</button>
+</div></div>
+</section>
+
+<section class="state" data-state="locked" data-label="Day locked">
+<div class="pagehead"><div class="grow"><div class="eyebrow">Day end · 30 Nov 2026, 22:12</div><h1>Day end · Anil Gurung, Duty Manager</h1>
+<p>The day is locked. Nobody can add, change or remove a bill or payment dated 30 Nov 2026.</p></div><span class="chip chip--solid"><svg class="ic"><use href="#i-lock"/></svg> Locked</span></div>
+<div class="note note--info" style="margin-bottom:14px"><svg class="ic"><use href="#i-user"/></svg><span>Signed in: <b>Anil Gurung · Duty Manager</b></span></div>
+<div class="grid2" style="grid-template-columns:1fr 1fr;align-items:start">
+<div class="stack">
+<div class="note note--ok"><svg class="ic"><use href="#i-lock"/></svg><div><b>30 Nov 2026 is locked</b> by Anil Gurung at 22:12. Bills and payments for the day can no longer change.</div></div>
+<div class="card"><div class="card-b stack">
+<div class="row"><svg class="ic"><use href="#i-check"/></svg><span class="grow">All shifts closed</span><span class="chip chip--pine">2 of 2</span></div>
+<div class="row"><svg class="ic"><use href="#i-check"/></svg><span class="grow">Unsynced bills</span><span class="chip chip--pine">0</span></div>
+<div class="row"><svg class="ic"><use href="#i-bed"/></svg><span class="grow">Open guest bills carried to 1 Dec</span><span class="chip">4</span></div>
+</div></div>
+<button class="btn" style="align-self:flex-start" data-go="B11b">Next: occupancy and revenue report</button>
+</div>
+<div class="card"><div class="card-h"><h3>Day totals by payment method</h3><span class="grow"></span><span class="muted small">The day's totals, NPR</span></div>
+<table class="tbl"><tbody>
+<tr><td><svg class="ic"><use href="#i-cash"/></svg> Cash</td><td class="num">61,400.00</td></tr>
+<tr><td><svg class="ic"><use href="#i-card"/></svg> Card</td><td class="num">118,200.00</td></tr>
+<tr><td><svg class="ic"><use href="#i-qr"/></svg> Fonepay QR</td><td class="num">154,196.50</td></tr>
+<tr><td><svg class="ic"><use href="#i-phone"/></svg> eSewa</td><td class="num">14,300.00</td></tr>
+<tr><td><svg class="ic"><use href="#i-phone"/></svg> Khalti</td><td class="num">8,900.00</td></tr>
+<tr><td><svg class="ic"><use href="#i-building"/></svg> Bank</td><td class="num">40,000.00</td></tr>
+</tbody></table></div>
+</div>
+</section>
+    </div>
+  </div>
+</div>
+
+</body></html>

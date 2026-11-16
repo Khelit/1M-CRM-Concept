@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A10 · Workflow stages</title><link rel="stylesheet" href="../assets/app.css">
+<script src="../assets/steps.js"></script><script src="../assets/shell.js"></script></head>
+<body data-step="A10" data-device="desktop">
+
+<div class="screen">
+  <nav class="side side--settings">
+    <div class="brand"><b>Dhaulagiri Courtyard</b><span>Settings · sandbox</span></div>
+    <div class="sec">Structure</div>
+    <a href="#"><svg class="ic"><use href="#i-tree"/></svg>Departments</a>
+    <a href="#"><svg class="ic"><use href="#i-key"/></svg>Roles &amp; access</a>
+    <div class="sec">Data</div>
+    <a href="#"><svg class="ic"><use href="#i-layers"/></svg>Objects &amp; fields</a>
+    <a href="#"><svg class="ic"><use href="#i-users"/></svg>Identity rule</a>
+    <a href="#"><svg class="ic"><use href="#i-panel"/></svg>Record layouts</a>
+    <div class="sec">Process</div>
+    <a class="on" href="#"><svg class="ic"><use href="#i-right"/></svg>Workflows</a>
+    <a href="#"><svg class="ic"><use href="#i-bed"/></svg>Rooms &amp; rates</a>
+    <a href="#"><svg class="ic"><use href="#i-link"/></svg>Handoff rules</a>
+    <div class="sec">People see</div>
+    <a href="#"><svg class="ic"><use href="#i-filter"/></svg>Saved views</a>
+    <a href="#"><svg class="ic"><use href="#i-list"/></svg>Navigation</a>
+    <div class="sec">Go live</div>
+    <a href="#"><svg class="ic"><use href="#i-upload"/></svg>Import</a>
+    <a href="#"><svg class="ic"><use href="#i-user"/></svg>Users</a>
+    <a href="#"><svg class="ic"><use href="#i-check"/></svg>Test run</a>
+    <a href="#"><svg class="ic"><use href="#i-send"/></svg>Publish</a>
+    <div class="foot">Aashish Poudel · Impl. lead</div>
+  </nav>
+  <div class="main">
+    <div class="mode-banner mode-banner--settings"><svg class="ic"><use href="#i-gear"/></svg><b>SETTINGS · DRAFT</b> Changes are not live until Publish. 3 unpublished changes.</div>
+    <div class="topbar">
+      <div class="modes"><span>Work</span><span>Analyze</span><span class="on settings">Settings</span></div>
+      <div class="search"><svg class="ic"><use href="#i-search"/></svg>Search settings</div>
+      <div class="grow"></div>
+      <div class="avatar">AP</div>
+    </div>
+    <div class="content">
+      <div class="pagehead">
+        <div class="grow"><div class="eyebrow">Process</div><h1>Workflows</h1>
+          <p>Reservation lifecycle · <span class="chip chip--brass">v2 draft</span> <span class="chip">v1 published</span> · 6 stages + 2 exits. The stage bar on every booking and the triggers in Handoff rules come from this list.</p></div>
+        <span class="seg"><span>v1 published</span><span class="on">v2 draft</span></span><button class="btn"><svg class="ic"><use href="#i-copy"/></svg>Compare with v1</button>
+      </div>
+      <section class="state" data-state="list" data-label="Stage list">
+<ul class="stagebar" style="margin-bottom:14px"><li class="done">Enquiry<small>reply 2 h</small></li><li class="now">Held<small>24 h</small></li><li>Confirmed<small>deposit</small></li><li>Pre-arrival<small>before arrival</small></li><li>In-house<small>&lt; 45 s</small></li><li>Checked out<small>settled</small></li><li class="exit">Cancelled / No-show<small>reason</small></li></ul>
+        <div class="card"><table class="tbl"><thead><tr><th style="width:36px">#</th><th>Stage</th><th>Owner unit</th><th>Form</th><th>Deadline</th><th>May advance</th><th style="width:70px"></th></tr></thead><tbody>
+<tr><td class="mono muted">1</td><td><b>Enquiry</b></td><td>Reservations</td><td>Booking draft</td><td>Reply within 2 h</td><td>Reservations Agent, Front Desk Agent</td><td class="center"><button class="btn btn--ghost" data-show="open">Open</button></td></tr>
+<tr><td class="mono muted">2</td><td><b>Held</b></td><td>Front Desk</td><td>Room hold</td><td>Expires after 24 h</td><td>Front Desk Agent, Duty Manager</td><td class="center"><button class="btn btn--ghost" data-show="open">Open</button></td></tr>
+<tr><td class="mono muted">3</td><td><b>Confirmed</b></td><td>Front Desk, then Accounts</td><td>Deposit record</td><td>Deposit; invoice the same day</td><td>Front Desk Agent, Duty Manager</td><td class="center"><button class="btn btn--ghost" data-show="open">Open</button></td></tr>
+<tr><td class="mono muted">4</td><td><b>Pre-arrival</b></td><td>Housekeeping</td><td>Room readiness</td><td>Room prepared and inspected before arrival</td><td>Automatic, 24 h before arrival (rule)</td><td class="center"><button class="btn btn--ghost" data-show="open">Open</button></td></tr>
+<tr><td class="mono muted">5</td><td><b>In-house</b></td><td>Front Desk</td><td>Registration card</td><td>Check-in in under 45 s</td><td>Front Desk Agent, Duty Manager</td><td class="center"><button class="btn btn--ghost" data-show="open">Open</button></td></tr>
+<tr><td class="mono muted">6</td><td style="white-space:nowrap"><b>Checked out</b></td><td>Front Desk, then Accounts</td><td>Folio and bill</td><td>Settled; room released</td><td>Front Desk Agent, Duty Manager</td><td class="center"><button class="btn btn--ghost" data-show="open">Open</button></td></tr>
+<tr><td class="mono muted">exit</td><td style="white-space:nowrap"><b style="color:var(--rose)">Cancelled</b></td><td>Front Desk</td><td>Reason form</td><td>Reason recorded</td><td>Reservations Agent, Duty Manager, General Manager</td><td></td></tr>
+<tr><td class="mono muted">exit</td><td style="white-space:nowrap"><b style="color:var(--rose)">No-show</b></td><td>Front Desk</td><td>Reason form</td><td>Reason recorded</td><td>Front Desk Agent, Duty Manager, General Manager</td><td></td></tr>
+</tbody></table></div>
+        <div class="note note--info" style="margin-top:12px"><svg class="ic"><use href="#i-alert"/></svg><span>v1 is published and cannot be edited. Changes go into v2 and reach staff only at Publish. Every stage needs an owner and at least one role that may advance it, or Publish is blocked.</span></div>
+      </section>
+      <section class="state" data-state="open" data-label="Stage open">
+<ul class="stagebar" style="margin-bottom:14px"><li class="done">Enquiry<small>reply 2 h</small></li><li class="now">Held<small>24 h</small></li><li>Confirmed<small>deposit</small></li><li>Pre-arrival<small>before arrival</small></li><li>In-house<small>&lt; 45 s</small></li><li>Checked out<small>settled</small></li><li class="exit">Cancelled / No-show<small>reason</small></li></ul>
+        <div class="grid2" style="grid-template-columns:1fr 360px">
+          <div class="card"><table class="tbl"><thead><tr><th style="width:36px">#</th><th>Stage</th><th>Owner unit</th><th>Form</th><th>Deadline</th><th>May advance</th><th style="width:70px"></th></tr></thead><tbody>
+<tr><td class="mono muted">1</td><td><b>Enquiry</b></td><td>Reservations</td><td>Booking draft</td><td>Reply within 2 h</td><td>Reservations Agent, Front Desk Agent</td><td class="center"></td></tr>
+<tr class="sel"><td class="mono muted">2</td><td><b>Held</b></td><td>Front Desk</td><td>Room hold</td><td>Expires after 24 h</td><td>Front Desk Agent, Duty Manager</td><td class="center"></td></tr>
+<tr><td class="mono muted">3</td><td><b>Confirmed</b></td><td>Front Desk, then Accounts</td><td>Deposit record</td><td>Deposit; invoice the same day</td><td>Front Desk Agent, Duty Manager</td><td class="center"></td></tr>
+<tr><td class="mono muted">4</td><td><b>Pre-arrival</b></td><td>Housekeeping</td><td>Room readiness</td><td>Room prepared and inspected before arrival</td><td>Automatic, 24 h before arrival (rule)</td><td class="center"></td></tr>
+<tr><td class="mono muted">5</td><td><b>In-house</b></td><td>Front Desk</td><td>Registration card</td><td>Check-in in under 45 s</td><td>Front Desk Agent, Duty Manager</td><td class="center"></td></tr>
+<tr><td class="mono muted">6</td><td style="white-space:nowrap"><b>Checked out</b></td><td>Front Desk, then Accounts</td><td>Folio and bill</td><td>Settled; room released</td><td>Front Desk Agent, Duty Manager</td><td class="center"></td></tr>
+<tr><td class="mono muted">exit</td><td style="white-space:nowrap"><b style="color:var(--rose)">Cancelled</b></td><td>Front Desk</td><td>Reason form</td><td>Reason recorded</td><td>Reservations Agent, Duty Manager, General Manager</td><td></td></tr>
+<tr><td class="mono muted">exit</td><td style="white-space:nowrap"><b style="color:var(--rose)">No-show</b></td><td>Front Desk</td><td>Reason form</td><td>Reason recorded</td><td>Front Desk Agent, Duty Manager, General Manager</td><td></td></tr>
+</tbody></table></div>
+          <div class="card"><div class="card-h"><h3>Held</h3><span class="chip chip--brass">edited in v2</span><span class="grow"></span><button class="btn btn--ghost" data-show="list"><svg class="ic"><use href="#i-x"/></svg>Close</button></div>
+            <div class="card-b stack">
+              <dl class="kv" style="grid-template-columns:110px 1fr">
+                <dt>Stage no.</dt><dd>2 of 6</dd>
+                <dt>Owner unit</dt><dd>Front Desk team <span class="muted small">(Front Office)</span></dd>
+                <dt>Form</dt><dd>Room hold</dd>
+                <dt>Deadline</dt><dd>Expires 24 h after the hold starts</dd>
+                <dt>Advanced by</dt><dd><span class="chip chip--plum">Front Desk Agent</span> <span class="chip chip--plum">Duty Manager</span></dd>
+                <dt>Moves to</dt><dd>Confirmed, when a deposit is recorded</dd>
+                <dt>Exits</dt><dd>Cancelled, No-show (reason required)</dd>
+              </dl>
+              <div class="note note--warn"><svg class="ic"><use href="#i-clock"/></svg><div><b>Hold expiry rule.</b> When 24 h pass without a deposit, the room is released and the Front Desk is told.<br><a href="#" data-go="A12">Open the rule in Handoff rules</a></div></div>
+              <div class="row"><button class="btn btn--settings">Save to v2 draft</button><button class="btn btn--ghost" data-show="list">Cancel</button></div>
+            </div></div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</div>
+
+</body></html>

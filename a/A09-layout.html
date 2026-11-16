@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A09 · Lay out the record page</title><link rel="stylesheet" href="../assets/app.css">
+<script src="../assets/steps.js"></script><script src="../assets/shell.js"></script></head>
+<body data-step="A09" data-device="desktop">
+
+<div class="screen">
+  <nav class="side side--settings">
+    <div class="brand"><b>Dhaulagiri Courtyard</b><span>Settings · sandbox</span></div>
+    <div class="sec">Structure</div>
+    <a href="#"><svg class="ic"><use href="#i-tree"/></svg>Departments</a>
+    <a href="#"><svg class="ic"><use href="#i-key"/></svg>Roles &amp; access</a>
+    <div class="sec">Data</div>
+    <a href="#"><svg class="ic"><use href="#i-layers"/></svg>Objects &amp; fields</a>
+    <a href="#"><svg class="ic"><use href="#i-users"/></svg>Identity rule</a>
+    <a class="on" href="#"><svg class="ic"><use href="#i-panel"/></svg>Record layouts</a>
+    <div class="sec">Process</div>
+    <a href="#"><svg class="ic"><use href="#i-right"/></svg>Workflows</a>
+    <a href="#"><svg class="ic"><use href="#i-bed"/></svg>Rooms &amp; rates</a>
+    <a href="#"><svg class="ic"><use href="#i-link"/></svg>Handoff rules</a>
+    <div class="sec">People see</div>
+    <a href="#"><svg class="ic"><use href="#i-filter"/></svg>Saved views</a>
+    <a href="#"><svg class="ic"><use href="#i-list"/></svg>Navigation</a>
+    <div class="sec">Go live</div>
+    <a href="#"><svg class="ic"><use href="#i-upload"/></svg>Import</a>
+    <a href="#"><svg class="ic"><use href="#i-user"/></svg>Users</a>
+    <a href="#"><svg class="ic"><use href="#i-check"/></svg>Test run</a>
+    <a href="#"><svg class="ic"><use href="#i-send"/></svg>Publish</a>
+    <div class="foot">Aashish Poudel · Impl. lead</div>
+  </nav>
+  <div class="main">
+    <div class="mode-banner mode-banner--settings"><svg class="ic"><use href="#i-gear"/></svg><b>SETTINGS · DRAFT</b> Changes are not live until Publish. 12 unpublished changes.</div>
+    <div class="topbar">
+      <div class="modes"><span>Work</span><span>Analyze</span><span class="on settings">Settings</span></div>
+      <div class="search"><svg class="ic"><use href="#i-search"/></svg>Search settings</div>
+      <div class="grow"></div>
+      <div class="avatar">AP</div>
+    </div>
+    <div class="content">
+      <div class="pagehead">
+        <div class="grow"><div class="eyebrow">Data</div><h1>Lay out the record page</h1>
+          <p>What the front desk sees forty times a day. Pick the fields, then check the page as each role.</p></div>
+        <span class="seg"><span class="on">Reservation</span><span>Guest</span><span>Room</span></span>
+        <button class="btn btn--settings" data-show="preview"><svg class="ic"><use href="#i-eye"/></svg>Preview as role</button>
+      </div>
+      <section class="state" data-state="editor" data-label="Editor">
+        <ul class="stagebar" style="margin-bottom:14px"><li class="done">Enquiry<small>2h reply</small></li><li class="done">Held<small>24h hold</small></li><li class="done">Confirmed<small>deposit</small></li><li class="now">Pre-arrival<small>room prepared</small></li><li>In-house<small>&lt; 45s check-in</small></li><li>Checked out<small>settled</small></li><li class="exit">Cancelled</li><li class="exit">No-show</li></ul>
+        <div class="record">
+          <div class="card"><div class="card-h"><h3>Details</h3><span class="grow"></span><span class="chip">left</span></div><div class="card-b stack" style="padding:10px">
+<div class="input" style="min-height:30px;padding:4px 8px"><svg class="ic"><use href="#i-drag"/></svg><span>Guest</span><span class="grow"></span></div>
+<div class="input" style="min-height:30px;padding:4px 8px"><svg class="ic"><use href="#i-drag"/></svg><span>Guest ID</span><span class="grow"></span><span class="chip chip--brass">masked by role</span></div>
+<div class="input" style="min-height:30px;padding:4px 8px"><svg class="ic"><use href="#i-drag"/></svg><span>Check in</span><span class="grow"></span><span class="chip chip--plum"><svg class="ic"><use href="#i-lock"/></svg>locked</span></div>
+<div class="input" style="min-height:30px;padding:4px 8px"><svg class="ic"><use href="#i-drag"/></svg><span>Check out</span><span class="grow"></span></div>
+<div class="input" style="min-height:30px;padding:4px 8px"><svg class="ic"><use href="#i-drag"/></svg><span>ETA</span><span class="grow"></span></div>
+<div class="input" style="min-height:30px;padding:4px 8px"><svg class="ic"><use href="#i-drag"/></svg><span>Room type</span><span class="grow"></span></div>
+<div class="input" style="min-height:30px;padding:4px 8px"><svg class="ic"><use href="#i-drag"/></svg><span>Room</span><span class="grow"></span></div>
+<div class="input" style="min-height:30px;padding:4px 8px"><svg class="ic"><use href="#i-drag"/></svg><span>Rate plan</span><span class="grow"></span></div>
+<div class="input" style="min-height:30px;padding:4px 8px"><svg class="ic"><use href="#i-drag"/></svg><span>Adults / Children</span><span class="grow"></span></div>
+<div class="input" style="min-height:30px;padding:4px 8px"><svg class="ic"><use href="#i-drag"/></svg><span>Source channel</span><span class="grow"></span></div>
+<div class="input" style="min-height:30px;padding:4px 8px"><svg class="ic"><use href="#i-drag"/></svg><span>WhatsApp number</span><span class="grow"></span></div>
+<div class="input" style="min-height:30px;padding:4px 8px"><svg class="ic"><use href="#i-drag"/></svg><span>Special requests</span><span class="grow"></span></div>
+<div class="input" style="min-height:30px;padding:4px 8px"><svg class="ic"><use href="#i-drag"/></svg><span>Agent</span><span class="grow"></span></div>
+<div class="input" style="min-height:30px;padding:4px 8px"><svg class="ic"><use href="#i-drag"/></svg><span>Total</span><span class="grow"></span><span class="chip chip--plum"><svg class="ic"><use href="#i-lock"/></svg>locked</span></div>
+<div class="input" style="min-height:30px;padding:4px 8px"><svg class="ic"><use href="#i-drag"/></svg><span>Cancellation reason</span><span class="grow"></span><span class="chip chip--rose"><svg class="ic"><use href="#i-eyeoff"/></svg>at Cancelled</span></div>
+            </div></div>
+          <div class="card"><div class="card-h"><h3>Timeline</h3><span class="grow"></span><span class="chip">centre</span></div><div class="card-b">
+            <div class="tl">
+              <div class="tl-item"><div class="t">GUEST MESSAGES</div><div class="b">WhatsApp, Viber and Messenger messages</div></div>
+              <div class="tl-item ai"><div class="t">AI DRAFT</div><div class="b">Draft, who confirmed it and what they changed</div></div>
+              <div class="tl-item stage"><div class="t">STAGE CHANGES</div><div class="b">Each move, who made it, reason on exits</div></div>
+              <div class="tl-item task"><div class="t">TASKS</div><div class="b">Prepare room, Luggage, Log arrival</div></div>
+              <div class="tl-item pay"><div class="t">PAYMENTS</div><div class="b">Deposit and settlement</div></div>
+            </div>
+            <span class="help">The timeline lists everything the viewing role may see. No fields are placed here.</span></div></div>
+          <div class="card"><div class="card-h"><h3>Related</h3><span class="grow"></span><span class="chip">right</span></div><div class="card-b stack" style="padding:10px">
+<div class="input" style="min-height:30px;padding:4px 8px"><svg class="ic"><use href="#i-drag"/></svg><span>Folio</span><span class="grow"></span><span class="chip chip--plum">needs Folio view</span></div>
+<div class="input" style="min-height:30px;padding:4px 8px"><svg class="ic"><use href="#i-drag"/></svg><span>Open tasks</span><span class="grow"></span></div>
+<div class="input" style="min-height:30px;padding:4px 8px"><svg class="ic"><use href="#i-drag"/></svg><span>Past stays</span><span class="grow"></span></div>
+<div class="input" style="min-height:30px;padding:4px 8px"><svg class="ic"><use href="#i-drag"/></svg><span>Preferences</span><span class="grow"></span></div>
+            </div></div>
+        </div>
+<div class="grid3" style="margin-top:14px;align-items:start">
+          <div class="card"><div class="card-h"><h3>Locked after confirmation</h3></div><div class="card-b stack"><table class="tbl"><tbody><tr><td><b>Check in</b></td><td><span class="chip chip--plum"><svg class="ic"><use href="#i-lock"/></svg>locked</span></td><td class="muted small">Duty Manager only</td></tr><tr><td><b>Total</b></td><td><span class="chip chip--plum"><svg class="ic"><use href="#i-lock"/></svg>locked</span></td><td class="muted small">Duty Manager only</td></tr></tbody></table><span class="help">After the stage Confirmed, everyone else sees these two as read-only.</span></div></div>
+          <div class="card"><div class="card-h"><h3>Hidden until stage</h3></div><div class="card-b stack"><table class="tbl"><tbody><tr><td><b>Cancellation reason</b></td><td><span class="chip chip--rose">appears at Cancelled</span></td></tr></tbody></table><span class="help"><svg class="ic"><use href="#i-eyeoff"/></svg> Not shown on a live booking, so the page stays short.</span></div></div>
+          <div class="card"><div class="card-h"><h3>Preview as role</h3></div><div class="card-b stack"><div class="input sel">Front Desk Agent</div><button class="btn btn--settings" data-show="preview"><svg class="ic"><use href="#i-eye"/></svg>Preview as Housekeeper</button><div class="help">Shows the page with that role's permissions from step A06.</div></div></div>
+        </div>
+      </section>
+      <section class="state" data-state="preview" data-label="Preview as Housekeeper">
+        <div class="row" style="margin-bottom:12px"><span class="chip chip--solid"><svg class="ic"><use href="#i-eye"/></svg>Previewing as Housekeeper</span><span class="muted small">Maya Lama · Floors team</span><span class="grow"></span><button class="btn" data-show="editor"><svg class="ic"><use href="#i-left"/></svg>Back to editor</button></div>
+        <ul class="stagebar" style="margin-bottom:14px"><li class="done">Enquiry<small>2h reply</small></li><li class="done">Held<small>24h hold</small></li><li class="done">Confirmed<small>deposit</small></li><li class="now">Pre-arrival<small>room prepared</small></li><li>In-house<small>&lt; 45s check-in</small></li><li>Checked out<small>settled</small></li><li class="exit">Cancelled</li><li class="exit">No-show</li></ul>
+        <div class="record">
+          <div class="card"><div class="card-h"><h3>Test Sharma</h3><span class="chip chip--brass">sandbox</span><span class="grow"></span><span class="chip"><svg class="ic"><use href="#i-lock"/></svg>read only</span></div><div class="card-b"><dl class="kv">
+<dt>Guest ID</dt><dd><span class="masked">••••••••••</span> <span class="chip chip--brass">masked</span></dd><dt>Check in</dt><dd>29 Oct 2026</dd><dt>Check out</dt><dd>30 Oct 2026</dd><dt>ETA</dt><dd>14:00</dd><dt>Room type</dt><dd>Deluxe</dd><dt>Room</dt><dd>304</dd><dt>Adults / Children</dt><dd>2 / 1</dd><dt>Source channel</dt><dd>WhatsApp</dd><dt>Special requests</dt><dd>Extra bed for the child</dd>
+          </dl></div></div>
+          <div class="card"><div class="card-h"><h3>Timeline</h3></div><div class="card-b"><div class="tl">
+            <div class="tl-item task"><div class="t">TASK · DUE BEFORE 14:00</div><div class="b"><b>Prepare room 304</b> · assigned to Maya Lama</div></div>
+            <div class="tl-item stage"><div class="t">STAGE</div><div class="b">Confirmed → Pre-arrival</div></div>
+          </div></div></div>
+          <div class="stack"><div class="card"><div class="card-b" style="text-align:center;color:var(--ink-3)"><svg class="ic lg"><use href="#i-lock"/></svg><div><b style="color:var(--ink)">Folio hidden</b></div><div class="small">Housekeeper has no Folio permission</div></div></div>
+            <div class="card"><div class="card-h"><h3>Open tasks</h3></div><div class="card-b small">Prepare room 304 · before 14:00</div></div></div>
+        </div>
+        <div class="grid2" style="margin-top:14px">
+          <div class="note note--info"><svg class="ic"><use href="#i-shield"/></svg><span><b>Why Guest ID shows dots.</b> In A06 the Housekeeper has Guest ID set to masked. The field is on the page, but this role only sees the mask.</span></div>
+          <div class="note note--warn"><svg class="ic"><use href="#i-eyeoff"/></svg><span><b>Why there is no Folio, Rate plan or Total.</b> The Housekeeper has no permission on Folio, and money fields go with it. Nothing else changes for this role.</span></div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+</body></html>

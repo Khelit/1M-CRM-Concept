@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>B03 · Reservation record page</title><link rel="stylesheet" href="../assets/app.css">
+<script src="../assets/steps.js"></script><script src="../assets/shell.js"></script></head>
+<body data-step="B03" data-device="desktop">
+
+<div class="screen">
+  <nav class="side">
+    <div class="brand"><b>Dhaulagiri Courtyard</b><span>Front desk</span></div>
+    <div class="sec">Work</div>
+    <a href="#" data-go="B04"><svg class="ic"><use href="#i-inbox"/></svg>My Work<span class="n">3</span></a>
+    <a href="#" data-go="B01"><svg class="ic"><use href="#i-ai"/></svg>Pending drafts<span class="n">4</span></a>
+    <a href="#"><svg class="ic"><use href="#i-cal"/></svg>Arrivals today</a>
+    <a href="#"><svg class="ic"><use href="#i-door"/></svg>Departures today</a>
+    <a href="#"><svg class="ic"><use href="#i-bed"/></svg>In-house</a>
+    <a class="on" href="#"><svg class="ic"><use href="#i-layers"/></svg>Pipeline</a>
+    <a href="#"><svg class="ic"><use href="#i-map"/></svg>Room status</a>
+    <div class="foot">Prakash Tamang · Front Desk Agent</div>
+  </nav>
+  <div class="main">
+    <div class="topbar">
+      <div class="modes"><span class="on">Work</span><span>Analyze</span><span>Settings</span></div>
+      <div class="search"><svg class="ic"><use href="#i-search"/></svg>Search guest, phone, room…</div>
+      <div class="grow"></div>
+      <div class="avatar">PT</div>
+    </div>
+    <div class="content">
+<section class="state" data-state="held" data-label="Held">
+<div class="pagehead"><div class="grow"><div class="eyebrow">Reservation · R-2083-0917</div><h1>Ramesh Adhikari · Deluxe, 28–30 Nov 2026</h1></div><span class="chip chip--brass">Held</span><button class="btn btn--danger" data-show="cancelled">Cancel reservation</button><button class="btn btn--primary btn--lg" data-show="confirmed"><svg class="ic"><use href="#i-cash"/></svg>Record deposit</button></div>
+<ul class="stagebar">
+<li class="done">Enquiry<small>reply 2 h</small></li>
+<li class="now">Held<small>expires 24 h</small></li>
+<li class="">Confirmed<small>deposit</small></li>
+<li class="">Pre-arrival<small>room ready</small></li>
+<li class="">In-house<small>check-in</small></li>
+<li class="">Checked out<small>settled</small></li>
+<li class="exit">Cancelled<small>reason required</small></li><li class="exit">No-show<small>reason required</small></li></ul>
+<div class="note note--warn" style="margin:14px 0"><svg class="ic"><use href="#i-clock"/></svg><span><b>Hold expires in 23 h</b> (16 Nov 09:20). Record the deposit to move this booking to Confirmed. If it expires, the hold is released and the front desk is told.</span></div>
+<div class="record">
+<div class="card"><div class="card-h"><h3>Details</h3></div><div class="card-b"><dl class="kv" style="grid-template-columns:96px 1fr">
+<dt>Guest</dt><dd><b>Ramesh Adhikari</b><div class="small muted">Pokhara</div></dd>
+<dt>Phone</dt><dd class="mono">+977 9856-041237</dd>
+<dt>Check-in</dt><dd>28 Nov 2026<div class="small muted">Mangsir 12, 2083 BS</div></dd>
+<dt>Check-out</dt><dd>30 Nov 2026<div class="small muted">Mangsir 14, 2083 BS</div></dd>
+<dt>Room type</dt><dd>Deluxe</dd>
+<dt>Room</dt><dd><span class="muted">Not assigned yet</span></dd>
+<dt>ETA</dt><dd>14:00</dd>
+<dt>Guests</dt><dd>2 adults, 1 child</dd>
+<dt>Source</dt><dd>WhatsApp</dd>
+<dt>Rate plan</dt><dd>B&amp;B · NPR 11,000<div class="small muted">Extra bed NPR 1,500 / night</div></dd>
+<dt>Total</dt><dd><b class="mono">NPR 25,000.00</b><div class="small muted">before tax · 2 × 11,000 + 2 × 1,500</div></dd>
+<dt>Guest ID</dt><dd><span class="masked">••••••••••</span> <svg class="ic" style="color:var(--ink-3)"><use href="#i-lock"/></svg><div class="small muted">shown to 4 roles only</div></dd>
+<dt>Flags</dt><dd><span class="chip chip--pine">Repeat guest</span></dd>
+</dl></div></div>
+<div class="card"><div class="card-h"><h3>Timeline</h3><span class="grow"></span><span class="muted small">oldest first</span></div><div class="card-b"><div class="tl"><div class="tl-item"><div class="t">15 Nov 09:12 · WhatsApp</div><div class="b"><div class="msg" style="max-width:none;font-size:13px">Namaste dai, Mangsir 12 dekhi 14 samma deluxe room chahiyo, 2 jana thulo 1 jana baccha. Breakfast sahit. Extra bed milcha? - Ramesh Adhikari</div></div></div><div class="tl-item ai"><div class="t">15 Nov 09:12 · AI draft</div><div class="b"><b>Draft created</b> from the message. 8 fields read, least sure about the requests field.<div class="small muted mono" style="margin-top:4px">AI draft · prompt version 3</div></div></div><div class="tl-item ai"><div class="t">15 Nov 09:20 · Draft confirmed</div><div class="b"><b>Confirmed by Prakash Tamang</b><div class="small" style="margin-top:4px">changed: <b>ETA</b> empty → 14:00</div></div></div><div class="tl-item stage"><div class="t">15 Nov 09:20 · Stage</div><div class="b"><span class="chip chip--brass">Held</span> Hold expires 16 Nov 09:20.</div></div></div></div></div>
+<div class="stack">
+<div class="card"><div class="card-h"><h3>Guest bill (folio)</h3><span class="grow"></span><span class="chip">opens at check-in</span></div><div class="card-b"><dl class="kv" style="grid-template-columns:1fr auto"><dt>Expected, before tax</dt><dd class="mono">NPR 25,000.00</dd><dt>Deposit received</dt><dd class="mono">none yet</dd><dt><b>Balance</b></dt><dd class="mono"><b>not open</b></dd></dl></div></div>
+<div class="card"><div class="card-h"><h3>Open tasks</h3></div><div class="card-b stack"><div class="row"><span class="dot" style="background:var(--brass)"></span><div class="grow"><b>Confirm details and requests</b><div class="small muted">Front desk · will be created 27 Nov, 24 hours before arrival</div></div></div></div></div>
+<div class="card"><div class="card-h"><h3>Past stays</h3></div><div class="card-b"><div class="row"><svg class="ic"><use href="#i-bed"/></svg><div class="grow"><b>Mar 2025</b><div class="small muted">1 previous stay · matched on phone</div></div></div></div></div>
+<div class="card"><div class="card-h"><h3>Preferences</h3></div><div class="card-b small">Extra bed for the child.<br><span class="muted">Ground floor near the lift: not needed.</span></div></div>
+</div>
+</div></section>
+
+<section class="state" data-state="confirmed" data-label="Confirmed">
+<div class="pagehead"><div class="grow"><div class="eyebrow">Reservation · R-2083-0917</div><h1>Ramesh Adhikari · Deluxe, 28–30 Nov 2026</h1></div><span class="chip chip--pine">Confirmed</span><button class="btn btn--danger" data-show="cancelled">Cancel reservation</button></div>
+<ul class="stagebar">
+<li class="done">Enquiry<small>reply 2 h</small></li>
+<li class="done">Held<small>expires 24 h</small></li>
+<li class="now">Confirmed<small>deposit</small></li>
+<li class="">Pre-arrival<small>room ready</small></li>
+<li class="">In-house<small>check-in</small></li>
+<li class="">Checked out<small>settled</small></li>
+<li class="exit">Cancelled<small>reason required</small></li><li class="exit">No-show<small>reason required</small></li></ul>
+<div class="note note--ok" style="margin:14px 0"><svg class="ic"><use href="#i-check"/></svg><span><b>Deposit recorded, booking confirmed.</b> A Deposit invoice task went to Accounts and the confirmation message was sent to the guest.</span></div>
+<div class="record">
+<div class="card"><div class="card-h"><h3>Details</h3></div><div class="card-b"><dl class="kv" style="grid-template-columns:96px 1fr">
+<dt>Guest</dt><dd><b>Ramesh Adhikari</b><div class="small muted">Pokhara</div></dd>
+<dt>Phone</dt><dd class="mono">+977 9856-041237</dd>
+<dt>Check-in</dt><dd>28 Nov 2026<div class="small muted">Mangsir 12, 2083 BS</div></dd>
+<dt>Check-out</dt><dd>30 Nov 2026<div class="small muted">Mangsir 14, 2083 BS</div></dd>
+<dt>Room type</dt><dd>Deluxe</dd>
+<dt>Room</dt><dd><span class="muted">Not assigned yet</span></dd>
+<dt>ETA</dt><dd>14:00</dd>
+<dt>Guests</dt><dd>2 adults, 1 child</dd>
+<dt>Source</dt><dd>WhatsApp</dd>
+<dt>Rate plan</dt><dd>B&amp;B · NPR 11,000<div class="small muted">Extra bed NPR 1,500 / night</div></dd>
+<dt>Total</dt><dd><b class="mono">NPR 25,000.00</b><div class="small muted">before tax · 2 × 11,000 + 2 × 1,500</div></dd>
+<dt>Guest ID</dt><dd><span class="masked">••••••••••</span> <svg class="ic" style="color:var(--ink-3)"><use href="#i-lock"/></svg><div class="small muted">shown to 4 roles only</div></dd>
+<dt>Flags</dt><dd><span class="chip chip--pine">Repeat guest</span></dd>
+</dl></div></div>
+<div class="card"><div class="card-h"><h3>Timeline</h3><span class="grow"></span><span class="muted small">oldest first</span></div><div class="card-b"><div class="tl"><div class="tl-item"><div class="t">15 Nov 09:12 · WhatsApp</div><div class="b"><div class="msg" style="max-width:none;font-size:13px">Namaste dai, Mangsir 12 dekhi 14 samma deluxe room chahiyo, 2 jana thulo 1 jana baccha. Breakfast sahit. Extra bed milcha? - Ramesh Adhikari</div></div></div><div class="tl-item ai"><div class="t">15 Nov 09:12 · AI draft</div><div class="b"><b>Draft created</b> from the message. 8 fields read, least sure about the requests field.<div class="small muted mono" style="margin-top:4px">AI draft · prompt version 3</div></div></div><div class="tl-item ai"><div class="t">15 Nov 09:20 · Draft confirmed</div><div class="b"><b>Confirmed by Prakash Tamang</b><div class="small" style="margin-top:4px">changed: <b>ETA</b> empty → 14:00</div></div></div><div class="tl-item stage"><div class="t">15 Nov 09:20 · Stage</div><div class="b"><span class="chip chip--brass">Held</span> Hold expires 16 Nov 09:20.</div></div><div class="tl-item pay"><div class="t">16 Nov · Payment</div><div class="b"><b>Deposit NPR 10,000.00</b> received by Fonepay. Recorded by Prakash Tamang.</div></div><div class="tl-item stage"><div class="t">16 Nov · Stage</div><div class="b"><span class="chip chip--pine">Confirmed</span> Held → Confirmed by recording the deposit.</div></div><div class="tl-item"><div class="t">16 Nov · Confirmation message sent (WhatsApp)</div><div class="b"><div class="msg" style="max-width:none;font-size:13px">Namaste Ramesh dai, your booking at Hotel Dhaulagiri Courtyard is confirmed: Deluxe room with breakfast, 28–30 Nov 2026 (Mangsir 12–14), 2 adults and 1 child, extra bed arranged. We have received your deposit of NPR 10,000. We look forward to welcoming you. - Front desk</div></div></div><div class="tl-item task"><div class="t">16 Nov · Task created</div><div class="b"><b>Deposit invoice</b> for Accounts, due same day.</div></div></div></div></div>
+<div class="stack">
+<div class="card"><div class="card-h"><h3>Guest bill (folio)</h3><span class="grow"></span><span class="chip">opens at check-in</span></div><div class="card-b"><dl class="kv" style="grid-template-columns:1fr auto"><dt>Expected, before tax</dt><dd class="mono">NPR 25,000.00</dd><dt>Deposit, 16 Nov (Fonepay)</dt><dd class="mono">NPR 10,000.00</dd><dt><b>Balance</b></dt><dd class="mono"><b>not open</b></dd></dl><div class="small muted" style="margin-top:6px">Charges post from check-in on 28 Nov.</div></div></div>
+<div class="card"><div class="card-h"><h3>Open tasks</h3></div><div class="card-b stack"><div class="row"><span class="dot" style="background:var(--brass)"></span><div class="grow"><b>Deposit invoice</b><div class="small muted">Accounts · due 16 Nov, same day</div></div></div><div class="row"><span class="dot" style="background:var(--brass)"></span><div class="grow"><b>Confirm details and requests</b><div class="small muted">Front desk · will be created 27 Nov, 24 hours before arrival</div></div></div></div></div>
+<div class="card"><div class="card-h"><h3>Past stays</h3></div><div class="card-b"><div class="row"><svg class="ic"><use href="#i-bed"/></svg><div class="grow"><b>Mar 2025</b><div class="small muted">1 previous stay · matched on phone</div></div></div></div></div>
+<div class="card"><div class="card-h"><h3>Preferences</h3></div><div class="card-b small">Extra bed for the child.<br><span class="muted">Ground floor near the lift: not needed.</span></div></div>
+</div>
+</div></section>
+
+<section class="state" data-state="cancelled" data-label="Cancelled">
+<div class="pagehead"><div class="grow"><div class="eyebrow">Reservation · R-2083-0917</div><h1>Ramesh Adhikari · Deluxe, 28–30 Nov 2026</h1></div><span class="chip chip--rose">Cancelled</span><button class="btn" data-show="held"><svg class="ic"><use href="#i-left"/></svg>Undo — back to Held</button></div>
+<ul class="stagebar">
+<li class="done">Enquiry<small>reply 2 h</small></li>
+<li class="done">Held<small>expires 24 h</small></li>
+<li class="">Confirmed<small>deposit</small></li>
+<li class="">Pre-arrival<small>room ready</small></li>
+<li class="">In-house<small>check-in</small></li>
+<li class="">Checked out<small>settled</small></li>
+<li class="exit now">Cancelled<small>reason required</small></li><li class="exit">No-show<small>reason required</small></li></ul>
+<div class="note note--err" style="margin:14px 0"><svg class="ic"><use href="#i-x"/></svg><div><b>Cancelled</b> on 16 Nov by Prakash Tamang. The hold was released and Deluxe is free again for 28–29 Nov.<br>A cancellation is a transition with a reason; history is kept. Nothing is deleted.</div></div>
+<div class="record">
+<div class="card"><div class="card-h"><h3>Details</h3></div><div class="card-b"><dl class="kv" style="grid-template-columns:96px 1fr">
+<dt>Guest</dt><dd><b>Ramesh Adhikari</b><div class="small muted">Pokhara</div></dd>
+<dt>Phone</dt><dd class="mono">+977 9856-041237</dd>
+<dt>Check-in</dt><dd>28 Nov 2026<div class="small muted">Mangsir 12, 2083 BS</div></dd>
+<dt>Check-out</dt><dd>30 Nov 2026<div class="small muted">Mangsir 14, 2083 BS</div></dd>
+<dt>Room type</dt><dd>Deluxe</dd>
+<dt>Room</dt><dd><span class="muted">Not assigned yet</span></dd>
+<dt>ETA</dt><dd>14:00</dd>
+<dt>Guests</dt><dd>2 adults, 1 child</dd>
+<dt>Source</dt><dd>WhatsApp</dd>
+<dt>Rate plan</dt><dd>B&amp;B · NPR 11,000<div class="small muted">Extra bed NPR 1,500 / night</div></dd>
+<dt>Total</dt><dd><b class="mono">NPR 25,000.00</b><div class="small muted">before tax · 2 × 11,000 + 2 × 1,500</div></dd>
+<dt>Guest ID</dt><dd><span class="masked">••••••••••</span> <svg class="ic" style="color:var(--ink-3)"><use href="#i-lock"/></svg><div class="small muted">shown to 4 roles only</div></dd>
+<dt>Flags</dt><dd><span class="chip chip--pine">Repeat guest</span></dd>
+</dl></div></div>
+<div class="stack">
+<div class="card"><div class="card-h"><h3>Reason for cancelling</h3><span class="grow"></span><span class="chip chip--rose">required</span></div><div class="card-b stack">
+<div class="small muted">Chosen from the list:</div>
+<div class="row wrap"><span class="chip chip--rose">Guest changed plans</span><span class="chip">Found another hotel</span><span class="chip">Dates changed</span><span class="chip">Hold expired</span><span class="chip">Duplicate booking</span></div>
+<div class="input ro">Guest called: family trip moved to December.</div></div></div>
+<div class="card"><div class="card-h"><h3>Timeline</h3><span class="grow"></span><span class="muted small">oldest first</span></div><div class="card-b"><div class="tl"><div class="tl-item"><div class="t">15 Nov 09:12 · WhatsApp</div><div class="b"><div class="msg" style="max-width:none;font-size:13px">Namaste dai, Mangsir 12 dekhi 14 samma deluxe room chahiyo, 2 jana thulo 1 jana baccha. Breakfast sahit. Extra bed milcha? - Ramesh Adhikari</div></div></div><div class="tl-item ai"><div class="t">15 Nov 09:12 · AI draft</div><div class="b"><b>Draft created</b> from the message. 8 fields read, least sure about the requests field.<div class="small muted mono" style="margin-top:4px">AI draft · prompt version 3</div></div></div><div class="tl-item ai"><div class="t">15 Nov 09:20 · Draft confirmed</div><div class="b"><b>Confirmed by Prakash Tamang</b><div class="small" style="margin-top:4px">changed: <b>ETA</b> empty → 14:00</div></div></div><div class="tl-item stage"><div class="t">15 Nov 09:20 · Stage</div><div class="b"><span class="chip chip--brass">Held</span> Hold expires 16 Nov 09:20.</div></div><div class="tl-item stage"><div class="t">16 Nov · Stage</div><div class="b"><span class="chip chip--rose">Cancelled</span> Held → Cancelled by Prakash Tamang. Reason: Guest changed plans.</div></div></div></div></div>
+</div>
+<div class="stack">
+<div class="card"><div class="card-h"><h3>Guest bill (folio)</h3><span class="grow"></span><span class="chip">opens at check-in</span></div><div class="card-b"><dl class="kv" style="grid-template-columns:1fr auto"><dt>Expected, before tax</dt><dd class="mono">NPR 25,000.00</dd><dt>Deposit received</dt><dd class="mono">none yet</dd><dt><b>Balance</b></dt><dd class="mono"><b>not open</b></dd></dl></div></div>
+<div class="card"><div class="card-h"><h3>Open tasks</h3></div><div class="card-b stack"><div class="small muted">No open tasks. The Confirm details task was cancelled with the reservation.</div></div></div>
+<div class="card"><div class="card-h"><h3>Past stays</h3></div><div class="card-b"><div class="row"><svg class="ic"><use href="#i-bed"/></svg><div class="grow"><b>Mar 2025</b><div class="small muted">1 previous stay · matched on phone</div></div></div></div></div>
+<div class="card"><div class="card-h"><h3>Preferences</h3></div><div class="card-b small">Extra bed for the child.<br><span class="muted">Ground floor near the lift: not needed.</span></div></div>
+</div>
+</div></section>
+    </div>
+  </div>
+</div>
+
+</body></html>

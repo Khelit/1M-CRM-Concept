@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A15 · Import and duplicates</title><link rel="stylesheet" href="../assets/app.css">
+<script src="../assets/steps.js"></script><script src="../assets/shell.js"></script></head>
+<body data-step="A15" data-device="desktop">
+
+<div class="screen">
+  <nav class="side side--settings">
+    <div class="brand"><b>Dhaulagiri Courtyard</b><span>Settings · sandbox</span></div>
+    <div class="sec">Structure</div>
+    <a href="#"><svg class="ic"><use href="#i-tree"/></svg>Departments</a>
+    <a href="#"><svg class="ic"><use href="#i-key"/></svg>Roles &amp; access</a>
+    <div class="sec">Data</div>
+    <a href="#"><svg class="ic"><use href="#i-layers"/></svg>Objects &amp; fields</a>
+    <a href="#"><svg class="ic"><use href="#i-users"/></svg>Identity rule</a>
+    <a href="#"><svg class="ic"><use href="#i-panel"/></svg>Record layouts</a>
+    <div class="sec">Process</div>
+    <a href="#"><svg class="ic"><use href="#i-right"/></svg>Workflows</a>
+    <a href="#"><svg class="ic"><use href="#i-bed"/></svg>Rooms &amp; rates</a>
+    <a href="#"><svg class="ic"><use href="#i-link"/></svg>Handoff rules</a>
+    <div class="sec">People see</div>
+    <a href="#"><svg class="ic"><use href="#i-filter"/></svg>Saved views</a>
+    <a href="#"><svg class="ic"><use href="#i-list"/></svg>Navigation</a>
+    <div class="sec">Go live</div>
+    <a class="on" href="#"><svg class="ic"><use href="#i-upload"/></svg>Import</a>
+    <a href="#"><svg class="ic"><use href="#i-user"/></svg>Users</a>
+    <a href="#"><svg class="ic"><use href="#i-check"/></svg>Test run</a>
+    <a href="#"><svg class="ic"><use href="#i-send"/></svg>Publish</a>
+    <div class="foot">Ritu Bhandari · Migration analyst</div>
+  </nav>
+  <div class="main">
+    <div class="mode-banner mode-banner--settings"><svg class="ic"><use href="#i-gear"/></svg><b>SETTINGS · DRAFT</b> Changes are not live until Publish.</div>
+    <div class="topbar">
+      <div class="modes"><span>Work</span><span>Analyze</span><span class="on settings">Settings</span></div>
+      <div class="search"><svg class="ic"><use href="#i-search"/></svg>Search settings</div>
+      <div class="grow"></div>
+      <div class="avatar">RB</div>
+    </div>
+    <div class="content">
+      <div class="pagehead">
+        <div class="grow"><div class="eyebrow">Go live</div><h1>Import history</h1>
+          <p>Old system file in, guests out. Exact matches merge by themselves; doubtful pairs wait for a person.</p></div>
+        
+      </div>
+      <section class="state" data-state="map" data-label="Map columns">
+        <div class="card" style="margin-bottom:12px"><div class="card-b row">
+          <svg class="ic lg"><use href="#i-upload"/></svg>
+          <div class="grow"><b class="mono">guests_2019_2026.xlsx</b><div class="muted small">From the old system · 5,480 rows read · 11 columns · uploaded by Ritu Bhandari</div></div>
+          <span class="chip chip--brass">2 columns not mapped</span>
+        </div></div>
+        <div class="grid2" style="grid-template-columns:1fr 320px">
+          <div class="card"><div class="card-h"><h3>Old column to guest field</h3><span class="grow"></span><span class="muted small">Nothing is saved until you read the file</span></div>
+            <table class="tbl"><thead><tr><th>Old column</th><th>Example</th><th>Guest field</th><th>Status</th></tr></thead><tbody>
+              <tr><td class="mono">OldID</td><td class="mono small">OLD-004121</td><td>Kept in import history</td><td><span class="chip chip--pine">mapped</span></td></tr>
+              <tr><td class="mono">FullName</td><td>Suresh Gurung</td><td><div class="input sel">Name</div></td><td><span class="chip chip--pine">mapped</span></td></tr>
+              <tr><td class="mono">Mobile</td><td class="mono small">98412 66305</td><td><div class="input sel">Phone (+977 normalised)</div></td><td><span class="chip chip--pine">mapped</span></td></tr>
+              <tr><td class="mono">EmailAddr</td><td>suresh.g@example.com</td><td><div class="input sel">Email</div></td><td><span class="chip chip--pine">mapped</span></td></tr>
+              <tr><td class="mono">IDType</td><td>Citizenship</td><td><div class="input sel">ID type</div></td><td><span class="chip chip--pine">mapped</span></td></tr>
+              <tr><td class="mono">IDNo</td><td class="mono small">27-01-71-04412</td><td><div class="input sel">ID number</div></td><td><span class="chip chip--pine">mapped</span></td></tr>
+              <tr><td class="mono">Country</td><td>Nepal</td><td><div class="input sel">Nationality</div></td><td><span class="chip chip--pine">mapped</span></td></tr>
+              <tr><td class="mono">Remarks</td><td>Prefers quiet room</td><td><div class="input sel">Preferences</div></td><td><span class="chip chip--pine">mapped</span></td></tr>
+              <tr><td class="mono">VIP</td><td>Y</td><td><div class="input sel">Flags</div></td><td><span class="chip chip--pine">mapped</span></td></tr>
+              <tr class="late"><td class="mono">City</td><td>Pokhara</td><td><div class="input err sel">Choose a field or skip</div></td><td><span class="chip chip--rose">not mapped</span></td></tr>
+              <tr class="late"><td class="mono">Loyalty_Pts</td><td class="mono small">1,250</td><td><div class="input err sel">Choose a field or skip</div></td><td><span class="chip chip--rose">not mapped</span></td></tr>
+            </tbody></table>
+          </div>
+          <div class="stack">
+            <div class="note note--warn"><svg class="ic"><use href="#i-alert"/></svg><div><b>Two columns have nowhere to go.</b><br>They are skipped unless you map them. City is what tells two people with the same name apart in the next step.</div></div>
+            <div class="card"><div class="card-h"><h3>How rows are matched</h3></div><div class="card-b">
+              <p class="small muted" style="margin-bottom:8px">Identity rule from step A08, in order:</p>
+              <ol class="small" style="padding-left:18px;line-height:1.8"><li>Phone, exact</li><li>Email, exact</li><li>ID number, exact</li><li>Name, fuzzy: <b>sent to review, never merged</b></li></ol></div></div>
+            <div class="row"><button class="btn btn--ghost">Skip both</button><span class="grow"></span><button class="btn btn--settings" data-show="review">Read file, find pairs</button></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="state" data-state="review" data-label="Review pairs">
+        <div class="note note--info" style="margin-bottom:12px"><svg class="ic"><use href="#i-lock"/></svg><span><b>Never auto-merge on a similar-name match.</b> Exact phone, email or ID merge by themselves. A name that only looks alike always comes here for a person to decide. 12 pairs wait; 6 are shown.</span></div>
+        <div class="card"><div class="card-h"><h3>Pairs awaiting review</h3><span class="chip chip--brass">12 to decide</span><span class="grow"></span><span class="muted small">Suggestion is pre-selected; you decide</span></div>
+          <table class="tbl"><thead><tr><th>Record A</th><th>Record B</th><th>Why it needs a person</th><th style="text-align:right">Decide</th></tr></thead><tbody>
+            <tr><td><span class="mono small muted">OLD-004121</span><br><b>Suresh Gurung</b> (Pokhara)</td><td><span class="mono small muted">OLD-009873</span><br><b>Suresh Gurung</b> (Lekhnath)</td><td><span class="chip chip--brass">similar name 97%, no phone</span></td><td style="text-align:right"><button class="btn">Merge</button> <button class="btn btn--primary">Suggested: Keep both</button></td></tr>
+            <tr><td><span class="mono small muted">OLD-011302</span><br><b>Sabitri Thapa</b> (Kathmandu)</td><td><span class="mono small muted">OLD-015560</span><br><b>Sabitri Thapa</b> (Kathmandu)</td><td><span class="chip chip--brass">similar name 93%</span></td><td style="text-align:right"><button class="btn">Merge</button> <button class="btn btn--primary">Suggested: Keep both</button></td></tr>
+            <tr><td><span class="mono small muted">OLD-020517</span><br><b>Ajay Jha</b> (Birgunj)</td><td><span class="mono small muted">OLD-031448</span><br><b>Ajay Kumar Jha</b> (Birgunj)</td><td><span class="chip chip--brass">similar name 91%</span></td><td style="text-align:right"><button class="btn btn--primary">Suggested: Merge</button> <button class="btn">Keep both</button></td></tr>
+            <tr><td><span class="mono small muted">OLD-024880</span><br><b>Pemba Sherpa</b> (Namche)</td><td><span class="mono small muted">OLD-027715</span><br><b>Lhakpa Sherpa</b> (Namche)</td><td><span class="chip chip--brass">same phone, different first name (family phone)</span></td><td style="text-align:right"><button class="btn">Merge</button> <button class="btn btn--primary">Suggested: Keep both</button></td></tr>
+            <tr><td><span class="mono small muted">OLD-029904</span><br><b>Hans Wieland</b> (Hamburg)</td><td><span class="mono small muted">OLD-033061</span><br><b>Hannes Wieland</b> (Bonn)</td><td><span class="chip chip--brass">similar name 93%</span></td><td style="text-align:right"><button class="btn">Merge</button> <button class="btn btn--primary">Suggested: Keep both</button></td></tr>
+            <tr><td><span class="mono small muted">OLD-036220</span><br><b>Priya Sharma</b> (Delhi)</td><td><span class="mono small muted">OLD-038914</span><br><b>Priya Sharma</b> (Delhi)</td><td><span class="chip chip--brass">similar name 97%, no phone</span></td><td style="text-align:right"><button class="btn btn--primary">Suggested: Merge</button> <button class="btn">Keep both</button></td></tr>
+            <tr><td colspan="4" class="muted center">6 more pairs below</td></tr>
+          </tbody></table>
+        </div>
+        <div class="row" style="margin-top:12px"><button class="btn btn--ghost" data-show="map">Back to mapping</button><span class="grow"></span><button class="btn btn--settings" data-show="done">Finish import</button></div>
+      </section>
+
+      <section class="state" data-state="done" data-label="Done">
+        <div class="grid4" style="grid-template-columns:repeat(5,1fr);margin-bottom:12px">
+          <div class="kpi"><div class="muted small">Rows read</div><div class="v num">5,480</div><div class="d">guests_2019_2026.xlsx</div></div>
+          <div class="kpi"><div class="muted small">Guests created</div><div class="v num">4,212</div><div class="d">with stay history</div></div>
+          <div class="kpi"><div class="muted small">Auto-merged</div><div class="v num">1,214</div><div class="d">exact phone, email or ID</div></div>
+          <div class="kpi"><div class="muted small">Reviewed by a person</div><div class="v num">12</div><div class="d">pairs decided</div></div>
+          <div class="kpi"><div class="muted small">Rejected</div><div class="v num">42</div><div class="d">no name</div></div>
+        </div>
+        <div class="grid2">
+          <div class="stack">
+            <div class="note note--ok"><svg class="ic"><use href="#i-check"/></svg><span><b>Import finished.</b> Repeat guests will be recognised when a draft is reviewed (B02). Nothing was merged on a fuzzy name alone.</span></div>
+            <div class="card"><div class="card-h"><h3>Import history</h3></div>
+              <table class="tbl"><thead><tr><th>File</th><th>By</th><th>Result</th></tr></thead><tbody>
+                <tr><td class="mono small">guests_2019_2026.xlsx</td><td>Ritu Bhandari</td><td><span class="chip chip--pine">4,212 guests</span></td></tr>
+              </tbody></table></div>
+            <div class="row"><button class="btn btn--ghost">Download the 42 rejected rows</button></div>
+          </div>
+          <div class="card"><div class="card-h"><h3>Cutover checklist (proposed)</h3></div>
+            <div class="card-b stack">
+              <p class="small muted">Moving from the old system to this one. Proposed steps, to be confirmed with the hotel.</p>
+              <div class="row"><span class="check"></span><span>Freeze old-system bookings at the agreed cutover time</span></div>
+              <div class="row"><span class="check"></span><span>Import future reservations, so no room is sold twice</span></div>
+              <div class="row"><span class="check"></span><span>Carry open folios over as an opening balance</span></div>
+              <div class="row"><span class="check"></span><span>Keep the old system read-only for 90 days</span></div>
+              <div class="row"><span class="check"></span><span>Owner sign-off before the old system is closed</span></div>
+              <div class="note note--warn"><svg class="ic"><use href="#i-alert"/></svg><span>Name who runs the cutover weekend before go-live.</span></div>
+            </div></div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+</body></html>

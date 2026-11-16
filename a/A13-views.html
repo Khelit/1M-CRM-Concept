@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A13 · Saved views</title><link rel="stylesheet" href="../assets/app.css">
+<script src="../assets/steps.js"></script><script src="../assets/shell.js"></script></head>
+<body data-step="A13" data-device="desktop">
+
+<div class="screen">
+  <nav class="side side--settings">
+    <div class="brand"><b>Dhaulagiri Courtyard</b><span>Settings · sandbox</span></div>
+    <div class="sec">Structure</div>
+    <a href="#"><svg class="ic"><use href="#i-tree"/></svg>Departments</a>
+    <a href="#"><svg class="ic"><use href="#i-key"/></svg>Roles &amp; access</a>
+    <div class="sec">Data</div>
+    <a href="#"><svg class="ic"><use href="#i-layers"/></svg>Objects &amp; fields</a>
+    <a href="#"><svg class="ic"><use href="#i-users"/></svg>Identity rule</a>
+    <a href="#"><svg class="ic"><use href="#i-panel"/></svg>Record layouts</a>
+    <div class="sec">Process</div>
+    <a href="#"><svg class="ic"><use href="#i-right"/></svg>Workflows</a>
+    <a href="#"><svg class="ic"><use href="#i-bed"/></svg>Rooms &amp; rates</a>
+    <a href="#"><svg class="ic"><use href="#i-link"/></svg>Handoff rules</a>
+    <div class="sec">People see</div>
+    <a class="on" href="#"><svg class="ic"><use href="#i-filter"/></svg>Saved views</a>
+    <a href="#"><svg class="ic"><use href="#i-list"/></svg>Navigation</a>
+    <div class="sec">Go live</div>
+    <a href="#"><svg class="ic"><use href="#i-upload"/></svg>Import</a>
+    <a href="#"><svg class="ic"><use href="#i-user"/></svg>Users</a>
+    <a href="#"><svg class="ic"><use href="#i-check"/></svg>Test run</a>
+    <a href="#"><svg class="ic"><use href="#i-send"/></svg>Publish</a>
+    <div class="foot">Aashish Poudel · Impl. lead</div>
+  </nav>
+  <div class="main">
+    <div class="mode-banner mode-banner--settings"><svg class="ic"><use href="#i-gear"/></svg><b>SETTINGS · DRAFT</b> Changes are not live until Publish. 3 unpublished changes.</div>
+    <div class="topbar">
+      <div class="modes"><span>Work</span><span>Analyze</span><span class="on settings">Settings</span></div>
+      <div class="search"><svg class="ic"><use href="#i-search"/></svg>Search settings</div>
+      <div class="grow"></div>
+      <div class="avatar">AP</div>
+    </div>
+    <div class="content">
+      <div class="pagehead">
+        <div class="grow"><div class="eyebrow">People see</div><h1>Saved views</h1>
+          <p>9 views. A view is an object, a lens and a filter, shared with chosen roles. Sunita pins them into sidebars in the next step.</p></div>
+        <button class="btn btn--settings" data-show="new"><svg class="ic"><use href="#i-plus"/></svg>New view</button>
+      </div>
+      <section class="state" data-state="views" data-label="Views">
+<div class="card"><table class="tbl"><thead><tr><th>View</th><th>Object</th><th>View type</th><th>Filter</th><th>Visible to</th><th style="width:44px"></th></tr></thead><tbody>
+<tr><td><b>Arrivals today</b></td><td>Reservation</td><td><span class="chip chip--slate">table</span></td><td class="small">Arrival date = today</td><td class="small">Front Desk Agent, Duty Manager, Bell Desk Porter</td><td><button class="btn btn--ghost"><svg class="ic"><use href="#i-pen"/></svg></button></td></tr>
+<tr><td><b>Departures today</b></td><td>Reservation</td><td><span class="chip chip--slate">table</span></td><td class="small">Departure date = today</td><td class="small">Front Desk Agent, Duty Manager, Housekeeping Supervisor</td><td><button class="btn btn--ghost"><svg class="ic"><use href="#i-pen"/></svg></button></td></tr>
+<tr><td><b>Pending drafts</b></td><td>AI draft (fixed)</td><td><span class="chip chip--slate">table</span></td><td class="small">State = pending review or needs info</td><td class="small">Front Desk Agent, Reservations Agent</td><td><button class="btn btn--ghost"><svg class="ic"><use href="#i-pen"/></svg></button></td></tr>
+<tr><td><b>In-house</b></td><td>Reservation</td><td><span class="chip chip--slate">table</span></td><td class="small">Stage = In-house</td><td class="small">Front Desk Agent, Duty Manager, Security Guard</td><td><button class="btn btn--ghost"><svg class="ic"><use href="#i-pen"/></svg></button></td></tr>
+<tr><td><b>Pipeline</b></td><td>Reservation</td><td><span class="chip chip--slate">board</span></td><td class="small">Open reservations, columns = stage</td><td class="small">Reservations Agent, Duty Manager, General Manager</td><td><button class="btn btn--ghost"><svg class="ic"><use href="#i-pen"/></svg></button></td></tr>
+<tr><td><b>Room status</b></td><td>Room</td><td><span class="chip chip--slate">board</span></td><td class="small">All rooms, columns = status</td><td class="small">Front Desk Agent, Housekeeping Supervisor, Housekeeper</td><td><button class="btn btn--ghost"><svg class="ic"><use href="#i-pen"/></svg></button></td></tr>
+<tr><td><b>My tasks</b></td><td>Task</td><td><span class="chip chip--slate">table</span></td><td class="small">Assignee = me</td><td class="small">Everyone with Work mode</td><td><button class="btn btn--ghost"><svg class="ic"><use href="#i-pen"/></svg></button></td></tr>
+<tr><td><b>Unpaid bills</b></td><td>Folio (Bill)</td><td><span class="chip chip--slate">table</span></td><td class="small">Balance &gt; 0</td><td class="small">Accounts Officer, Front Desk Agent, Duty Manager<br><span class="chip chip--rose"><svg class="ic"><use href="#i-lock"/></svg> Housekeeper: no permission</span></td><td><button class="btn btn--ghost"><svg class="ic"><use href="#i-pen"/></svg></button></td></tr>
+<tr><td><b>Occupancy</b></td><td>Room</td><td><span class="chip chip--slate">dashboard</span></td><td class="small">Today, all rooms</td><td class="small">Duty Manager, General Manager</td><td><button class="btn btn--ghost"><svg class="ic"><use href="#i-pen"/></svg></button></td></tr>
+</tbody></table></div>
+        <div class="note note--warn" style="margin-top:12px"><svg class="ic"><use href="#i-lock"/></svg><span><b>Unpaid bills cannot be shared with Housekeeper.</b> That role has no permission on Folio, so the share box is locked. Change it in Roles &amp; access, not here.</span></div>
+      </section>
+      <section class="state" data-state="new" data-label="New view">
+<div class="grid2" style="grid-template-columns:1fr 360px">
+          <div class="card"><div class="card-h"><h3>New view</h3><span class="chip chip--brass">draft</span></div><div class="card-b stack">
+            <div class="field"><span class="lbl">Name</span><div class="input">Unpaid bills</div></div>
+            <div class="grid2"><div class="field"><span class="lbl">Object</span><div class="input sel">Folio (Bill)</div></div>
+            <div class="field"><span class="lbl">View type</span><div><span class="seg"><span class="on">Table</span><span>Board</span><span>Calendar</span><span>Timeline</span><span>Dashboard</span></span></div></div></div>
+            <div class="field"><span class="lbl">Filter</span><div class="input">Balance &gt; 0</div></div>
+            <div class="row"><button class="btn btn--settings" data-show="views">Save view</button><button class="btn btn--ghost" data-show="views">Cancel</button></div>
+          </div></div>
+          <div class="card"><div class="card-h"><h3>Visible to</h3></div><div class="card-b stack">
+            <div class="row"><span class="check on"></span>Accounts Officer</div>
+            <div class="row"><span class="check on"></span>Front Desk Agent</div>
+            <div class="row"><span class="check on"></span>Duty Manager</div>
+            <div class="row"><span class="check"></span>General Manager</div>
+            <div class="row muted"><svg class="ic"><use href="#i-lock"/></svg>Housekeeper <span class="small">no permission on Folio</span></div>
+            <div class="row muted"><svg class="ic"><use href="#i-lock"/></svg>Security Guard <span class="small">no permission on Folio</span></div>
+          </div></div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</div>
+
+</body></html>

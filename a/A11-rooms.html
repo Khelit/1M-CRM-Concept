@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A11 · Rooms, rates, tax and payments</title><link rel="stylesheet" href="../assets/app.css">
+<script src="../assets/steps.js"></script><script src="../assets/shell.js"></script></head>
+<body data-step="A11" data-device="desktop">
+
+<div class="screen">
+  <nav class="side side--settings">
+    <div class="brand"><b>Dhaulagiri Courtyard</b><span>Settings · sandbox</span></div>
+    <div class="sec">Structure</div>
+    <a href="#"><svg class="ic"><use href="#i-tree"/></svg>Departments</a>
+    <a href="#"><svg class="ic"><use href="#i-key"/></svg>Roles &amp; access</a>
+    <div class="sec">Data</div>
+    <a href="#"><svg class="ic"><use href="#i-layers"/></svg>Objects &amp; fields</a>
+    <a href="#"><svg class="ic"><use href="#i-users"/></svg>Identity rule</a>
+    <a href="#"><svg class="ic"><use href="#i-panel"/></svg>Record layouts</a>
+    <div class="sec">Process</div>
+    <a href="#"><svg class="ic"><use href="#i-right"/></svg>Workflows</a>
+    <a class="on" href="#"><svg class="ic"><use href="#i-bed"/></svg>Rooms &amp; rates</a>
+    <a href="#"><svg class="ic"><use href="#i-link"/></svg>Handoff rules</a>
+    <div class="sec">People see</div>
+    <a href="#"><svg class="ic"><use href="#i-filter"/></svg>Saved views</a>
+    <a href="#"><svg class="ic"><use href="#i-list"/></svg>Navigation</a>
+    <div class="sec">Go live</div>
+    <a href="#"><svg class="ic"><use href="#i-upload"/></svg>Import</a>
+    <a href="#"><svg class="ic"><use href="#i-user"/></svg>Users</a>
+    <a href="#"><svg class="ic"><use href="#i-check"/></svg>Test run</a>
+    <a href="#"><svg class="ic"><use href="#i-send"/></svg>Publish</a>
+    <div class="foot">Aashish Poudel · Impl. lead</div>
+  </nav>
+  <div class="main">
+    <div class="mode-banner mode-banner--settings"><svg class="ic"><use href="#i-gear"/></svg><b>SETTINGS · DRAFT</b> Changes are not live until Publish. 3 unpublished changes.</div>
+    <div class="topbar">
+      <div class="modes"><span>Work</span><span>Analyze</span><span class="on settings">Settings</span></div>
+      <div class="search"><svg class="ic"><use href="#i-search"/></svg>Search settings</div>
+      <div class="grow"></div>
+      <div class="avatar">AP</div>
+    </div>
+    <div class="content">
+      <div class="pagehead">
+        <div class="grow"><div class="eyebrow">Process</div><h1>Rooms &amp; rates</h1>
+          <p>4 room types · 52 rooms · tax rule, bill series and payment methods. Legal entity and fiscal year come from the tenant setup.</p></div>
+        <button class="btn"><svg class="ic"><use href="#i-plus"/></svg>Add room type</button><button class="btn btn--settings"><svg class="ic"><use href="#i-plus"/></svg>Add rooms</button>
+      </div>
+      <section class="state" data-state="types" data-label="Room types">
+<div class="tabs"><span class="on" data-show="types" style="cursor:pointer">Room types</span><span data-show="rooms" style="cursor:pointer">Rooms</span><span data-show="types" style="cursor:pointer">Rates</span><span data-show="tax" style="cursor:pointer">Tax &amp; bills</span><span data-show="tax" style="cursor:pointer">Payments</span></div>
+        <div class="card"><table class="tbl"><thead><tr><th>Room type</th><th class="num">Rooms</th><th>Room numbers</th><th>Allocation</th><th>Rate plans</th><th class="num">Room only (NPR)</th><th class="num">B&amp;B (NPR)</th></tr></thead><tbody>
+<tr><td><b>Standard</b></td><td class="num">24</td><td class="mono small">101-112, 201-212</td><td><span class="chip">Pooled</span></td><td>Room only, B&amp;B</td><td class="num">6,500</td><td class="num">7,800</td></tr>
+<tr><td><b>Deluxe</b></td><td class="num">18</td><td class="mono small">301-312, 401-406</td><td><span class="chip">Pooled</span></td><td>Room only, B&amp;B</td><td class="num">9,500</td><td class="num">11,000</td></tr>
+<tr><td><b>Premier</b></td><td class="num">8</td><td class="mono small">407-412, 501-502</td><td><span class="chip">Pooled</span></td><td>Room only, B&amp;B</td><td class="num">13,500</td><td class="num">15,000</td></tr>
+<tr><td><b>Courtyard Suite</b></td><td class="num">2</td><td class="mono small">503, 504</td><td><span class="chip chip--plum">Named</span></td><td>Room only, B&amp;B</td><td class="num">22,000</td><td class="num">24,000</td></tr>
+<tr><td><b>Total</b></td><td class="num"><b>52</b></td><td colspan="5" class="muted small">Pooled: any room of the type can serve the booking. Named: this exact room is booked.</td></tr>
+</tbody></table></div>
+        <div class="grid2" style="margin-top:16px">
+          <div class="card"><div class="card-h"><h3>Booking rules</h3></div><div class="card-b stack">
+            <div class="field"><span class="lbl">Overbooking</span><div class="input ro"><svg class="ic"><use href="#i-lock"/></svg>Not allowed (enforced by the database)</div><span class="help">No setting turns this off. Two bookings can never hold the same room on the same night.</span></div>
+            <div class="field"><span class="lbl">Hold expiry</span><div class="input">24 h</div><span class="help">A hold with no deposit is released after this. See the hold-expiry rule in Handoff rules.</span></div>
+            <div class="field"><span class="lbl">Room assigned</span><div class="input sel">At check-in for pooled types</div><span class="help">Named type (Courtyard Suite 503, 504) is assigned when booked.</span></div>
+          </div></div>
+          <div class="stack">
+            <div class="note note--warn"><svg class="ic"><use href="#i-alert"/></svg><div><b>Pooled room types.</b> A room in a pooled type is normally assigned at check-in. The front desk may assign it earlier, inside the Confirm details task, so Prepare room has a room number 24 h before arrival.</div></div>
+            <div class="card"><div class="card-h"><h3>Checks before Publish</h3></div><div class="card-b stack small">
+              <div class="row"><svg class="ic"><use href="#i-check"/></svg>Every type has a rate for Room only and B&amp;B</div>
+              <div class="row"><svg class="ic"><use href="#i-check"/></svg>No room number appears twice (52 unique)</div>
+              <div class="row"><svg class="ic"><use href="#i-check"/></svg>Every room belongs to exactly one type</div>
+            </div></div>
+          </div>
+        </div>
+      </section>
+      <section class="state" data-state="rooms" data-label="Rooms">
+<div class="tabs"><span data-show="types" style="cursor:pointer">Room types</span><span class="on" data-show="rooms" style="cursor:pointer">Rooms</span><span data-show="types" style="cursor:pointer">Rates</span><span data-show="tax" style="cursor:pointer">Tax &amp; bills</span><span data-show="tax" style="cursor:pointer">Payments</span></div>
+        <div class="row" style="margin-bottom:10px"><span class="muted small">Colour shows room type, not today's status.</span><span class="grow"></span>
+          <span class="chip">Standard 24</span><span class="chip chip--slate">Deluxe 18</span><span class="chip chip--brass">Premier 8</span><span class="chip chip--plum">Courtyard Suite 2</span></div>
+        <div class="card"><div class="card-b">
+<div style="margin-bottom:12px"><div class="row" style="margin-bottom:6px"><b>Floor 1</b><span class="muted small">12 rooms · 101-112</span></div><div class="rooms"><div class="room" style="border-color:var(--line);background:var(--paper)"><b>101</b>Standard</div><div class="room" style="border-color:var(--line);background:var(--paper)"><b>102</b>Standard</div><div class="room" style="border-color:var(--line);background:var(--paper)"><b>103</b>Standard</div><div class="room" style="border-color:var(--line);background:var(--paper)"><b>104</b>Standard</div><div class="room" style="border-color:var(--line);background:var(--paper)"><b>105</b>Standard</div><div class="room" style="border-color:var(--line);background:var(--paper)"><b>106</b>Standard</div><div class="room" style="border-color:var(--line);background:var(--paper)"><b>107</b>Standard</div><div class="room" style="border-color:var(--line);background:var(--paper)"><b>108</b>Standard</div><div class="room" style="border-color:var(--line);background:var(--paper)"><b>109</b>Standard</div><div class="room" style="border-color:var(--line);background:var(--paper)"><b>110</b>Standard</div><div class="room" style="border-color:var(--line);background:var(--paper)"><b>111</b>Standard</div><div class="room" style="border-color:var(--line);background:var(--paper)"><b>112</b>Standard</div></div></div>
+<div style="margin-bottom:12px"><div class="row" style="margin-bottom:6px"><b>Floor 2</b><span class="muted small">12 rooms · 201-212</span></div><div class="rooms"><div class="room" style="border-color:var(--line);background:var(--paper)"><b>201</b>Standard</div><div class="room" style="border-color:var(--line);background:var(--paper)"><b>202</b>Standard</div><div class="room" style="border-color:var(--line);background:var(--paper)"><b>203</b>Standard</div><div class="room" style="border-color:var(--line);background:var(--paper)"><b>204</b>Standard</div><div class="room" style="border-color:var(--line);background:var(--paper)"><b>205</b>Standard</div><div class="room" style="border-color:var(--line);background:var(--paper)"><b>206</b>Standard</div><div class="room" style="border-color:var(--line);background:var(--paper)"><b>207</b>Standard</div><div class="room" style="border-color:var(--line);background:var(--paper)"><b>208</b>Standard</div><div class="room" style="border-color:var(--line);background:var(--paper)"><b>209</b>Standard</div><div class="room" style="border-color:var(--line);background:var(--paper)"><b>210</b>Standard</div><div class="room" style="border-color:var(--line);background:var(--paper)"><b>211</b>Standard</div><div class="room" style="border-color:var(--line);background:var(--paper)"><b>212</b>Standard</div></div></div>
+<div style="margin-bottom:12px"><div class="row" style="margin-bottom:6px"><b>Floor 3</b><span class="muted small">12 rooms · 301-312</span></div><div class="rooms"><div class="room" style="border-color:#C9DAE6;background:var(--slate-soft);color:#1E4258"><b>301</b>Deluxe</div><div class="room" style="border-color:#C9DAE6;background:var(--slate-soft);color:#1E4258"><b>302</b>Deluxe</div><div class="room" style="border-color:#C9DAE6;background:var(--slate-soft);color:#1E4258"><b>303</b>Deluxe</div><div class="room" style="border-color:#C9DAE6;background:var(--slate-soft);color:#1E4258"><b>304</b>Deluxe</div><div class="room" style="border-color:#C9DAE6;background:var(--slate-soft);color:#1E4258"><b>305</b>Deluxe</div><div class="room" style="border-color:#C9DAE6;background:var(--slate-soft);color:#1E4258"><b>306</b>Deluxe</div><div class="room" style="border-color:#C9DAE6;background:var(--slate-soft);color:#1E4258"><b>307</b>Deluxe</div><div class="room" style="border-color:#C9DAE6;background:var(--slate-soft);color:#1E4258"><b>308</b>Deluxe</div><div class="room" style="border-color:#C9DAE6;background:var(--slate-soft);color:#1E4258"><b>309</b>Deluxe</div><div class="room" style="border-color:#C9DAE6;background:var(--slate-soft);color:#1E4258"><b>310</b>Deluxe</div><div class="room" style="border-color:#C9DAE6;background:var(--slate-soft);color:#1E4258"><b>311</b>Deluxe</div><div class="room" style="border-color:#C9DAE6;background:var(--slate-soft);color:#1E4258"><b>312</b>Deluxe</div></div></div>
+<div style="margin-bottom:12px"><div class="row" style="margin-bottom:6px"><b>Floor 4</b><span class="muted small">12 rooms · 401-412</span></div><div class="rooms"><div class="room" style="border-color:#C9DAE6;background:var(--slate-soft);color:#1E4258"><b>401</b>Deluxe</div><div class="room" style="border-color:#C9DAE6;background:var(--slate-soft);color:#1E4258"><b>402</b>Deluxe</div><div class="room" style="border-color:#C9DAE6;background:var(--slate-soft);color:#1E4258"><b>403</b>Deluxe</div><div class="room" style="border-color:#C9DAE6;background:var(--slate-soft);color:#1E4258"><b>404</b>Deluxe</div><div class="room" style="border-color:#C9DAE6;background:var(--slate-soft);color:#1E4258"><b>405</b>Deluxe</div><div class="room" style="border-color:#C9DAE6;background:var(--slate-soft);color:#1E4258"><b>406</b>Deluxe</div><div class="room" style="border-color:#E8D6A8;background:var(--brass-soft);color:#6E4D0B"><b>407</b>Premier</div><div class="room" style="border-color:#E8D6A8;background:var(--brass-soft);color:#6E4D0B"><b>408</b>Premier</div><div class="room" style="border-color:#E8D6A8;background:var(--brass-soft);color:#6E4D0B"><b>409</b>Premier</div><div class="room" style="border-color:#E8D6A8;background:var(--brass-soft);color:#6E4D0B"><b>410</b>Premier</div><div class="room" style="border-color:#E8D6A8;background:var(--brass-soft);color:#6E4D0B"><b>411</b>Premier</div><div class="room" style="border-color:#E8D6A8;background:var(--brass-soft);color:#6E4D0B"><b>412</b>Premier</div></div></div>
+<div style="margin-bottom:12px"><div class="row" style="margin-bottom:6px"><b>Floor 5</b><span class="muted small">4 rooms · 501-504</span></div><div class="rooms"><div class="room" style="border-color:#E8D6A8;background:var(--brass-soft);color:#6E4D0B"><b>501</b>Premier</div><div class="room" style="border-color:#E8D6A8;background:var(--brass-soft);color:#6E4D0B"><b>502</b>Premier</div><div class="room" style="border-color:#D8C6DD;background:var(--plum-soft);color:var(--plum)"><b>503</b>Suite · named</div><div class="room" style="border-color:#D8C6DD;background:var(--plum-soft);color:var(--plum)"><b>504</b>Suite · named</div></div></div>
+        </div></div>
+      </section>
+      <section class="state" data-state="tax" data-label="Tax, bills &amp; payments">
+<div class="tabs"><span data-show="types" style="cursor:pointer">Room types</span><span data-show="rooms" style="cursor:pointer">Rooms</span><span data-show="types" style="cursor:pointer">Rates</span><span class="on" data-show="tax" style="cursor:pointer">Tax &amp; bills</span><span data-show="tax" style="cursor:pointer">Payments</span></div>
+        <div class="grid2">
+          <div class="stack">
+            <div class="card"><div class="card-h"><h3>Legal entity and fiscal year</h3></div><div class="card-b"><dl class="kv" style="grid-template-columns:120px 1fr">
+              <dt>Legal entity</dt><dd>Dhaulagiri Courtyard Pvt. Ltd.</dd>
+              <dt>PAN</dt><dd class="mono">609845213 <span class="chip chip--pine">VAT registered</span></dd>
+              <dt>Fiscal year</dt><dd>2083/84 <span class="muted small">(mid-July to mid-July)</span></dd>
+              <dt>Bill series</dt><dd class="mono">DC-8384- <span class="chip">next 000001</span></dd>
+              <dt>Credit notes</dt><dd class="mono">CN-8384-</dd>
+            </dl></div></div>
+            <div class="card"><div class="card-h"><h3>Tax rule</h3><span class="chip chip--slate">data, not code</span></div><div class="card-b stack">
+              <table class="tbl"><thead><tr><th>Tax</th><th class="num">Rate</th><th>Valid from</th></tr></thead><tbody>
+                <tr><td>VAT</td><td class="num">13%</td><td class="mono">fiscal year 2083/84</td></tr></tbody></table>
+              <div class="row" style="align-items:flex-start"><span class="toggle"></span><div><b>Service charge line</b> <span class="chip">OFF by default</span><div class="help">When off, bills carry no service charge line at all.</div></div></div>
+            </div></div>
+            <div class="card"><div class="card-h"><h3>Tax monitoring sync <span class="muted small">(sending each bill to the tax office's system)</span></h3></div><div class="card-b">
+              <div class="row" style="align-items:flex-start"><span class="toggle"></span><div><b>Dhaulagiri Courtyard Pvt. Ltd.</b> <span class="chip">off</span><div class="help">Off while below the threshold. The switch is per legal entity; designed to be turned on once the billing permit is issued (A17b).</div></div></div>
+            </div></div>
+          </div>
+          <div class="card" style="align-self:start"><div class="card-h"><h3>Payment methods</h3><span class="grow"></span><span class="muted small">6 enabled</span></div><div class="card-b stack">
+            <div class="row"><span class="toggle on"></span><b>Cash</b></div>
+            <div class="row"><span class="toggle on"></span><b>Card</b></div>
+            <div><div class="row"><span class="toggle on"></span><b>Fonepay QR</b><span class="chip chip--pine">merchant ID set</span></div>
+              <div class="field" style="margin:8px 0 0 42px"><span class="lbl">Merchant ID</span><div class="input ro mono"><svg class="ic"><use href="#i-lock"/></svg>•••••••••4821</div><span class="help">Shown masked. Without it, the QR step at checkout cannot start.</span></div></div>
+            <div class="row"><span class="toggle on"></span><b>eSewa</b></div>
+            <div class="row"><span class="toggle on"></span><b>Khalti</b></div>
+            <div class="row"><span class="toggle on"></span><b>Bank</b></div>
+          </div></div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</div>
+
+</body></html>

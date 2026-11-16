@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A12 · Handoff rules</title><link rel="stylesheet" href="../assets/app.css">
+<script src="../assets/steps.js"></script><script src="../assets/shell.js"></script></head>
+<body data-step="A12" data-device="desktop">
+
+<div class="screen">
+  <nav class="side side--settings">
+    <div class="brand"><b>Dhaulagiri Courtyard</b><span>Settings · sandbox</span></div>
+    <div class="sec">Structure</div>
+    <a href="#"><svg class="ic"><use href="#i-tree"/></svg>Departments</a>
+    <a href="#"><svg class="ic"><use href="#i-key"/></svg>Roles &amp; access</a>
+    <div class="sec">Data</div>
+    <a href="#"><svg class="ic"><use href="#i-layers"/></svg>Objects &amp; fields</a>
+    <a href="#"><svg class="ic"><use href="#i-users"/></svg>Identity rule</a>
+    <a href="#"><svg class="ic"><use href="#i-panel"/></svg>Record layouts</a>
+    <div class="sec">Process</div>
+    <a href="#"><svg class="ic"><use href="#i-right"/></svg>Workflows</a>
+    <a href="#"><svg class="ic"><use href="#i-bed"/></svg>Rooms &amp; rates</a>
+    <a class="on" href="#"><svg class="ic"><use href="#i-link"/></svg>Handoff rules</a>
+    <div class="sec">People see</div>
+    <a href="#"><svg class="ic"><use href="#i-filter"/></svg>Saved views</a>
+    <a href="#"><svg class="ic"><use href="#i-list"/></svg>Navigation</a>
+    <div class="sec">Go live</div>
+    <a href="#"><svg class="ic"><use href="#i-upload"/></svg>Import</a>
+    <a href="#"><svg class="ic"><use href="#i-user"/></svg>Users</a>
+    <a href="#"><svg class="ic"><use href="#i-check"/></svg>Test run</a>
+    <a href="#"><svg class="ic"><use href="#i-send"/></svg>Publish</a>
+    <div class="foot">Aashish Poudel · Impl. lead</div>
+  </nav>
+  <div class="main">
+    <div class="mode-banner mode-banner--settings"><svg class="ic"><use href="#i-gear"/></svg><b>SETTINGS · DRAFT</b> Changes are not live until Publish. 3 unpublished changes.</div>
+    <div class="topbar">
+      <div class="modes"><span>Work</span><span>Analyze</span><span class="on settings">Settings</span></div>
+      <div class="search"><svg class="ic"><use href="#i-search"/></svg>Search settings</div>
+      <div class="grow"></div>
+      <div class="avatar">AP</div>
+    </div>
+    <div class="content">
+      <div class="pagehead">
+        <div class="grow"><div class="eyebrow">Process</div><h1>Handoff rules</h1>
+          <p>12 rules, each read as a sentence: When this happens, then do this, for this role, due by then. The tag shows which handoff from the building walk (A02) it came from.</p></div>
+        <button class="btn" data-show="dry"><svg class="ic"><use href="#i-play"/></svg>Dry run</button><button class="btn btn--settings"><svg class="ic"><use href="#i-plus"/></svg>Add rule</button>
+      </div>
+      <section class="state" data-state="rules" data-label="Rules">
+<div class="card"><table class="tbl"><thead><tr><th style="width:30px">#</th><th style="width:96px">Trigger</th><th>When / Then</th><th style="width:140px">For</th><th style="width:100px">Due</th><th style="width:160px">Came from (A02)</th></tr></thead><tbody>
+<tr><td class="mono muted">1</td><td><span class="chip chip--plum">Confirmed</span></td><td><b>When</b> Reservation becomes Confirmed<br><b>Then</b> create Deposit invoice</td><td>Accounts</td><td>Same day</td><td class="small muted"><svg class="ic"><use href="#i-link"/></svg> A02 row 3 · "deposit by eSewa noted on paper"</td></tr>
+<tr><td class="mono muted">2</td><td><span class="chip chip--plum">Confirmed</span></td><td><b>When</b> Reservation becomes Confirmed<br><b>Then</b> send confirmation message</td><td>Guest</td><td>—</td><td class="small muted"><svg class="ic"><use href="#i-link"/></svg> A02 row 1 · "message read by GM, passed on by hand"</td></tr>
+<tr><td class="mono muted">3</td><td><span class="chip chip--plum">T-24h</span></td><td><b>When</b> 24 hours before arrival<br><b>Then</b> create Prepare room</td><td>Housekeeping</td><td>Before arrival</td><td class="small muted"><svg class="ic"><use href="#i-link"/></svg> A02 row 4 · "front desk shouts the room number"</td></tr>
+<tr><td class="mono muted">4</td><td><span class="chip chip--plum">T-24h</span></td><td><b>When</b> 24 hours before arrival<br><b>Then</b> create Confirm details and requests</td><td>Front Desk</td><td>2 h</td><td class="small muted"><svg class="ic"><use href="#i-link"/></svg> A02 row 2 · "booking written in the paper diary"</td></tr>
+<tr><td class="mono muted">5</td><td><span class="chip chip--plum">VIP</span></td><td><b>When</b> Guest is flagged VIP<br><b>Then</b> notify the manager; create Welcome amenity</td><td>Duty Manager; F&amp;B Captain</td><td>—</td><td class="small muted"><svg class="ic"><use href="#i-link"/></svg> A01 pain 5 · "VIP bookings bypass the system"</td></tr>
+<tr><td class="mono muted">6</td><td><span class="chip chip--plum">In-house</span></td><td><b>When</b> Reservation becomes In-house<br><b>Then</b> create Luggage</td><td>Bell Desk</td><td>10 min</td><td class="small muted"><svg class="ic"><use href="#i-link"/></svg> A02 row 6 · "bell desk not told at all"</td></tr>
+<tr><td class="mono muted">7</td><td><span class="chip chip--plum">In-house</span></td><td><b>When</b> Reservation becomes In-house<br><b>Then</b> create Log arrival</td><td>Security</td><td>10 min</td><td class="small muted"><svg class="ic"><use href="#i-link"/></svg> A02 row 7 · "no arrival log for the guest"</td></tr>
+<tr><td class="mono muted">8</td><td><span class="chip chip--plum">In-house</span></td><td><b>When</b> Reservation becomes In-house<br><b>Then</b> set room to Occupied</td><td>Room (automatic)</td><td>At once</td><td class="small muted"><svg class="ic"><use href="#i-link"/></svg> A02 row 2 · "rooms checked by eye"</td></tr>
+<tr><td class="mono muted">9</td><td><span class="chip chip--plum">Checked out</span></td><td><b>When</b> Reservation becomes Checked out<br><b>Then</b> create Clean and inspect</td><td>Housekeeping</td><td>45 min</td><td class="small muted"><svg class="ic"><use href="#i-link"/></svg> A01 pain 4 · "tasks coordinated verbally"</td></tr>
+<tr><td class="mono muted">10</td><td><span class="chip chip--plum">Checked out</span></td><td><b>When</b> Reservation becomes Checked out<br><b>Then</b> create Settle bill</td><td>Accounts</td><td>Same day</td><td class="small muted"><svg class="ic"><use href="#i-link"/></svg> A02 row 8 · "bill totalled by hand"</td></tr>
+<tr><td class="mono muted">11</td><td><span class="chip chip--brass">Late</span></td><td><b>When</b> Any task passes its deadline<br><b>Then</b> escalate to Duty Manager, then General Manager</td><td>Duty Manager, then GM</td><td>GM after 30 min</td><td class="small muted"><svg class="ic"><use href="#i-link"/></svg> A01 pain 4 · "nothing is timed"</td></tr>
+<tr><td class="mono muted">12</td><td><span class="chip chip--brass">Hold expiry</span></td><td><b>When</b> A hold reaches 24 h with no deposit<br><b>Then</b> release the room; notify the Front Desk</td><td>Front Desk</td><td>At expiry</td><td class="small muted"><svg class="ic"><use href="#i-link"/></svg> A02 row 2 · "no check against other channels"</td></tr>
+</tbody></table></div>
+        <div class="grid2" style="margin-top:14px">
+          <div class="note note--info"><svg class="ic"><use href="#i-link"/></svg><div><b>Inspect room is blocked by Prepare room / Clean.</b> Rules 3 and 9 create a task that cannot be marked inspected until the housekeeper has marked the room clean.</div></div>
+          <div class="note note--ok"><svg class="ic"><use href="#i-check"/></svg><div><b>Checks passed.</b> No rule triggers itself. Every role named has staff in the department tree. Rules 6, 7 and 8 fire together on In-house.</div></div>
+        </div>
+      </section>
+      <section class="state" data-state="dry" data-label="Dry run">
+<div class="grid2" style="grid-template-columns:320px 1fr">
+          <div class="card"><div class="card-h"><h3>Simulate</h3><span class="chip chip--slate">sandbox only</span></div><div class="card-b stack">
+            <div class="field"><span class="lbl">Event</span><div class="input sel">Reservation becomes In-house</div></div>
+            <div class="field"><span class="lbl">Test guest</span><div class="input">Test Sharma · Deluxe · room 304</div></div>
+            <div class="field"><span class="lbl">Pretend it is</span><div class="input mono">29 Oct 2026 14:06 (sandbox)</div></div>
+            <div class="row"><button class="btn btn--settings"><svg class="ic"><use href="#i-play"/></svg>Run again</button><button class="btn btn--ghost" data-show="rules">Back to rules</button></div>
+          </div></div>
+          <div class="card"><div class="card-h"><h3>Result: 3 actions fire together</h3><span class="chip chip--pine">no errors</span></div><div class="card-b">
+            <table class="tbl"><thead><tr><th>Rule</th><th>Action</th><th>Who</th><th>When</th></tr></thead><tbody>
+              <tr><td class="mono">6</td><td>Task: Luggage to room 304</td><td>Bell Desk (Dorje Sherpa)</td><td>Due 14:16 (10 min)</td></tr>
+              <tr><td class="mono">7</td><td>Task: Log arrival, Test Sharma, room 304</td><td>Security (Hari Bahadur Thapa)</td><td>Due 14:16 (10 min)</td></tr>
+              <tr><td class="mono">8</td><td>Room 304 becomes Occupied</td><td>System</td><td>14:06, at once</td></tr>
+            </tbody></table>
+            <div class="note note--info" style="margin-top:12px"><svg class="ic"><use href="#i-alert"/></svg><span>Nothing else fires. Clean and inspect waits for Checked out. Tasks made here are deleted with the sandbox.</span></div>
+          </div></div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</div>
+
+</body></html>

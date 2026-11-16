@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>B08a · Manager live dashboard</title><link rel="stylesheet" href="../assets/app.css">
+<script src="../assets/steps.js"></script><script src="../assets/shell.js"></script></head>
+<body data-step="B08a" data-device="desktop">
+
+<div class="screen">
+  <nav class="side side--analyze">
+    <div class="brand"><b>Dhaulagiri Courtyard</b><span>Analyze</span></div>
+    <div class="sec">Analyze</div>
+    <a class="on" href="#" data-go="B08a"><svg class="ic"><use href="#i-chart"/></svg>Live dashboard</a>
+    <a href="#" data-go="B08b"><svg class="ic"><use href="#i-map"/></svg>Room status</a>
+    <a href="#" data-go="B11b"><svg class="ic"><use href="#i-file"/></svg>Reports</a>
+    <a href="#"><svg class="ic"><use href="#i-alert"/></svg>Tasks late<span class="n late">2</span></a>
+    <a href="#"><svg class="ic"><use href="#i-layers"/></svg>Pipeline</a>
+    <div class="foot">Anil Gurung · Duty Manager</div>
+  </nav>
+  <div class="main">
+    <div class="mode-banner mode-banner--analyze"><svg class="ic"><use href="#i-eye"/></svg><b>ANALYZE · read-only</b> Nothing on these screens can be edited.</div>
+    <div class="topbar">
+      <div class="modes"><span>Work</span><span class="on analyze">Analyze</span><span>Settings</span></div>
+      <div class="search"><svg class="ic"><use href="#i-search"/></svg>Search reports, rooms, guests…</div>
+      <div class="grow"></div>
+      <div class="avatar" style="background:var(--slate-soft);color:var(--slate)">AG</div>
+    </div>
+    <div class="content">
+<section class="state" data-state="normal" data-label="Normal">
+<div class="pagehead"><div class="grow"><div class="eyebrow">Analyze · 28 Nov 2026, 14:20</div><h1>Live dashboard</h1><p>Anil Gurung, Duty Manager. Tasks, alerts and today's numbers across departments.</p></div><span class="chip chip--slate">Updated 14:20</span></div>
+<div class="grid4" style="grid-template-columns:repeat(6,1fr);margin-bottom:16px"><div class="kpi"><div class="eyebrow">Occupancy</div><div class="v">78.8%</div><div class="d">41 of 52 rooms</div><div class="bar" style="margin-top:8px"><i style="width:79%"></i></div></div><div class="kpi"><div class="eyebrow">Arrivals</div><div class="v">9</div><div class="d">4 arrived · 5 expected</div></div><div class="kpi"><div class="eyebrow">Departures</div><div class="v">7</div><div class="d">4 checked out · 3 due</div></div><div class="kpi"><div class="eyebrow">ADR (average rate per occupied room)</div><div class="v">10,850</div><div class="d">NPR per occupied room</div></div><div class="kpi"><div class="eyebrow">Room revenue today</div><div class="v">444,850</div><div class="d">NPR · 28 Nov</div></div><div class="kpi"><div class="eyebrow">Task compliance</div><div class="v">91%</div><div class="d">20 of 22 on time</div><div class="bar" style="margin-top:8px"><i style="width:91%"></i></div></div></div>
+<div class="grid2" style="grid-template-columns:1fr 330px;align-items:start">
+<div class="card"><div class="card-h"><svg class="ic"><use href="#i-list"/></svg><h3>Live task feed</h3><span class="chip chip--pine"><span class="dot" style="background:var(--pine)"></span> Live</span><span class="grow"></span><span class="small muted">Newest first · 16 of 22 shown</span></div>
+<table class="tbl"><thead><tr><th>Time</th><th>Task</th><th>Assignee</th><th>Room / guest</th><th class="num" style="text-align:right">Due</th><th>Status</th></tr></thead><tbody>
+<tr class=""><td class="mono small">14:20</td><td><b>Inspect room 411</b><div class="small muted">Floors</div></td><td>Kamala Shakya</td><td>411</td><td class="num">15:30</td><td><span class="chip">open</span></td></tr>
+<tr class="sel"><td class="mono small">14:06</td><td><b>Luggage to room</b><div class="small muted">Bell Desk</div></td><td>Dorje Sherpa</td><td>304 Adhikari</td><td class="num">14:15</td><td><span class="chip chip--pine">done 14:12</span></td></tr>
+<tr class="sel"><td class="mono small">14:06</td><td><b>Log arrival</b><div class="small muted">Security Guard</div></td><td>Hari Bahadur Thapa</td><td>304 Adhikari</td><td class="num">14:15</td><td><span class="chip chip--pine">done 14:09</span></td></tr>
+<tr class=""><td class="mono small">13:45</td><td><b>Prepare agency voucher</b><div class="small muted">Front Office</div></td><td>Anil Gurung</td><td>110 Lhakpa Dolma Sherpa</td><td class="num">15:00</td><td><span class="chip">open</span></td></tr>
+<tr class=""><td class="mono small">13:45</td><td><b>Inspect room 110</b><div class="small muted">Floors</div></td><td>Kamala Shakya</td><td>110 Lhakpa Dolma Sherpa</td><td class="num">14:00</td><td><span class="chip chip--pine">done 13:55</span></td></tr>
+<tr class=""><td class="mono small">13:30</td><td><b>Settle bill, departure</b><div class="small muted">Accounts</div></td><td>Rajesh Dangol</td><td>Departure</td><td class="num">14:00</td><td><span class="chip chip--pine">done 13:40</span></td></tr>
+<tr class=""><td class="mono small">13:15</td><td><b>Restock minibars, floor 4</b><div class="small muted">Floors</div></td><td>Sabina Magar</td><td>407-412</td><td class="num">14:00</td><td><span class="chip chip--pine">done 13:50</span></td></tr>
+<tr class=""><td class="mono small">13:00</td><td><b>Clean and restock room 202</b><div class="small muted">Floors</div></td><td>Maya Lama</td><td>202 (checked out)</td><td class="num">15:00</td><td><span class="chip">open</span></td></tr>
+<tr class="late"><td class="mono small">12:10</td><td><b>Bed linen to laundry, floor 4</b><div class="small muted">Laundry</div></td><td>Bina Tamang</td><td>Floor 4</td><td class="num">12:30</td><td><span class="chip chip--rose"><svg class="ic"><use href="#i-clock"/></svg> late (done 12:55)</span></td></tr>
+<tr class=""><td class="mono small">12:05</td><td><b>Repair AC unit</b><div class="small muted">Maintenance</div></td><td>Dipesh Rai</td><td>112 (out of order)</td><td class="num">17:00</td><td><span class="chip">open</span></td></tr>
+<tr class="late"><td class="mono small">12:00</td><td><b>Fix bathroom leak</b><div class="small muted">Maintenance</div></td><td>Ganesh Tamang</td><td>209 (out of order)</td><td class="num">12:30</td><td><span class="chip chip--solid" style="background:var(--rose)"><svg class="ic"><use href="#i-alert"/></svg> escalated to GM</span></td></tr>
+<tr class=""><td class="mono small">11:30</td><td><b>Welcome amenity for Joshi (anniversary)</b><div class="small muted">F&amp;B</div></td><td>Nisha Rai</td><td>503 Joshi</td><td class="num">12:30</td><td><span class="chip chip--pine">done 12:10</span></td></tr>
+<tr class="sel"><td class="mono small">11:25</td><td><b>Inspect room 304</b><div class="small muted">Floors</div></td><td>Kamala Shakya</td><td>304 Adhikari</td><td class="num">11:45</td><td><span class="chip chip--pine">done 11:40</span></td></tr>
+<tr class=""><td class="mono small">11:00</td><td><b>Check in VIP guests</b><div class="small muted">Front Desk</div></td><td>Prakash Tamang</td><td>503 Joshi</td><td class="num">11:30</td><td><span class="chip chip--pine">done 11:20</span></td></tr>
+<tr class="sel"><td class="mono small">10:50</td><td><b>Extra bed to room 304</b><div class="small muted">Floors</div></td><td>Maya Lama</td><td>304 Adhikari</td><td class="num">13:30</td><td><span class="chip chip--pine">done 11:10</span></td></tr>
+<tr class="sel"><td class="mono small">10:30</td><td><b>Prepare room 304</b><div class="small muted">Floors</div></td><td>Maya Lama</td><td>304 Adhikari</td><td class="num">11:30</td><td><span class="chip chip--pine">done 11:20</span></td></tr>
+</tbody></table>
+<div class="card-b row" style="border-top:1px solid var(--line-soft)"><span class="chip chip--slate">Highlighted</span><span class="small muted grow">Ramesh Adhikari's check-in chain, room 304: Prepare room 11:20 (extra bed placed 11:10), Inspect 11:40, Luggage 14:12, Log arrival 14:09.</span><button class="btn btn--ghost">Show earlier 6</button></div></div>
+<div class="stack">
+<div class="card"><div class="card-h"><svg class="ic"><use href="#i-alert"/></svg><h3>Alerts</h3><span class="grow"></span><span class="chip chip--rose">2</span></div>
+<div class="card-b stack">
+<div style="border-left:3px solid var(--rose);padding-left:10px"><div class="row"><b>1 escalated to GM</b><span class="grow"></span><span class="chip chip--rose">GM Bikash Shrestha</span></div><div>Fix bathroom leak, room 209 (out of order). Due 12:30.</div><div class="small muted" style="margin-top:4px">Open since 12:00 · Ganesh Tamang, Maintenance</div></div>
+<div style="border-left:3px solid var(--brass);padding-left:10px"><div class="row"><b>1 late</b><span class="grow"></span><span class="chip chip--brass">done 12:55</span></div><div>Bed linen to laundry, floor 4. Due 12:30, Bina Tamang.</div></div>
+</div></div>
+<div class="card"><div class="card-h"><svg class="ic"><use href="#i-layers"/></svg><h3>Pipeline</h3><span class="grow"></span><span class="small muted">Reservations by stage</span></div>
+<div class="card-b"><div style="margin-bottom:9px"><div class="row between"><span>Enquiry</span><b class="mono">6</b></div><div class="bar" style="margin-top:3px"><i style="width:15%"></i></div></div><div style="margin-bottom:9px"><div class="row between"><span>Held</span><b class="mono">3</b></div><div class="bar" style="margin-top:3px"><i style="width:7%"></i></div></div><div style="margin-bottom:9px"><div class="row between"><span>Confirmed</span><b class="mono">27</b></div><div class="bar" style="margin-top:3px"><i style="width:66%"></i></div></div><div style="margin-bottom:9px"><div class="row between"><span>Pre-arrival</span><b class="mono">5</b></div><div class="bar" style="margin-top:3px"><i style="width:12%"></i></div></div><div style="margin-bottom:9px"><div class="row between"><span>In-house</span><b class="mono">41</b></div><div class="bar" style="margin-top:3px"><i style="width:100%"></i></div></div>
+<div class="row" style="border-top:1px solid var(--line-soft);padding-top:10px"><span class="chip chip--slate"><svg class="ic"><use href="#i-ai"/></svg> AI</span><span class="grow">Pending AI drafts today</span><b class="mono">2</b></div></div></div>
+<div class="card"><div class="card-b row"><svg class="ic lg"><use href="#i-link"/></svg><div class="grow"><b>Channel manager</b><div class="small muted">OTA sync status will appear here once it is connected (phase 6).</div></div><span class="chip chip--brass">not connected</span></div></div>
+</div></div>
+</section>
+<section class="state" data-state="escalation" data-label="Escalation">
+<div class="pagehead"><div class="grow"><div class="eyebrow">Analyze · 28 Nov 2026, 14:20</div><h1>Live dashboard</h1><p>Anil Gurung, Duty Manager. Tasks, alerts and today's numbers across departments.</p></div><span class="chip chip--slate">Updated 14:20</span></div>
+<div class="note note--err" style="margin-bottom:16px;padding:14px 16px;font-size:14px"><svg class="ic lg"><use href="#i-alert"/></svg><div class="grow"><b style="font-size:15px">Room 209 leak: due 12:30, escalated to GM at 13:05, still open (1 h 50 m)</b><div>Task "Fix bathroom leak" (Ganesh Tamang, Maintenance), escalated to Bikash Shrestha after the 30-minute rule. The room is out of order.</div></div><a href="#" data-go="B04"><b>Open task in Work mode</b></a></div>
+<div class="grid4" style="grid-template-columns:repeat(6,1fr);margin-bottom:16px"><div class="kpi"><div class="eyebrow">Occupancy</div><div class="v">78.8%</div><div class="d">41 of 52 rooms</div><div class="bar" style="margin-top:8px"><i style="width:79%"></i></div></div><div class="kpi"><div class="eyebrow">Arrivals</div><div class="v">9</div><div class="d">4 arrived · 5 expected</div></div><div class="kpi"><div class="eyebrow">Departures</div><div class="v">7</div><div class="d">4 checked out · 3 due</div></div><div class="kpi"><div class="eyebrow">ADR (average rate per occupied room)</div><div class="v">10,850</div><div class="d">NPR per occupied room</div></div><div class="kpi"><div class="eyebrow">Room revenue today</div><div class="v">444,850</div><div class="d">NPR · 28 Nov</div></div><div class="kpi"><div class="eyebrow">Task compliance</div><div class="v">91%</div><div class="d">20 of 22 on time</div><div class="bar" style="margin-top:8px"><i style="width:91%"></i></div></div></div>
+<div class="grid2" style="grid-template-columns:1fr 330px;align-items:start">
+<div class="card"><div class="card-h"><svg class="ic"><use href="#i-list"/></svg><h3>Live task feed</h3><span class="chip chip--pine"><span class="dot" style="background:var(--pine)"></span> Live</span><span class="grow"></span><span class="small muted">Newest first · 16 of 22 shown</span></div>
+<table class="tbl"><thead><tr><th>Time</th><th>Task</th><th>Assignee</th><th>Room / guest</th><th class="num" style="text-align:right">Due</th><th>Status</th></tr></thead><tbody>
+<tr class=""><td class="mono small">14:20</td><td><b>Inspect room 411</b><div class="small muted">Floors</div></td><td>Kamala Shakya</td><td>411</td><td class="num">15:30</td><td><span class="chip">open</span></td></tr>
+<tr class="sel"><td class="mono small">14:06</td><td><b>Luggage to room</b><div class="small muted">Bell Desk</div></td><td>Dorje Sherpa</td><td>304 Adhikari</td><td class="num">14:15</td><td><span class="chip chip--pine">done 14:12</span></td></tr>
+<tr class="sel"><td class="mono small">14:06</td><td><b>Log arrival</b><div class="small muted">Security Guard</div></td><td>Hari Bahadur Thapa</td><td>304 Adhikari</td><td class="num">14:15</td><td><span class="chip chip--pine">done 14:09</span></td></tr>
+<tr class=""><td class="mono small">13:45</td><td><b>Prepare agency voucher</b><div class="small muted">Front Office</div></td><td>Anil Gurung</td><td>110 Lhakpa Dolma Sherpa</td><td class="num">15:00</td><td><span class="chip">open</span></td></tr>
+<tr class=""><td class="mono small">13:45</td><td><b>Inspect room 110</b><div class="small muted">Floors</div></td><td>Kamala Shakya</td><td>110 Lhakpa Dolma Sherpa</td><td class="num">14:00</td><td><span class="chip chip--pine">done 13:55</span></td></tr>
+<tr class=""><td class="mono small">13:30</td><td><b>Settle bill, departure</b><div class="small muted">Accounts</div></td><td>Rajesh Dangol</td><td>Departure</td><td class="num">14:00</td><td><span class="chip chip--pine">done 13:40</span></td></tr>
+<tr class=""><td class="mono small">13:15</td><td><b>Restock minibars, floor 4</b><div class="small muted">Floors</div></td><td>Sabina Magar</td><td>407-412</td><td class="num">14:00</td><td><span class="chip chip--pine">done 13:50</span></td></tr>
+<tr class=""><td class="mono small">13:00</td><td><b>Clean and restock room 202</b><div class="small muted">Floors</div></td><td>Maya Lama</td><td>202 (checked out)</td><td class="num">15:00</td><td><span class="chip">open</span></td></tr>
+<tr class="late"><td class="mono small">12:10</td><td><b>Bed linen to laundry, floor 4</b><div class="small muted">Laundry</div></td><td>Bina Tamang</td><td>Floor 4</td><td class="num">12:30</td><td><span class="chip chip--rose"><svg class="ic"><use href="#i-clock"/></svg> late (done 12:55)</span></td></tr>
+<tr class=""><td class="mono small">12:05</td><td><b>Repair AC unit</b><div class="small muted">Maintenance</div></td><td>Dipesh Rai</td><td>112 (out of order)</td><td class="num">17:00</td><td><span class="chip">open</span></td></tr>
+<tr class="late"><td class="mono small">12:00</td><td><b>Fix bathroom leak</b><div class="small muted">Maintenance</div></td><td>Ganesh Tamang</td><td>209 (out of order)</td><td class="num">12:30</td><td><span class="chip chip--solid" style="background:var(--rose)"><svg class="ic"><use href="#i-alert"/></svg> escalated to GM</span></td></tr>
+<tr class=""><td class="mono small">11:30</td><td><b>Welcome amenity for Joshi (anniversary)</b><div class="small muted">F&amp;B</div></td><td>Nisha Rai</td><td>503 Joshi</td><td class="num">12:30</td><td><span class="chip chip--pine">done 12:10</span></td></tr>
+<tr class="sel"><td class="mono small">11:25</td><td><b>Inspect room 304</b><div class="small muted">Floors</div></td><td>Kamala Shakya</td><td>304 Adhikari</td><td class="num">11:45</td><td><span class="chip chip--pine">done 11:40</span></td></tr>
+<tr class=""><td class="mono small">11:00</td><td><b>Check in VIP guests</b><div class="small muted">Front Desk</div></td><td>Prakash Tamang</td><td>503 Joshi</td><td class="num">11:30</td><td><span class="chip chip--pine">done 11:20</span></td></tr>
+<tr class="sel"><td class="mono small">10:50</td><td><b>Extra bed to room 304</b><div class="small muted">Floors</div></td><td>Maya Lama</td><td>304 Adhikari</td><td class="num">13:30</td><td><span class="chip chip--pine">done 11:10</span></td></tr>
+<tr class="sel"><td class="mono small">10:30</td><td><b>Prepare room 304</b><div class="small muted">Floors</div></td><td>Maya Lama</td><td>304 Adhikari</td><td class="num">11:30</td><td><span class="chip chip--pine">done 11:20</span></td></tr>
+</tbody></table>
+<div class="card-b row" style="border-top:1px solid var(--line-soft)"><span class="chip chip--slate">Highlighted</span><span class="small muted grow">Ramesh Adhikari's check-in chain, room 304: Prepare room 11:20 (extra bed placed 11:10), Inspect 11:40, Luggage 14:12, Log arrival 14:09.</span><button class="btn btn--ghost">Show earlier 6</button></div></div>
+<div class="stack">
+<div class="card"><div class="card-h"><svg class="ic"><use href="#i-alert"/></svg><h3>Alerts</h3><span class="grow"></span><span class="chip chip--rose">2</span></div>
+<div class="card-b stack">
+<div style="border-left:3px solid var(--rose);padding-left:10px"><div class="row"><b>1 escalated to GM</b><span class="grow"></span><span class="chip chip--rose">GM Bikash Shrestha</span></div><div>Fix bathroom leak, room 209 (out of order). Due 12:30.</div><div class="small muted" style="margin-top:4px">Open since 12:00 · Ganesh Tamang, Maintenance</div></div>
+<div style="border-left:3px solid var(--brass);padding-left:10px"><div class="row"><b>1 late</b><span class="grow"></span><span class="chip chip--brass">done 12:55</span></div><div>Bed linen to laundry, floor 4. Due 12:30, Bina Tamang.</div></div>
+</div></div>
+<div class="card"><div class="card-h"><svg class="ic"><use href="#i-layers"/></svg><h3>Pipeline</h3><span class="grow"></span><span class="small muted">Reservations by stage</span></div>
+<div class="card-b"><div style="margin-bottom:9px"><div class="row between"><span>Enquiry</span><b class="mono">6</b></div><div class="bar" style="margin-top:3px"><i style="width:15%"></i></div></div><div style="margin-bottom:9px"><div class="row between"><span>Held</span><b class="mono">3</b></div><div class="bar" style="margin-top:3px"><i style="width:7%"></i></div></div><div style="margin-bottom:9px"><div class="row between"><span>Confirmed</span><b class="mono">27</b></div><div class="bar" style="margin-top:3px"><i style="width:66%"></i></div></div><div style="margin-bottom:9px"><div class="row between"><span>Pre-arrival</span><b class="mono">5</b></div><div class="bar" style="margin-top:3px"><i style="width:12%"></i></div></div><div style="margin-bottom:9px"><div class="row between"><span>In-house</span><b class="mono">41</b></div><div class="bar" style="margin-top:3px"><i style="width:100%"></i></div></div>
+<div class="row" style="border-top:1px solid var(--line-soft);padding-top:10px"><span class="chip chip--slate"><svg class="ic"><use href="#i-ai"/></svg> AI</span><span class="grow">Pending AI drafts today</span><b class="mono">2</b></div></div></div>
+<div class="card"><div class="card-b row"><svg class="ic lg"><use href="#i-link"/></svg><div class="grow"><b>Channel manager</b><div class="small muted">OTA sync status will appear here once it is connected (phase 6).</div></div><span class="chip chip--brass">not connected</span></div></div>
+</div></div>
+</section>
+    </div>
+  </div>
+</div>
+
+</body></html>

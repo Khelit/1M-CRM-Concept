@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A05 · Department tree</title><link rel="stylesheet" href="../assets/app.css">
+<script src="../assets/steps.js"></script><script src="../assets/shell.js"></script></head>
+<body data-step="A05" data-device="desktop">
+
+<div class="screen">
+  <nav class="side side--settings">
+    <div class="brand"><b>Dhaulagiri Courtyard</b><span>Settings · sandbox</span></div>
+    <div class="sec">Structure</div>
+    <a class="on" href="#"><svg class="ic"><use href="#i-tree"/></svg>Departments</a>
+    <a href="#"><svg class="ic"><use href="#i-key"/></svg>Roles &amp; access</a>
+    <div class="sec">Data</div>
+    <a href="#"><svg class="ic"><use href="#i-layers"/></svg>Objects &amp; fields</a>
+    <a href="#"><svg class="ic"><use href="#i-users"/></svg>Identity rule</a>
+    <a href="#"><svg class="ic"><use href="#i-panel"/></svg>Record layouts</a>
+    <div class="sec">Process</div>
+    <a href="#"><svg class="ic"><use href="#i-right"/></svg>Workflows</a>
+    <a href="#"><svg class="ic"><use href="#i-bed"/></svg>Rooms &amp; rates</a>
+    <a href="#"><svg class="ic"><use href="#i-link"/></svg>Handoff rules</a>
+    <div class="sec">People see</div>
+    <a href="#"><svg class="ic"><use href="#i-filter"/></svg>Saved views</a>
+    <a href="#"><svg class="ic"><use href="#i-list"/></svg>Navigation</a>
+    <div class="sec">Go live</div>
+    <a href="#"><svg class="ic"><use href="#i-upload"/></svg>Import</a>
+    <a href="#"><svg class="ic"><use href="#i-user"/></svg>Users</a>
+    <a href="#"><svg class="ic"><use href="#i-check"/></svg>Test run</a>
+    <a href="#"><svg class="ic"><use href="#i-send"/></svg>Publish</a>
+    <div class="foot">Aashish Poudel · Impl. lead</div>
+  </nav>
+  <div class="main">
+    <div class="mode-banner mode-banner--settings"><svg class="ic"><use href="#i-gear"/></svg><b>SETTINGS · DRAFT</b> Changes are not live until Publish. 3 unpublished changes.</div>
+    <div class="topbar">
+      <div class="modes"><span>Work</span><span>Analyze</span><span class="on settings">Settings</span></div>
+      <div class="search"><svg class="ic"><use href="#i-search"/></svg>Search settings</div>
+      <div class="grow"></div>
+      <div class="avatar">AP</div>
+    </div>
+    <div class="content">
+      <div class="pagehead">
+        <div class="grow"><div class="eyebrow">Structure</div><h1>Departments</h1>
+          <p>4 levels · 18 units · 65 staff. Depth is available, not required: Security and Sales stay single units.</p></div>
+        <span class="seg"><span class="on">Tree</span><span>Table</span></span>
+        <button class="btn btn--settings"><svg class="ic"><use href="#i-plus"/></svg>Add unit</button>
+      </div>
+
+      <section class="state" data-state="tree" data-label="Tree, unit selected">
+        <div class="grid2" style="grid-template-columns:1fr 340px">
+          <div class="card"><div class="card-h"><h3>Hotel Dhaulagiri Courtyard</h3><span class="muted small">Drag a unit to move it. Staff move with it.</span></div>
+            <div class="card-b tree">
+              <div class="node"><span class="type">Property</span><svg class="ic"><use href="#i-building"/></svg><b>Hotel Dhaulagiri Courtyard</b><span class="grow"></span><span class="chip chip--plum">2 workflows</span><span class="mono small">65</span></div>
+              <div class="kids">
+                <div class="node"><span class="type">Division</span><b>Rooms Division</b><span class="grow"></span><span class="chip">inherits</span><span class="mono small">30</span></div>
+                <div class="kids">
+                  <div class="node sel"><span class="type">Dept</span><b>Front Office</b><span class="grow"></span><span class="chip chip--plum">owns Reservation</span><span class="mono small">12</span></div>
+                  <div class="kids">
+                    <div class="node"><span class="type">Team</span>Reservations<span class="grow"></span><span class="chip">inherits</span><span class="mono small">3</span></div>
+                    <div class="node"><span class="type">Team</span>Front Desk<span class="grow"></span><span class="chip">inherits</span><span class="mono small">6</span></div>
+                    <div class="node"><span class="type">Team</span>Bell Desk<span class="grow"></span><span class="chip">inherits</span><span class="mono small">3</span></div>
+                  </div>
+                  <div class="node"><span class="type">Dept</span><b>Housekeeping</b><span class="grow"></span><span class="chip chip--plum">owns Room turnaround</span><span class="mono small">18</span></div>
+                  <div class="kids">
+                    <div class="node"><span class="type">Team</span>Floors<span class="grow"></span><span class="chip">inherits</span><span class="mono small">14</span></div>
+                    <div class="node"><span class="type">Team</span>Laundry<span class="grow"></span><span class="chip">inherits</span><span class="mono small">4</span></div>
+                  </div>
+                </div>
+                <div class="node"><span class="type">Division</span><b>Food &amp; Beverage</b><span class="grow"></span><span class="chip">inherits</span><span class="mono small">16</span></div>
+                <div class="kids">
+                  <div class="node"><span class="type">Team</span>Restaurant<span class="grow"></span><span class="mono small">10</span></div>
+                  <div class="node"><span class="type">Team</span>Kitchen<span class="grow"></span><span class="mono small">6</span></div>
+                </div>
+                <div class="node"><span class="type">Dept</span><b>Security</b><span class="grow"></span><span class="mono small">6</span></div>
+                <div class="node"><span class="type">Dept</span><b>Maintenance</b><span class="grow"></span><span class="mono small">4</span></div>
+                <div class="node"><span class="type">Dept</span><b>Finance</b><span class="grow"></span><span class="chip chip--plum">owns Folio</span><span class="mono small">4</span></div>
+                <div class="kids"><div class="node"><span class="type">Team</span>Accounts<span class="grow"></span><span class="mono small">4</span></div></div>
+                <div class="node"><span class="type">Dept</span><b>Sales</b><span class="grow"></span><span class="mono small">2</span></div>
+                <div class="node"><span class="type">Dept</span><b>Management</b><span class="grow"></span><span class="mono small">3</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="stack">
+            <div class="card"><div class="card-h"><h3>Front Office</h3><span class="grow"></span><span class="chip chip--brass">edited</span></div>
+              <div class="card-b"><dl class="kv">
+                <dt>Type</dt><dd>Department</dd>
+                <dt>Parent</dt><dd>Rooms Division</dd>
+                <dt>Path</dt><dd class="mono small">dhaulagiri.rooms.front_office</dd>
+                <dt>Staff</dt><dd>12 in 3 teams</dd>
+                <dt>Owns</dt><dd>Reservation lifecycle (stages Enquiry, Held, In-house)</dd>
+                <dt>Views</dt><dd>Arrivals today, Pending drafts</dd>
+                <dt>Nepali name</dt><dd><span class="ne" style="display:inline">फ्रन्ट अफिस</span></dd>
+              </dl></div></div>
+            <div class="card"><div class="card-h"><h3>Removed from the blueprint</h3></div>
+              <div class="card-b"><table class="tbl"><tbody>
+                <tr><td>Spa</td><td class="muted">No spa</td><td><span class="chip chip--rose">deleted</span></td></tr>
+                <tr><td>Concierge team</td><td class="muted">Front Desk does it</td><td><span class="chip chip--rose">deleted</span></td></tr>
+                <tr><td>Night Audit team</td><td class="muted">Duty manager does day end</td><td><span class="chip chip--rose">deleted</span></td></tr>
+              </tbody></table></div></div>
+            <div class="note note--info"><svg class="ic"><use href="#i-tree"/></svg><span>The tree is for setup only. Staff never browse it: each role gets a short sidebar in step A14.</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="state" data-state="blocked" data-label="Delete blocked">
+        <div class="grid2" style="grid-template-columns:1fr 340px">
+          <div class="card"><div class="card-b tree">
+            <div class="node"><span class="type">Dept</span><b>Housekeeping</b><span class="grow"></span><span class="chip chip--plum">owns Room turnaround</span><span class="mono small">18</span></div>
+            <div class="kids"><div class="node sel"><span class="type">Team</span>Floors<span class="grow"></span><span class="mono small">14</span></div><div class="node"><span class="type">Team</span>Laundry<span class="grow"></span><span class="mono small">4</span></div></div>
+          </div></div>
+          <div class="note note--err"><svg class="ic"><use href="#i-alert"/></svg><div><b>Housekeeping cannot be deleted.</b><br>It owns the stage Pre-arrival and 14 staff belong to its Floors team. Move the staff and give the stage a new owner first.<div class="row" style="margin-top:8px"><button class="btn" data-go="A10">Show the stage</button><button class="btn btn--ghost" data-show="tree">Cancel</button></div></div></div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+</body></html>

@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>B05b · Supervisor: inspect room</title><link rel="stylesheet" href="../assets/app.css">
+<script src="../assets/steps.js"></script><script src="../assets/shell.js"></script></head>
+<body data-step="B05b" data-device="phone">
+
+<section class="state" data-state="inspect" data-label="1 · Inspect">
+  <div class="phones"><div>
+    <div class="phone">
+      <div class="ph-sys"><span>28 Nov · 11:25</span><span>4G ▮▮▮</span></div>
+      <div class="ph-head"><div class="who">कमला शाक्य · Kamala Shakya</div><div class="title"><span class="ne">कोठा जाँच्नुहोस्</span><span class="en">Inspect room</span></div></div>
+      <div class="ph-body">
+        <div class="ph-card" style="flex-direction:column;align-items:flex-start;gap:6px">
+          <div class="row" style="width:100%"><div class="ph-big">304</div><span class="grow"></span><span class="chip chip--brass" style="font-size:14px">14:00 आगमन · arrival</span></div>
+          <span class="en" style="font-size:16px">Deluxe · cleaned by Maya Lama at 11:20</span>
+        </div>
+        <div class="ph-card"><div class="ico"><svg class="ic lg"><use href="#i-bed"/></svg></div><div class="grow"><span class="ne">थप खाट राखेको हुनुपर्छ</span><span class="en">Extra bed should be in place</span></div><span class="check on" style="width:28px;height:28px"></span></div>
+        <div class="grow"></div>
+        <button class="ph-btn" type="button" data-show="passed"><svg class="ic xl"><use href="#i-check"/></svg><span><span class="ne">पास</span><span class="en">Pass</span></span></button>
+        <button class="ph-btn ph-btn--alt" type="button" data-show="fail" style="border-color:var(--rose);color:var(--rose);margin-top:14px"><svg class="ic xl"><use href="#i-x"/></svg><span><span class="ne">फेल</span><span class="en">Fail</span></span></button>
+      </div>
+    </div>
+    <div class="phone-cap">Pass is 1 tap. Fail is 2 taps (Fail, then one reason picture).</div>
+  </div></div>
+</section>
+
+<section class="state" data-state="passed" data-label="2 · Passed">
+  <div class="phones"><div>
+    <div class="phone">
+      <div class="ph-sys"><span>28 Nov · 11:40</span><span>4G ▮▮▮</span></div>
+      <div class="ph-head"><div class="who">कमला शाक्य · Kamala Shakya</div><div class="title"><span class="ne">धन्यवाद</span><span class="en">Thank you</span></div></div>
+      <div class="ph-body">
+        <div class="ph-ok"><div class="tick"><svg class="ic xl" style="width:64px;height:64px"><use href="#i-check"/></svg></div>
+          <div><div class="ph-big">304</div><span class="ne" style="font-size:22px">जाँच भयो · आगमनका लागि तयार</span><span class="en">Inspected · ready for arrival 14:00</span></div></div>
+        <div class="ph-card"><div class="ico"><svg class="ic lg"><use href="#i-door"/></svg></div>
+          <div class="grow"><span class="ne">फ्रन्ट डेस्कले चेक-इन गर्न सक्छ</span><span class="en">Front desk can check in</span></div></div>
+        <div class="eyebrow">अब · Next</div>
+        <div class="ph-card"><div class="ico"><svg class="ic lg"><use href="#i-clock"/></svg></div>
+          <div class="grow"><span class="ne">अरू काम छैन</span><span class="en">No other task waiting</span></div></div>
+      </div>
+    </div>
+    <div class="phone-cap">Done in 1 tap. Shows what is next, so nothing needs remembering.</div>
+  </div></div>
+</section>
+
+<section class="state" data-state="fail" data-label="Fail: choose reason">
+  <div class="phones"><div>
+    <div class="phone">
+      <div class="ph-sys"><span>28 Nov · 11:40</span><span>4G ▮▮▮</span></div>
+      <div class="ph-head" style="background:var(--rose)"><div class="who"><a href="#" data-show="inspect" style="color:#fff">← पछाडि · Back</a></div><div class="title"><span class="ne">के मिलेन?</span><span class="en">What is wrong? · 304</span></div></div>
+      <div class="ph-body">
+        <div class="ph-row">
+          <a class="ph-tile" href="#" data-show="back" style="text-decoration:none;color:inherit"><svg class="ic xl"><use href="#i-broom"/></svg><span><span class="ne">बाथरुम फोहोर</span><span class="en">Dirty bathroom</span></span></a>
+          <a class="ph-tile" href="#" data-show="back" style="text-decoration:none;color:inherit"><svg class="ic xl"><use href="#i-bed"/></svg><span><span class="ne">ओछ्यान मिलाएको छैन</span><span class="en">Bed not made</span></span></a>
+          <a class="ph-tile" href="#" data-show="back" style="text-decoration:none;color:inherit"><svg class="ic xl"><use href="#i-layers"/></svg><span><span class="ne">थप खाट छैन</span><span class="en">Extra bed missing</span></span></a>
+          <a class="ph-tile" href="#" data-show="back" style="text-decoration:none;color:inherit"><svg class="ic xl"><use href="#i-wrench"/></svg><span><span class="ne">केही बिग्रिएको</span><span class="en">Something broken</span></span></a>
+        </div>
+        <div class="phone-cap" style="text-align:left">Tap 2 of 2: one reason sends it back to Maya. No typing.</div>
+      </div>
+    </div>
+  </div></div>
+</section>
+
+<section class="state" data-state="back" data-label="Sent back">
+  <div class="phones"><div>
+    <div class="phone">
+      <div class="ph-sys"><span>28 Nov · 11:41</span><span>4G ▮▮▮</span></div>
+      <div class="ph-head"><div class="who">कमला शाक्य · Kamala Shakya</div><div class="title"><span class="ne">पठाइयो</span><span class="en">Sent</span></div></div>
+      <div class="ph-body">
+        <div class="ph-ok"><div class="tick" style="background:var(--rose)"><svg class="ic xl" style="width:64px;height:64px"><use href="#i-refresh"/></svg></div>
+          <div><div class="ph-big">304</div><span class="ne" style="font-size:22px">माया लामालाई फर्काइयो</span><span class="en">Sent back to Maya Lama</span></div></div>
+        <div class="ph-card"><div class="ico"><svg class="ic lg"><use href="#i-clock"/></svg></div>
+          <div class="grow"><span class="ne">माया सकेपछि फेरि जाँच्नुहोस्</span><span class="en">Inspect again when Maya is done</span></div></div>
+      </div>
+    </div>
+    <div class="phone-cap">Maya gets the task again with your reason picture.</div>
+  </div></div>
+</section>
+
+</body></html>

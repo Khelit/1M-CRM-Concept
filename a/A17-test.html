@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A17 · Test run</title><link rel="stylesheet" href="../assets/app.css">
+<script src="../assets/steps.js"></script><script src="../assets/shell.js"></script></head>
+<body data-step="A17" data-device="desktop">
+
+<div class="screen">
+  <nav class="side side--settings">
+    <div class="brand"><b>Dhaulagiri Courtyard</b><span>Settings · sandbox</span></div>
+    <div class="sec">Structure</div>
+    <a href="#"><svg class="ic"><use href="#i-tree"/></svg>Departments</a>
+    <a href="#"><svg class="ic"><use href="#i-key"/></svg>Roles &amp; access</a>
+    <div class="sec">Data</div>
+    <a href="#"><svg class="ic"><use href="#i-layers"/></svg>Objects &amp; fields</a>
+    <a href="#"><svg class="ic"><use href="#i-users"/></svg>Identity rule</a>
+    <a href="#"><svg class="ic"><use href="#i-panel"/></svg>Record layouts</a>
+    <div class="sec">Process</div>
+    <a href="#"><svg class="ic"><use href="#i-right"/></svg>Workflows</a>
+    <a href="#"><svg class="ic"><use href="#i-bed"/></svg>Rooms &amp; rates</a>
+    <a href="#"><svg class="ic"><use href="#i-link"/></svg>Handoff rules</a>
+    <div class="sec">People see</div>
+    <a href="#"><svg class="ic"><use href="#i-filter"/></svg>Saved views</a>
+    <a href="#"><svg class="ic"><use href="#i-list"/></svg>Navigation</a>
+    <div class="sec">Go live</div>
+    <a href="#"><svg class="ic"><use href="#i-upload"/></svg>Import</a>
+    <a href="#"><svg class="ic"><use href="#i-user"/></svg>Users</a>
+    <a class="on" href="#"><svg class="ic"><use href="#i-check"/></svg>Test run</a>
+    <a href="#"><svg class="ic"><use href="#i-send"/></svg>Publish</a>
+    <div class="foot">Aashish Poudel · Impl. lead</div>
+  </nav>
+  <div class="main">
+    <div class="mode-banner mode-banner--sandbox"><svg class="ic"><use href="#i-alert"/></svg><b>SANDBOX · test data, nothing is real</b></div>
+    <div class="topbar">
+      <div class="modes"><span>Work</span><span>Analyze</span><span class="on settings">Settings</span></div>
+      <div class="search"><svg class="ic"><use href="#i-search"/></svg>Search settings</div>
+      <div class="grow"></div>
+      <div class="avatar">AP</div>
+    </div>
+    <div class="content">
+      <div class="pagehead">
+        <div class="grow"><div class="eyebrow">Go live</div><h1>End-to-end test run</h1>
+          <p>One fake guest, Test Sharma, through every stage by the people who will really do each step.</p></div>
+        
+      </div>
+      <section class="state" data-state="progress" data-label="In progress">
+        <div class="card" style="margin-bottom:12px"><div class="card-b row">
+          <div class="avatar" style="background:var(--brass-soft);color:var(--brass)">TS</div>
+          <div class="grow"><b>Test Sharma</b> <span class="chip chip--brass">test guest</span><div class="muted small">Deluxe · B&amp;B · 2 nights · sandbox reservation</div></div>
+          <span class="chip chip--slate">Run stops at In-house</span>
+        </div></div>
+        <ul class="stagebar" style="margin-bottom:12px">
+          <li class="done">Enquiry<small>done</small></li>
+          <li class="done">Held<small>done</small></li>
+          <li class="done">Confirmed<small>done</small></li>
+          <li class="done">Pre-arrival<small>done</small></li>
+          <li class="now">In-house<small>in progress</small></li>
+          <li>Checked out<small>not started</small></li>
+        </ul>
+        <div class="grid2" style="grid-template-columns:1fr 300px;align-items:start">
+          <div class="card"><div class="card-h"><h3>Who did what</h3><span class="grow"></span><span class="muted small">Each action by the person who will really do it</span></div>
+            <table class="tbl"><thead><tr><th>Stage</th><th>Action</th><th>Done by</th><th>Device</th><th>Result</th></tr></thead><tbody>
+              <tr><td>Enquiry</td><td>Reply to the enquiry, create the draft</td><td>Pooja Maharjan</td><td>desktop</td><td><span class="chip chip--pine">pass</span></td></tr>
+              <tr><td>Held</td><td>Review and confirm the draft</td><td>Prakash Tamang</td><td>desktop</td><td><span class="chip chip--pine">pass</span></td></tr>
+              <tr><td>Confirmed</td><td>Record deposit</td><td>Prakash Tamang</td><td>desktop</td><td><span class="chip chip--pine">pass</span></td></tr>
+              <tr><td>Confirmed</td><td>Deposit invoice</td><td>Rajesh Dangol</td><td>desktop</td><td><span class="chip chip--rose">defect 1</span> <span class="chip chip--pine">fixed</span></td></tr>
+              <tr><td>Pre-arrival</td><td>Prepare room</td><td>Maya Lama</td><td>own phone</td><td><span class="chip chip--rose">defect 2</span> <span class="chip chip--pine">fixed</span></td></tr>
+              <tr><td>Pre-arrival</td><td>Inspect room</td><td>Kamala Shakya</td><td>own phone</td><td><span class="chip chip--pine">pass</span></td></tr>
+              <tr><td>In-house</td><td>Check in, open folio</td><td>Prakash Tamang</td><td>desktop</td><td><span class="chip chip--pine">pass</span></td></tr>
+              <tr><td>In-house</td><td>Luggage to room</td><td>Dorje Sherpa</td><td>own phone</td><td><span class="chip chip--pine">pass</span></td></tr>
+              <tr class="late"><td>In-house</td><td>Log arrival</td><td>Hari Bahadur Thapa</td><td>own phone</td><td><span class="chip chip--rose">defect 3</span> <span class="chip chip--brass">Sunita fixing</span></td></tr>
+              <tr><td>Checked out</td><td>Settle bill</td><td>Rajesh Dangol</td><td>desktop</td><td><span class="chip">waiting</span></td></tr>
+              <tr><td>Checked out</td><td>Clean and inspect</td><td>Kamala Shakya</td><td>own phone</td><td><span class="chip">waiting</span></td></tr>
+            </tbody></table></div>
+          <div class="stack">
+            <div class="card"><div class="card-h"><h3>Defects so far</h3><span class="chip chip--rose">3</span></div><div class="card-b stack small">
+              <div><b>1</b> Deposit invoice showed USD, not NPR. <span class="chip chip--pine">fixed</span></div>
+              <div><b>2</b> Done needed three taps on Maya's phone. <span class="chip chip--pine">fixed</span></div>
+              <div><b>3</b> Security did not get the Log arrival task: Hari's invite was still pending. <span class="chip chip--brass">open</span></div></div></div>
+            <button class="btn btn--settings" data-show="complete">Finish the run</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="state" data-state="complete" data-label="Complete">
+        <div class="note note--ok" style="margin-bottom:12px"><svg class="ic"><use href="#i-check"/></svg><span><b>Test run complete.</b> Test Sharma went from Enquiry to Checked out. 3 defects found, all 3 fixed. Next: publish (A18).</span></div>
+        <ul class="stagebar" style="margin-bottom:12px">
+          <li class="done">Enquiry<small>done</small></li><li class="done">Held<small>done</small></li><li class="done">Confirmed<small>done</small></li>
+          <li class="done">Pre-arrival<small>done</small></li><li class="done">In-house<small>done</small></li><li class="done">Checked out<small>done</small></li>
+        </ul>
+        <div class="grid2" style="grid-template-columns:1fr 320px;align-items:start">
+          <div class="card"><div class="card-h"><h3>Who did what</h3></div>
+            <table class="tbl"><thead><tr><th>Stage</th><th>Action</th><th>Done by</th><th>Device</th><th>Result</th></tr></thead><tbody>
+              <tr><td>Enquiry</td><td>Reply to the enquiry, create the draft</td><td>Pooja Maharjan</td><td>desktop</td><td><span class="chip chip--pine">pass</span></td></tr>
+              <tr><td>Held</td><td>Review and confirm the draft</td><td>Prakash Tamang</td><td>desktop</td><td><span class="chip chip--pine">pass</span></td></tr>
+              <tr><td>Confirmed</td><td>Record deposit</td><td>Prakash Tamang</td><td>desktop</td><td><span class="chip chip--pine">pass</span></td></tr>
+              <tr><td>Confirmed</td><td>Deposit invoice</td><td>Rajesh Dangol</td><td>desktop</td><td><span class="chip chip--rose">defect 1</span> <span class="chip chip--pine">fixed</span></td></tr>
+              <tr><td>Pre-arrival</td><td>Prepare room</td><td>Maya Lama</td><td>own phone</td><td><span class="chip chip--rose">defect 2</span> <span class="chip chip--pine">fixed</span></td></tr>
+              <tr><td>Pre-arrival</td><td>Inspect room</td><td>Kamala Shakya</td><td>own phone</td><td><span class="chip chip--pine">pass</span></td></tr>
+              <tr><td>In-house</td><td>Check in, open folio</td><td>Prakash Tamang</td><td>desktop</td><td><span class="chip chip--pine">pass</span></td></tr>
+              <tr><td>In-house</td><td>Luggage to room</td><td>Dorje Sherpa</td><td>own phone</td><td><span class="chip chip--pine">pass</span></td></tr>
+              <tr><td>In-house</td><td>Log arrival</td><td>Hari Bahadur Thapa</td><td>own phone</td><td><span class="chip chip--rose">defect 3</span> <span class="chip chip--pine">fixed</span></td></tr>
+              <tr><td>Checked out</td><td>Settle bill</td><td>Rajesh Dangol</td><td>desktop</td><td><span class="chip chip--pine">pass</span></td></tr>
+              <tr><td>Checked out</td><td>Clean and inspect</td><td>Kamala Shakya</td><td>own phone</td><td><span class="chip chip--pine">pass</span></td></tr>
+              <tr><td>Any</td><td>Late task seen and escalated</td><td>Anil Gurung</td><td>desktop</td><td><span class="chip chip--pine">pass</span></td></tr>
+            </tbody></table></div>
+          <div class="stack">
+            <div class="card"><div class="card-h"><h3>Defect list</h3><span class="chip chip--pine">3 of 3 fixed</span></div><div class="card-b stack small">
+              <div><b>1 · Billing.</b> Deposit invoice showed USD, not NPR.<br><span class="muted">Fixed: currency set to NPR.</span></div>
+              <div><b>2 · Staff phone.</b> Done needed three taps on Maya's phone.<br><span class="muted">Fixed: back to two taps.</span></div>
+              <div><b>3 · Users.</b> Security did not get Log arrival: Hari's invite was still pending.<br><span class="muted">Fixed by Sunita: invite completed.</span></div></div></div>
+            <a class="btn btn--settings" href="#" data-go="A17b">Go to Publish</a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+</body></html>
