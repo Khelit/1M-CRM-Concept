@@ -172,7 +172,7 @@
     <div class="meta-head"><div class="grow"><div class="eyebrow">Hotel Dhaulagiri Courtyard · 52 rooms · 65 staff · Kathmandu</div>
       <h1>The whole process, start to finish</h1>
       <p>Part A is how our operations person and the hotel's admin set the CRM up in five days. Part B follows one guest, Ramesh Adhikari, from his WhatsApp message to checkout. Click any tile to open that screen, or play the story.</p></div>
-      <div class="row"><a class="btn btn--lg" href="${root}gaps.html">${icon('alert')} What was missing</a><a class="btn btn--lg" href="${root}coverage.html">${icon('list')} Coverage</a>
+      <div class="row"><a class="btn btn--lg" href="${root}guide.html">${icon('file')} Implementation playbook</a><a class="btn btn--lg" href="${root}gaps.html">${icon('alert')} What was missing</a><a class="btn btn--lg" href="${root}coverage.html">${icon('list')} Coverage</a>
       <a class="btn btn--lg btn--primary" href="${url(startA)}" data-play>${icon('play')} Play the whole story</a></div></div>
     <div class="legend"><span>${icon('file')} worksheet, no software</span><span>${icon('layers')} office screen</span><span>${icon('phone')} staff phone</span><span><span class="chip chip--brass">gap noted</span> something was missing here</span><span style="border:1px solid var(--brass);padding:0 6px;border-radius:4px">brass border</span> = screen added because of a gap</div>
     <section class="part"><h2>Part A <span class="muted" style="font:400 15px var(--sans)">Creating the CRM · Settings mode · 18 steps + permit track</span></h2>

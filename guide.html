@@ -1,0 +1,1313 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>1M-CRM Implementation Playbook</title><link rel="stylesheet" href="assets/app.css"></head>
+<body class="guidepage">
+<header class="proto-strip"><a class="ps-btn" href="index.html">&larr; Clickable demo</a><span class="ps-part">1M-CRM · Implementation Playbook</span><span class="grow"></span><a class="ps-btn" href="a/A01-scope.html">See Part A screens</a></header>
+<div class="guide-wrap"><nav class="guide-toc"><b>Contents</b><a href="#at-a-glance">At a glance</a><a href="#the-building-blocks">The building blocks</a><a href="#who-does-what">Who does what</a><a href="#phase-a-discovery-day-1-morning-steps-1-3">Phase A: Discovery (Day 1 morning, steps 1-3)</a><a href="#phase-b-foundation-day-1-afternoon-steps-4-6">Phase B: Foundation (Day 1 afternoon, steps 4-6)</a><a href="#phase-c-data-model-day-2-steps-7-9">Phase C: Data model (Day 2, steps 7-9)</a><a href="#phase-d-process-day-3-steps-10-12">Phase D: Process (Day 3, steps 10-12)</a><a href="#how-to-design-a-flow">How to design a flow</a><a href="#phase-e-views-and-navigation-day-3-afternoon-steps-13-14">Phase E: Views and navigation (Day 3 afternoon, steps 13-14)</a><a href="#phase-f-data-and-people-day-4-steps-15-16">Phase F: Data and people (Day 4, steps 15-16)</a><a href="#phase-g-test-publish-hand-over-day-5-steps-17-18">Phase G: Test, publish, hand over (Day 5, steps 17-18)</a><a href="#same-method-different-business">Same method, different business</a><a href="#templates">Templates</a><a href="#before-you-publish">Before you publish</a></nav><article class="guide"><h1 id="1m-crm-implementation-playbook">1M-CRM: Implementation Playbook</h1>
+<p><em>Version of 15 Nov 2026</em></p>
+<p>Every client on 1M-CRM is set up the same way: in five working days, 18 steps turn the way a business already works into forms, departments, roles, stages, handoff rules and per-role screens. Nothing is coded per client. This playbook tells the team exactly what to do at each step, using Hotel Dhaulagiri Courtyard (52 rooms, 65 staff, Kathmandu) as the worked example and a trekking operator as proof that the method fits any business.</p>
+<h2 id="at-a-glance">At a glance</h2>
+<p><img alt="Five days, seven phases, each closed by a gate" src="assets/guide-timeline.png" /></p>
+<p>Do not start a phase until the gate under the previous one is passed. Clients that issue tax bills also run the permit track from Day 3; Publish waits for it.</p>
+<h2 id="the-building-blocks">The building blocks</h2>
+<p>Every CRM we build is made of the same twelve pieces. Learn these words first; every step below configures one or more of them.</p>
+<table>
+<thead>
+<tr>
+<th>Piece</th>
+<th>What it is</th>
+<th>Hotel example</th>
+<th>Any-business example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Object</td>
+<td>A kind of thing the business tracks</td>
+<td>Guest, Reservation, Room, Folio ("Bill"), Task</td>
+<td>Patient, Appointment; Customer, Order</td>
+</tr>
+<tr>
+<td>Field</td>
+<td>One piece of information on an object</td>
+<td>Check-in date, ETA, WhatsApp number</td>
+<td>Blood group; Delivery address</td>
+</tr>
+<tr>
+<td>Record</td>
+<td>One row of an object</td>
+<td>Reservation R-2083-0917 for Ramesh Adhikari</td>
+<td>Order #4410</td>
+</tr>
+<tr>
+<td>Identity rule</td>
+<td>How the system knows two records are the same person or thing</td>
+<td>Same phone, then email, then ID number</td>
+<td>Same PAN; same company registration</td>
+</tr>
+<tr>
+<td>Department (org unit)</td>
+<td>A node in the organisation tree, nested to any depth</td>
+<td>Hotel &gt; Rooms Division &gt; Front Office &gt; Front Desk team</td>
+<td>Head office &gt; Region &gt; Branch &gt; Sales team</td>
+</tr>
+<tr>
+<td>Role</td>
+<td>A job inside a department</td>
+<td>Front Desk Agent, Housekeeper</td>
+<td>Branch Manager, Field Agent</td>
+</tr>
+<tr>
+<td>Permission</td>
+<td>What a role may view, add, edit, delete, which records, which fields, which stage moves</td>
+<td>Housekeeper sees only own tasks; passport number hidden</td>
+<td>Agent sees only own customers</td>
+</tr>
+<tr>
+<td>Stage</td>
+<td>A step in a workflow, owned by a department, with a form and a deadline</td>
+<td>Enquiry &gt; Held &gt; Confirmed &gt; Pre-arrival &gt; In-house &gt; Checked out</td>
+<td>Lead &gt; Quote &gt; Won &gt; Delivered</td>
+</tr>
+<tr>
+<td>Rule</td>
+<td>When X happens and these conditions hold, do these actions</td>
+<td>When a reservation becomes In-house, create Luggage for Bell Desk, due in 10 min</td>
+<td>When an order is Won, create Invoice for Accounts</td>
+</tr>
+<tr>
+<td>Task</td>
+<td>A piece of work a rule (or a person) creates for a role</td>
+<td>Prepare room 304, due before 14:00</td>
+<td>Call customer back in 2 days</td>
+</tr>
+<tr>
+<td>View</td>
+<td>A saved filter shown as a table, board, calendar, timeline or dashboard</td>
+<td>Arrivals today (table), Room status (board)</td>
+<td>Overdue invoices (table)</td>
+</tr>
+<tr>
+<td>Navigation</td>
+<td>The short, flat menu each role sees</td>
+<td>Housekeeper: My Work, My tasks, Room status</td>
+<td>Field agent: My visits, Customers</td>
+</tr>
+</tbody>
+</table>
+<h3 id="what-we-configure-and-what-stays-fixed">What we configure and what stays fixed</h3>
+<p>The rule that decides it: <strong>configurable where it is safe, fixed where law, money or capacity is involved.</strong></p>
+<table>
+<thead>
+<tr>
+<th>Configurable per client (Settings mode)</th>
+<th>Fixed, the same for every client (purpose-built code)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Objects and fields, forms, departments, roles, stages, rules, tasks, views, navigation, pick-lists</td>
+<td>Room inventory and bookings (no double sale), rates, folios, tax bills, payments, the audit log, AI drafts</td>
+</tr>
+</tbody>
+</table>
+<p>Why: Nepal's tax rules require bill software that cannot edit or delete a bill; bookings must be impossible to double-sell; money must be exact. A generic configurable store cannot promise those, so those parts are built once and shared. A non-hotel client keeps the same split: their bills, payments and audit log are fixed; everything about how their teams work is configured.</p>
+<h3 id="five-rules-that-never-bend">Five rules that never bend</h3>
+<ol>
+<li>Every change is signed by a person: no shared logins, ever.</li>
+<li>Bills are never edited or deleted. Mistakes are fixed by a credit note or a cancellation with a reason.</li>
+<li>A person confirms every AI-drafted record. The AI only drafts.</li>
+<li>Staff phone screens: one main action, at most two taps, Nepali and English, no typing.</li>
+<li>The client admin must have hands on the keyboard during setup, or they will never own the system.</li>
+</ol>
+<h2 id="who-does-what">Who does what</h2>
+<p>There are two sets of roles, and confusing them is the most common reason a setup slips. <strong>Our team builds the CRM. The client's departments and roles are what the CRM is built for.</strong> Every step names one of each: a doer and a subject.</p>
+<h3 id="our-implementation-team">Our implementation team</h3>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Side</th>
+<th>Owns steps</th>
+<th>Time</th>
+<th>Why they exist</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Implementation Lead</td>
+<td>Ours</td>
+<td>4-14, 17, 18</td>
+<td>2.5 days</td>
+<td>Does all the configuration, start to finish, so context is never handed off</td>
+</tr>
+<tr>
+<td>Solution Consultant</td>
+<td>Ours</td>
+<td>1-3</td>
+<td>0.5 day</td>
+<td>Runs discovery. On small clients the Lead wears this hat too</td>
+</tr>
+<tr>
+<td>Migration Analyst</td>
+<td>Ours</td>
+<td>15</td>
+<td>0.5 day</td>
+<td>Imports and de-duplicates history; bad work here is invisible until month three</td>
+</tr>
+<tr>
+<td>Client Sponsor</td>
+<td>Theirs (owner or GM)</td>
+<td>1, 18</td>
+<td>2 hours</td>
+<td>Signs scope on day one and go-live on day five</td>
+</tr>
+<tr>
+<td>Client Admin</td>
+<td>Theirs</td>
+<td>3, 6, 14, 16, 18</td>
+<td>1 day</td>
+<td>Inherits the system; must type during setup</td>
+</tr>
+<tr>
+<td>Department Heads</td>
+<td>Theirs</td>
+<td>2, 10, 12, 17</td>
+<td>3 hours</td>
+<td>Describe the real process and test it; they configure nothing</td>
+</tr>
+</tbody>
+</table>
+<p>Hotel example: Aashish Poudel (Lead and Consultant), Ritu Bhandari (Migration), Bikash Shrestha (GM, Sponsor), Sunita Karki (Front Office Manager, Client Admin), and the heads of Front Office, Housekeeping, Security and Accounts.</p>
+<h3 id="effort-for-a-mid-size-client">Effort for a mid-size client</h3>
+<p>About 3.5 person-days from us and 1.5 from the client, over five working days. The client's share is not optional. For a 52-room hotel with 65 staff the split held; a group with several properties adds about a day per extra property for steps 5, 11 and 16.</p>
+<h3 id="working-rules-for-our-team">Working rules for our team</h3>
+<ul>
+<li>One Lead per client from step 4 to step 18. No hand-offs between colleagues mid-build.</li>
+<li>All configuration happens in a <strong>sandbox</strong>. Nothing reaches staff until Publish (step 18).</li>
+<li>Every decision the client makes is written on the step's worksheet the same day, with who decided it.</li>
+<li>If a step needs a decision nobody in the room can make, write it on the open-questions list and keep going. Never guess.</li>
+</ul>
+<h2 id="phase-a-discovery-day-1-morning-steps-1-3">Phase A: Discovery (Day 1 morning, steps 1-3)</h2>
+<p>No software is touched in Phase A. These three steps produce the decisions that steps 4-18 carry out; every hour skipped here costs three later. Bring printed worksheets (see Templates) and fill them in the room.</p>
+<h3 id="step-1-agree-scope-in-writing-60-min">Step 1. Agree scope in writing (60 min)</h3>
+<p><strong>Who:</strong> Solution Consultant with the Client Sponsor and Client Admin. <strong>Goal:</strong> a signed one-page scope that says what is in, what is phase two, and who inherits the system.</p>
+<p>Ask these questions, in this order, and write the answers on the scope worksheet:</p>
+<ol>
+<li>What breaks today? Ask for incidents, not opinions: "When did a booking last get lost? What happened?"</li>
+<li>How will we know it worked in 90 days? Get numbers.</li>
+<li>Which work must the system run from day one?</li>
+<li>What is explicitly phase two? Name it and date it; never just refuse it.</li>
+<li>Does the client issue tax bills from this system? If yes, the billing permit track (Phase G) starts on Day 3.</li>
+<li>Who inherits the system? One named person, present for steps 3, 6, 14, 16 and 18.</li>
+<li>Go-live date. Pick a low-season, mid-week day.</li>
+</ol>
+<p><strong>Hotel example:</strong> pains were 3-4 minute manual guest entry, bookings on WhatsApp, phone and OTA with no sync, double bookings, tasks shouted between desks, VIP bookings living in the GM's phone. Success: check-in under 45 seconds, zero double bookings in 90 days, 80% of arrival-to-checkout tasks created automatically. Phase two: channel manager, restaurant POS, inventory, payroll, accounting ledger. Bills in scope: yes. Inherits: Sunita Karki. Go-live: Sunday 1 Nov 2026.</p>
+<p><strong>Done when:</strong> the Sponsor has signed, and phase-two items each have a target quarter. <strong>Common mistake:</strong> writing "everything the old system does". That is a scope of 300 menus. Ask what they actually used last week.</p>
+<h3 id="step-2-walk-one-real-booking-through-the-building-90-min">Step 2. Walk one real booking through the building (90 min)</h3>
+<p><strong>Who:</strong> Solution Consultant with each Department Head, at their desk. <strong>Goal:</strong> every handoff and every delay in the real process, in the staff's own words.</p>
+<p>Do not ask "describe your process"; that gets the ideal version. Pick one real transaction from last week and follow it desk to desk. At each desk ask:</p>
+<ol>
+<li>What did you physically do with this one?</li>
+<li>How did you find out it was your turn? (call, shout, paper, WhatsApp, walking past)</li>
+<li>How long did it wait before you acted?</li>
+<li>Who did you tell when you finished, and how?</li>
+<li>What goes wrong here most often?</li>
+</ol>
+<p>Write one row per desk: desk, what happened, how they were told, delay, and "becomes rule or deadline". Walk to every desk, including the ones nobody mentions in the meeting room.</p>
+<p><strong>Hotel example:</strong> eight desks for one past stay. Two were found only by walking there: the bell desk and security were never told a guest had arrived. Those two rows became the Luggage and Log arrival rules.</p>
+<p><strong>Done when:</strong> every row has a "becomes" entry, and each department head has read their rows back. <strong>Common mistake:</strong> skipping the desks that "aren't really part of it" (security, porters, accounts).</p>
+<h3 id="step-3-name-the-things-the-business-talks-about-45-min">Step 3. Name the things the business talks about (45 min)</h3>
+<p><strong>Who:</strong> Implementation Lead with the Client Admin. <strong>Goal:</strong> the object list, with the words staff already say, in English and Nepali.</p>
+<ol>
+<li>List every noun from the step 2 walk: guest, booking, room, bill, job.</li>
+<li>For each, agree one name in English and one in Nepali. Use the staff's word, not ours: this hotel says "Bill", so the Folio object is labelled Bill.</li>
+<li>For each object, write how you recognise the same one twice (phone, email, ID number). This feeds the identity rule in step 8.</li>
+<li>Write the "deliberately absent" list: objects you will not create yet. Adding later is free; carrying them now costs training time.</li>
+</ol>
+<p><strong>Hotel example:</strong> Guest (अतिथि), Reservation "Booking" (बुकिङ), Room (कोठा), Folio "Bill" (बिल), Task "Jobs" (काम). Absent: Supplier, Campaign, Menu item.</p>
+<p><strong>Done when:</strong> every object has an English name, a Nepali name and a "recognised by". <strong>Common mistake:</strong> two departments using two words for the same thing. Pick one and write the other as a synonym on the sheet.</p>
+<h2 id="phase-b-foundation-day-1-afternoon-steps-4-6">Phase B: Foundation (Day 1 afternoon, steps 4-6)</h2>
+<p>First contact with 1M-CRM. Everything from here happens in the sandbox, so mistakes cost nothing.</p>
+<h3 id="step-4-create-the-tenant-and-install-a-blueprint-10-min">Step 4. Create the tenant and install a blueprint (10 min)</h3>
+<p><strong>Who:</strong> Implementation Lead, in Platform mode (our team only; clients never see it). <strong>Goal:</strong> a working sandbox, right in shape and wrong in details.</p>
+<ol>
+<li>New tenant: client name, data region (Nepal data centre for any client that issues bills).</li>
+<li>Add each <strong>legal entity</strong>: registered name, PAN, VAT registered yes/no. Each legal entity gets its own bill number series. One company with a restaurant under a second PAN = two legal entities.</li>
+<li>Set the fiscal year (Nepal: mid-July to mid-July).</li>
+<li>Install the closest blueprint. Never start from blank unless no blueprint fits: editing is days, authoring is weeks.</li>
+<li>Give the Client Admin access.</li>
+</ol>
+<p><strong>Hotel example:</strong> tenant Hotel Dhaulagiri Courtyard; legal entity Dhaulagiri Courtyard Pvt. Ltd., PAN 609845213, VAT registered; fiscal year 2083/84; Hotel blueprint (5 objects, 8 stages, 12 rules, 9 views).</p>
+<p><strong>Done when:</strong> the sandbox opens with the blueprint's objects, stages and rules. <strong>Common mistake:</strong> a missing PAN. Bills cannot be issued without it, so stop and get it.</p>
+<h3 id="step-5-edit-the-department-tree-20-min">Step 5. Edit the department tree (20 min)</h3>
+<p><strong>Who:</strong> Implementation Lead. <strong>Goal:</strong> a tree that matches the real organisation chart.</p>
+<ol>
+<li>Start from the blueprint's tree. <strong>Delete</strong> what the client does not have; deleting is faster and gives better structures than building from scratch.</li>
+<li>Nest only where it carries meaning: a separate manager, a separate queue of work, or a separate permission boundary. Depth is available, not required.</li>
+<li>For each unit record its type (property, division, department, team), its staff count, and which workflows it owns or inherits.</li>
+<li>Past five levels, add nothing without checking navigation (step 14): staff stop browsing and rely on their menu.</li>
+</ol>
+<p>Workflows attach to any unit and relate to the parent's in one of four ways: <strong>inherit</strong> (take it unchanged), <strong>extend</strong> (add stages or rules, never remove), <strong>override</strong> (replace for this subtree, used rarely and on purpose), <strong>block</strong> (nothing applies). A group can mark a workflow <strong>mandatory</strong> (for example foreign-guest registration), and no descendant may override it.</p>
+<p><strong>Hotel example:</strong> Property &gt; Rooms Division &gt; Front Office &gt; Reservations, Front Desk, Bell Desk teams; Housekeeping &gt; Floors, Laundry; Food &amp; Beverage &gt; Restaurant, Kitchen; plus Security, Maintenance, Finance &gt; Accounts, Sales, Management. 18 units, 4 levels. Spa, Concierge and Night Audit came with the blueprint and were deleted.</p>
+<p><strong>Done when:</strong> every staff member has exactly one home unit, and every unit that owns a stage is named. <strong>Common mistake:</strong> mirroring the payroll chart instead of how work flows. Ask "who gives this team its work?"</p>
+<h3 id="step-6-roles-and-what-each-may-touch-45-min">Step 6. Roles and what each may touch (45 min)</h3>
+<p><strong>Who:</strong> Implementation Lead with the Client Admin typing. This is the setting they will change most often after we leave. <strong>Goal:</strong> every role with six permissions per object.</p>
+<p>For each role, for each object, set:</p>
+<table>
+<thead>
+<tr>
+<th>Permission</th>
+<th>Question to ask</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>View</td>
+<td>Should this role see these records at all?</td>
+</tr>
+<tr>
+<td>Add</td>
+<td>Do they create them?</td>
+</tr>
+<tr>
+<td>Edit</td>
+<td>Do they change them?</td>
+</tr>
+<tr>
+<td>Delete</td>
+<td>Almost always no. Only the GM and admin</td>
+</tr>
+<tr>
+<td>Record scope</td>
+<td>All records, own unit's, or only those assigned to them?</td>
+</tr>
+<tr>
+<td>Field masks</td>
+<td>Which fields are hidden or masked (ID numbers, prices)?</td>
+</tr>
+<tr>
+<td>Allowed stage moves</td>
+<td>Which stage changes may they make?</td>
+</tr>
+</tbody>
+</table>
+<p>Then check two things before moving on: every stage has at least one role allowed to move a record into it, and ID-document fields are visible only to roles with a legal need.</p>
+<p><strong>Hotel example:</strong> 11 roles. Guest ID numbers visible to 4 roles (Front Desk Agent, Duty Manager, GM, System Admin), masked for Reservations, Housekeeping and Accounts roles, hidden for Bell Desk, Security and F&amp;B. The Front Desk Agent may move Enquiry &gt; Held &gt; Confirmed &gt; In-house &gt; Checked out; housekeepers see only their own tasks.</p>
+<p><strong>Done when:</strong> 1M-CRM's publish check shows no stage without an advancer. <strong>Common mistake:</strong> creating a role per person. A role is a job; three front desk agents share one role.</p>
+<h2 id="phase-c-data-model-day-2-steps-7-9">Phase C: Data model (Day 2, steps 7-9)</h2>
+<p>The objects, the rule that makes 1M-CRM a CRM rather than a form tool, and the page staff will look at forty times a day.</p>
+<h3 id="step-7-trim-and-rename-the-fields-90-min">Step 7. Trim and rename the fields (90 min)</h3>
+<p><strong>Who:</strong> Implementation Lead. <strong>Goal:</strong> each object carries only fields someone named in a workshop.</p>
+<ol>
+<li>Open each object from step 3. For every blueprint field ask: did anyone mention this on the walk or the scope sheet? If not, delete it.</li>
+<li>Rename fields to the agreed vocabulary, and give each a Nepali label.</li>
+<li>Add the client's own fields that came out of step 2 (hotel: WhatsApp number, ETA).</li>
+<li>For each field set: type (text, number, date, phone, money, pick-list, link to another object), required yes/no, privacy level, and whether it is searched often.</li>
+<li>Turn repeated choices into <strong>pick-lists</strong> (source channel, cancellation reason). One pick-list editor replaces dozens of setup screens in older systems.</li>
+<li>Check what can never change: a field's key locks once published. System fields on fixed objects (guest, reservation dates, money) cannot be deleted.</li>
+</ol>
+<p><strong>Hotel example:</strong> Reservation went from 22 blueprint fields to 16; six deleted (meal plan code, corporate code and others nobody used), WhatsApp number and ETA added. Source channel pick-list: Booking.com, Expedia, WhatsApp, Viber, Messenger, phone, walk-in, agency.</p>
+<p><strong>Done when:</strong> every field on every object can be traced to the scope sheet, the walk or the vocabulary sheet. <strong>Common mistake:</strong> keeping fields "just in case". Each one is a box a busy clerk must skip forty times a day.</p>
+<h3 id="step-8-set-the-identity-rule-15-min-the-highest-value-step">Step 8. Set the identity rule (15 min, the highest-value step)</h3>
+<p><strong>Who:</strong> Implementation Lead. <strong>Goal:</strong> the system recognises a returning customer automatically.</p>
+<ol>
+<li>List the reliable identifiers from step 3's "recognised by" column, strongest first.</li>
+<li>For each, choose how to compare: exact (after formatting phone numbers and lower-casing emails) or similar (names).</li>
+<li>Choose the action on a match: join the existing record, or queue the pair for a person to decide.</li>
+<li><strong>Never auto-merge on a name match.</strong> Names are not identity: spellings vary and families share surnames. A missed duplicate is a small annoyance; a wrong merge blends two strangers' histories and is very hard to undo.</li>
+<li>Test with three samples: a true repeat, a family sharing one phone, and a common name with no phone.</li>
+</ol>
+<p><strong>Hotel example:</strong> 1) phone exact (formatted to +977) joins; 2) email exact joins; 3) ID number exact joins; 4) similar name and date of birth goes to review. Test: "Ramesh Adhikari, +977 9856-041237" matched on phone and joined his March 2025 stay.</p>
+<p><strong>Done when:</strong> all three test samples behave as expected. <strong>Common mistake:</strong> matching on name first because "everyone knows the regulars".</p>
+<h3 id="step-9-lay-out-the-record-page-45-min">Step 9. Lay out the record page (45 min)</h3>
+<p><strong>Who:</strong> Implementation Lead. <strong>Goal:</strong> the screen staff use most, filled in, not designed.</p>
+<p>The frame is fixed for every client: <strong>details on the left, timeline in the centre, related records on the right</strong>, with the stage bar on top. You choose only what goes in each panel.</p>
+<ol>
+<li>Left: the fields people check at a glance (for the hotel: guest, dates, room, ETA, guests, source, rate, total, ID masked).</li>
+<li>Centre: the timeline shows everything that happened, newest at the bottom: messages, AI drafts and who confirmed them, stage changes, tasks done, payments.</li>
+<li>Right: linked records (bill, open tasks, past stays, preferences).</li>
+<li>Mark fields <strong>locked after a stage</strong> (hotel: check-in date and total, after Confirmed, editable only by the Duty Manager).</li>
+<li>Mark fields <strong>hidden until a stage</strong> (cancellation reason, only at Cancelled).</li>
+<li>Preview as every role. A masked field must show as masked for roles that may not see it.</li>
+</ol>
+<p><strong>Done when:</strong> the preview looks right for the busiest role and the most restricted role. <strong>Common mistake:</strong> putting every field in the left panel. If it is needed less than daily, it belongs further down or hidden until its stage.</p>
+<h2 id="phase-d-process-day-3-steps-10-12">Phase D: Process (Day 3, steps 10-12)</h2>
+<p>This is where the walk from step 2 becomes running work. Department heads sit in for steps 10 and 12. The next section, How to design a flow, gives the method in detail; these steps say when and who.</p>
+<h3 id="step-10-set-the-workflow-stages-60-min">Step 10. Set the workflow stages (60 min)</h3>
+<p><strong>Who:</strong> Implementation Lead with the Department Heads. <strong>Goal:</strong> a short list of stages, each owned by one department, with a form and a deadline.</p>
+<ol>
+<li>Start from the blueprint's stages. Remove any stage that nobody could describe on the walk.</li>
+<li>For each stage fill one row: stage name, owning department, form shown at this stage, deadline, roles allowed to move a record in.</li>
+<li>Add the side exits (cancelled, no-show, lost), each needing a reason from a pick-list.</li>
+<li>Check the publish rules: every stage has an owner, every stage has someone allowed to move into it, and no stage is a dead end.</li>
+<li>Stages are versioned. Changes go into a draft; staff keep the published version until Publish.</li>
+</ol>
+<p><strong>Hotel example:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>Owner</th>
+<th>Deadline</th>
+<th>Moved in by</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Enquiry</td>
+<td>Reservations or Front Desk</td>
+<td>Reply in 2 h</td>
+<td>Reservations Agent, Front Desk Agent</td>
+</tr>
+<tr>
+<td>Held</td>
+<td>Front Desk</td>
+<td>Hold expires in 24 h</td>
+<td>Reservations Agent, Front Desk Agent</td>
+</tr>
+<tr>
+<td>Confirmed</td>
+<td>Front Desk, then Accounts</td>
+<td>Deposit invoice same day</td>
+<td>Front Desk Agent, Duty Manager</td>
+</tr>
+<tr>
+<td>Pre-arrival</td>
+<td>Housekeeping</td>
+<td>Room prepared and inspected before arrival</td>
+<td>Automatic, 24 h before arrival</td>
+</tr>
+<tr>
+<td>In-house</td>
+<td>Front Desk</td>
+<td>Check-in under 45 s</td>
+<td>Front Desk Agent, Duty Manager</td>
+</tr>
+<tr>
+<td>Checked out</td>
+<td>Front Desk, then Accounts</td>
+<td>Settled same day</td>
+<td>Front Desk Agent, Duty Manager</td>
+</tr>
+<tr>
+<td>Cancelled / No-show</td>
+<td>Front Desk</td>
+<td>Reason required</td>
+<td>Duty Manager, GM (plus the agents)</td>
+</tr>
+</tbody>
+</table>
+<p>The 24-hour hold expiry is the single change that fixed this hotel's double bookings: before, a pencil mark in the diary never expired.</p>
+<p><strong>Done when:</strong> each Department Head reads their stages aloud and agrees.</p>
+<h3 id="step-11-capacity-stop-things-being-sold-twice-30-min">Step 11. Capacity: stop things being sold twice (30 min)</h3>
+<p><strong>Who:</strong> Implementation Lead with the client's accounts person. <strong>Goal:</strong> inventory the database itself protects.</p>
+<p>Capacity is not a stage, so it is set separately and lives in the fixed part of 1M-CRM.</p>
+<ol>
+<li>Enter the types of thing sold (hotel: room types) and each unit (rooms with number and floor).</li>
+<li>Choose allocation: <strong>pooled</strong> (customer books a type, the exact unit is picked later) or <strong>named</strong> (customer books that exact unit).</li>
+<li>Overbooking: not allowed, or a tolerance per property.</li>
+<li>Hold expiry (hotel: 24 h).</li>
+<li>Prices: rate plans per type.</li>
+<li>Tax and bills: the VAT rule (13%, stored as data so a change needs no code), service charge line (off by default), bill number series per legal entity and fiscal year.</li>
+<li>Payment methods the client accepts (cash, card, Fonepay QR, eSewa, Khalti, bank), with their merchant IDs.</li>
+</ol>
+<p><strong>Hotel example:</strong> 52 rooms: 24 Standard (NPR 6,500 room only / 7,800 B&amp;B), 18 Deluxe (9,500 / 11,000), 8 Premier (13,500 / 15,000) all pooled; 2 Courtyard Suites (22,000 / 24,000) named. Overbooking not allowed.</p>
+<p><strong>Non-hotel version:</strong> a clinic's doctor slots, a training company's seats, a rental firm's vehicles. Same screen, same database guarantee.</p>
+<h3 id="step-12-turn-each-handoff-into-a-rule-60-min">Step 12. Turn each handoff into a rule (60 min)</h3>
+<p><strong>Who:</strong> Implementation Lead with the Department Heads. <strong>Goal:</strong> every handoff found on the walk runs by itself, with a deadline and an escalation.</p>
+<ol>
+<li>Take the step 2 worksheet. Every row marked "becomes rule" gets one rule.</li>
+<li>Write it as one sentence: <strong>When</strong> [event] <strong>and</strong> [condition] <strong>then</strong> [action] <strong>for</strong> [role or department] <strong>due</strong> [deadline].</li>
+<li>Read each rule aloud to the department head it lands on. If they can't confirm it in their own words, it is wrong.</li>
+<li>Add the two safety-net rules every client gets: late-task escalation, and expiry of anything that holds capacity.</li>
+<li>Mark tasks that must wait for another (inspect waits for clean).</li>
+<li>Dry-run each rule against a test record before saving.</li>
+</ol>
+<p><strong>Done when:</strong> every handoff row from the walk points at a rule, and the dry run shows the right tasks for the right roles. <strong>Common mistake:</strong> writing rules nobody asked for. Each rule must trace back to something a staff member said.</p>
+<h2 id="how-to-design-a-flow">How to design a flow</h2>
+<p>A flow in 1M-CRM is always the same chain: <strong>a record changes, a rule matches, tasks are created for other departments, deadlines run, late tasks escalate, and every step lands on the record's timeline.</strong> Design every client's flows with the seven moves below, in order.</p>
+<p><img alt="One change on a record creates timed work; late work climbs to a manager" src="assets/guide-flow.png" /></p>
+<p>Swap the words and the chain is any business's: a won deal, a booked appointment or an approved order runs through the same four steps.</p>
+<h3 id="move-1-pick-the-record-that-carries-the-work">Move 1. Pick the record that carries the work</h3>
+<p>Every flow hangs off one main object: the thing whose life the business follows. Hotel: Reservation. Clinic: Appointment. Trading company: Order. Ask: "When this is finished, what is finished?"</p>
+<h3 id="move-2-draw-the-stages-as-the-records-life-not-as-departments">Move 2. Draw the stages as the record's life, not as departments</h3>
+<ul>
+<li>4 to 7 stages. More than 7 means some are tasks, not stages.</li>
+<li>A stage is a state the record is <strong>in</strong> (Held, In-house), not an action someone <strong>does</strong> ("call guest"). Actions are tasks.</li>
+<li>Each stage has exactly one owning department, one form and one deadline.</li>
+<li>Side exits (cancelled, lost, no-show) always need a reason.</li>
+<li>Test: can a manager glance at the stage and know who is responsible right now? If not, split or rename it.</li>
+</ul>
+<h3 id="move-3-find-the-handoffs">Move 3. Find the handoffs</h3>
+<p>A handoff is any moment work passes to another person or department. They come from the step 2 walk. Each one becomes a rule. Typical signs: "then I tell...", "they shout up the stairs", "we send a WhatsApp to...", "they find out when they walk past".</p>
+<h3 id="move-4-write-each-rule-in-one-sentence">Move 4. Write each rule in one sentence</h3>
+<p>Use exactly this shape, and pick the trigger from the list 1M-CRM supports:</p>
+<blockquote>
+<p><strong>When</strong> [trigger] <strong>and</strong> [condition, optional] <strong>then</strong> [action] <strong>for</strong> [role or department] <strong>due</strong> [deadline] <strong>escalate to</strong> [role] <strong>after</strong> [time].</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Trigger type</th>
+<th>Use it when</th>
+<th>Hotel example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Record created</td>
+<td>Something new arrives</td>
+<td>A new reservation from WhatsApp creates an AI draft for review</td>
+</tr>
+<tr>
+<td>Field changed</td>
+<td>One value matters</td>
+<td>Guest flagged VIP: notify Duty Manager, create Welcome amenity for F&amp;B</td>
+</tr>
+<tr>
+<td>Stage changed</td>
+<td>The record moves on</td>
+<td>Becomes In-house: Luggage for Bell Desk, Log arrival for Security, room set to Occupied</td>
+</tr>
+<tr>
+<td>Time relative to a date field</td>
+<td>Something must happen before or after a date</td>
+<td>24 h before check-in: Prepare room for Housekeeping, Confirm details for Front Desk</td>
+</tr>
+<tr>
+<td>Schedule</td>
+<td>Every day or week at a fixed time</td>
+<td>Day end at 22:00</td>
+</tr>
+<tr>
+<td>Inbound message</td>
+<td>A chat message arrives</td>
+<td>WhatsApp text creates a draft booking</td>
+</tr>
+<tr>
+<td>Manual</td>
+<td>A person presses a button</td>
+<td>Duty Manager asks for a deep clean</td>
+</tr>
+</tbody>
+</table>
+<p>Actions are: create a task, notify a role, set a field, move a stage, send a message.</p>
+<h3 id="move-5-give-every-task-an-owner-and-a-clock">Move 5. Give every task an owner and a clock</h3>
+<ul>
+<li>Assign to a <strong>role or a department queue</strong>, never to a named person. People leave; roles stay.</li>
+<li>Every task has a deadline written as relative time ("10 min after check-in", "before arrival time", "same day").</li>
+<li>If order matters, mark <strong>blocked by</strong>: Inspect room waits for Prepare room.</li>
+<li>Tasks for phone users get a short title in both languages and one photo or icon.</li>
+</ul>
+<h3 id="move-6-add-the-safety-nets">Move 6. Add the safety nets</h3>
+<p>Every client gets these two, unchanged:</p>
+<ol>
+<li><strong>Late task:</strong> when any task passes its deadline, notify the duty manager; after 30 more minutes, the general manager.</li>
+<li><strong>Expiry:</strong> when anything that holds capacity (a hold, a reserved slot) reaches its expiry, release it and tell the owner.</li>
+</ol>
+<h3 id="move-7-check-the-flow-before-saving">Move 7. Check the flow before saving</h3>
+<ul>
+<li>☐ Every handoff from the walk has a rule; every rule traces to a walk row.</li>
+<li>☐ No rule triggers itself or another rule in a loop.</li>
+<li>☐ Every role named in a rule has at least one staff member.</li>
+<li>☐ Rules that fire on the same event are meant to fire together (hotel: the three In-house rules fire at once).</li>
+<li>☐ Dry run on a test record shows the right tasks, for the right roles, with the right deadlines.</li>
+<li>☐ Read aloud to the department head who receives the work: they agree.</li>
+</ul>
+<h3 id="the-hotels-arrival-flow-written-out">The hotel's arrival flow, written out</h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>When</th>
+<th>Then</th>
+<th>For</th>
+<th>Due</th>
+<th>From the walk</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Reservation becomes Confirmed</td>
+<td>Create Deposit invoice</td>
+<td>Accounts</td>
+<td>Same day</td>
+<td>Deposit noted on paper</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Reservation becomes Confirmed</td>
+<td>Send confirmation message</td>
+<td>Guest</td>
+<td>Now</td>
+<td>Guest never told</td>
+</tr>
+<tr>
+<td>3</td>
+<td>24 h before check-in</td>
+<td>Create Prepare room</td>
+<td>Housekeeping</td>
+<td>Before arrival</td>
+<td>Front desk shouts the room number</td>
+</tr>
+<tr>
+<td>4</td>
+<td>24 h before check-in</td>
+<td>Create Confirm details and requests</td>
+<td>Front Desk</td>
+<td>2 h</td>
+<td>Booking in the paper diary</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Guest flagged VIP</td>
+<td>Notify; create Welcome amenity</td>
+<td>Duty Manager; F&amp;B</td>
+<td>Before arrival</td>
+<td>VIP bookings bypass the system</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Becomes In-house</td>
+<td>Create Luggage</td>
+<td>Bell Desk</td>
+<td>10 min</td>
+<td>Bell desk not told at all</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Becomes In-house</td>
+<td>Create Log arrival</td>
+<td>Security</td>
+<td>10 min</td>
+<td>No arrival log</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Becomes In-house</td>
+<td>Set room to Occupied</td>
+<td>System</td>
+<td>Now</td>
+<td>Rooms checked by eye</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Becomes Checked out</td>
+<td>Create Clean and inspect</td>
+<td>Housekeeping</td>
+<td>45 min</td>
+<td>Room free found by walking past</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Becomes Checked out</td>
+<td>Create Settle bill</td>
+<td>Accounts</td>
+<td>Same day</td>
+<td>Bill totalled by hand</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Any task late</td>
+<td>Notify Duty Manager, then GM after 30 min</td>
+<td>Managers</td>
+<td>Now</td>
+<td>Nothing is timed</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Hold reaches 24 h</td>
+<td>Release the room; notify</td>
+<td>Front Desk</td>
+<td>Now</td>
+<td>Pencil marks never expire</td>
+</tr>
+</tbody>
+</table>
+<h2 id="phase-e-views-and-navigation-day-3-afternoon-steps-13-14">Phase E: Views and navigation (Day 3 afternoon, steps 13-14)</h2>
+<p>The process now works. These two steps decide what each person sees when they open 1M-CRM in the morning. No new data and no new screens: only saved filters and short menus.</p>
+<h3 id="step-13-build-the-saved-views-45-min">Step 13. Build the saved views (45 min)</h3>
+<p><strong>Who:</strong> Implementation Lead. <strong>Goal:</strong> one view for every question a role asks daily.</p>
+<ol>
+<li>For each role, list the questions they ask at the start of a shift ("Who arrives today?", "Which rooms are dirty?", "What do I have to do?").</li>
+<li>For each question make one view: object + filter + view type + who may use it.</li>
+<li>Choose the view type by the question: a list to work through = <strong>table</strong>; things moving between states = <strong>board</strong>; things on dates = <strong>calendar</strong>; numbers = <strong>dashboard</strong>.</li>
+<li>Share each view only with roles that have permission on its object. 1M-CRM blocks the rest.</li>
+</ol>
+<p><strong>Hotel example:</strong></p>
+<table>
+<thead>
+<tr>
+<th>View</th>
+<th>Object</th>
+<th>Type</th>
+<th>Filter</th>
+<th>Used by</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Arrivals today</td>
+<td>Reservation</td>
+<td>Table</td>
+<td>Check-in = today</td>
+<td>Everyone</td>
+</tr>
+<tr>
+<td>Departures today</td>
+<td>Reservation</td>
+<td>Table</td>
+<td>Check-out = today</td>
+<td>Everyone</td>
+</tr>
+<tr>
+<td>Pending drafts</td>
+<td>AI draft</td>
+<td>Table</td>
+<td>State = pending review</td>
+<td>Front Desk, Reservations</td>
+</tr>
+<tr>
+<td>In-house</td>
+<td>Reservation</td>
+<td>Table</td>
+<td>Stage = In-house</td>
+<td>Front Desk, Duty Manager</td>
+</tr>
+<tr>
+<td>Pipeline</td>
+<td>Reservation</td>
+<td>Board</td>
+<td>Grouped by stage</td>
+<td>Front Desk, Managers</td>
+</tr>
+<tr>
+<td>Room status</td>
+<td>Room</td>
+<td>Board</td>
+<td>Grouped by status</td>
+<td>Housekeeping, Front Desk</td>
+</tr>
+<tr>
+<td>My tasks</td>
+<td>Task</td>
+<td>Table</td>
+<td>Assigned to me</td>
+<td>Everyone</td>
+</tr>
+<tr>
+<td>Unpaid bills</td>
+<td>Folio</td>
+<td>Table</td>
+<td>Balance above zero</td>
+<td>Accounts, Front Desk, Duty Manager</td>
+</tr>
+<tr>
+<td>Occupancy</td>
+<td>Reservation</td>
+<td>Dashboard</td>
+<td>Rolling 30 days</td>
+<td>Managers</td>
+</tr>
+</tbody>
+</table>
+<h3 id="step-14-compose-each-roles-menu-45-min">Step 14. Compose each role's menu (45 min)</h3>
+<p><strong>Who:</strong> the Client Admin drives; the Implementation Lead watches. This is the request they will get most often after go-live. <strong>Goal:</strong> one short, flat menu per role.</p>
+<p>The department tree is for setup, never for navigation. Each role gets a flat, pinned list built in three layers:</p>
+<ol>
+<li><strong>Locked by 1M-CRM:</strong> "My Work" is always first, so no one ever opens an empty screen.</li>
+<li><strong>Set by the admin:</strong> the views from step 13 this role needs.</li>
+<li><strong>User slots:</strong> up to 3 items each person may add (zero for staff phones, to keep them simple).</li>
+</ol>
+<p>Then press <strong>Preview as role</strong> for every role. Anything the role may not see can't be pinned, and appears greyed with the reason.</p>
+<p><strong>Hotel example:</strong> Housekeeper, 3 items (My Work, My tasks, Room status), which become the three tabs on their phone. Front Desk Agent 6 items. Duty Manager 8. GM 9.</p>
+<p><strong>Done when:</strong> every role has been previewed, and no menu has more than about 9 items. <strong>Common mistake:</strong> giving everyone the manager's menu "so they can find things". Pinning is about speed, not access; search still reaches everything a role may see.</p>
+<h2 id="phase-f-data-and-people-day-4-steps-15-16">Phase F: Data and people (Day 4, steps 15-16)</h2>
+<p>The configuration is done. Now it needs history and users, and this is where the two most expensive mistakes are made: bad merges and shared logins.</p>
+<h3 id="step-15-import-history-and-merge-duplicates-3-hours">Step 15. Import history and merge duplicates (3 hours)</h3>
+<p><strong>Who:</strong> Migration Analyst. <strong>Goal:</strong> clean customer history in 1M-CRM, with every doubtful merge decided by a person.</p>
+<ol>
+<li>Get an export from the client's current system or spreadsheet. Ask for customers, past transactions and open future transactions as separate files.</li>
+<li><strong>Map columns</strong> to fields. Leave a column unmapped on purpose rather than forcing it into the wrong field; write down why.</li>
+<li>Run the import in the sandbox. The identity rule from step 8 does the first pass: exact matches join automatically.</li>
+<li><strong>Review the pairs</strong> it could not decide (similar names, a shared family phone). For each: merge or keep both. When unsure, keep both.</li>
+<li>Read the totals and check they add up: rows read = created + merged + waiting + rejected.</li>
+<li>Plan the <strong>cutover</strong> with the client in writing: when the old system stops taking new bookings, how future bookings and open balances come across, how long the old system stays readable (we suggest 90 days), and who signs it off.</li>
+</ol>
+<p><strong>Hotel example:</strong> 5,480 rows from 2019-2026 became 4,212 guests; 1,214 merged on exact phone, email or ID; 12 pairs decided by hand; 42 rejected for having no name.</p>
+<p><strong>Done when:</strong> the totals add up, every doubtful pair is decided, and the cutover plan is signed. <strong>Common mistake:</strong> auto-merging similar names to "save time". A wrong merge is invisible for months and very painful to undo.</p>
+<h3 id="step-16-invite-the-staff-30-min">Step 16. Invite the staff (30 min)</h3>
+<p><strong>Who:</strong> the Client Admin, alone. It is the simplest admin task in 1M-CRM, so it is the right first solo run. If they can't do it unaided, the handover plan needs rethinking now. <strong>Goal:</strong> every person has their own login.</p>
+<ol>
+<li>Add each person: name, mobile number, role, home department or team, language (Nepali or English).</li>
+<li>Send the invitation by SMS. Staff open the link on their own phone, choose a language and set a 4-digit PIN.</li>
+<li>Office staff log in with email and password; phone staff with phone number and PIN.</li>
+<li>Refuse every request for a shared login ("frontdesk@"). Every task, stage change and bill must be signed by a person, or the audit trail and the deadline reports are fiction.</li>
+<li>List staff with no smartphone and agree the fallback with the client (a shared device with personal PINs, or a printed list).</li>
+</ol>
+<p><strong>Hotel example:</strong> 65 staff invited, 58 active by Day 5; housekeepers set their PIN in Nepali.</p>
+<p><strong>Done when:</strong> every person who will take part in the step 17 test has logged in on their own device.</p>
+<h2 id="phase-g-test-publish-hand-over-day-5-steps-17-18">Phase G: Test, publish, hand over (Day 5, steps 17-18)</h2>
+<p>Two steps left. Step 17 is the one teams skip when they run late, and it decides whether the client trusts 1M-CRM in week two.</p>
+<h3 id="step-17-run-one-test-transaction-with-the-real-staff-2-hours">Step 17. Run one test transaction with the real staff (2 hours)</h3>
+<p><strong>Who:</strong> Implementation Lead with one real person from every role, each on their own device. <strong>Goal:</strong> every stage performed by the person who will really perform it.</p>
+<ol>
+<li>Create a fake customer clearly marked as a test (hotel: "Test Sharma", 2 nights).</li>
+<li>Take it through every stage. Each action is done by the real role holder: the housekeeper marks the room ready on her own phone, the accountant settles the bill on theirs.</li>
+<li>Record each action in a table: stage, who did it, which device, pass or defect.</li>
+<li>For each defect: what happened, the cause, fixed now or accepted and dated.</li>
+<li>Repeat only the failed actions after fixing.</li>
+</ol>
+<p><strong>Hotel example:</strong> three defects. The deposit invoice showed USD instead of NPR (fixed). "Done" took three taps on the housekeeper's phone instead of two (fixed). Security never received Log arrival because Hari's invitation was still pending (fixed by the admin).</p>
+<p><strong>Done when:</strong> every stage passed with its real role holder, and every defect is fixed or accepted in writing.</p>
+<h3 id="step-18-publish-then-hand-over-the-keys-90-min">Step 18. Publish, then hand over the keys (90 min)</h3>
+<p><strong>Who:</strong> Implementation Lead, Client Admin, Client Sponsor. <strong>Goal:</strong> a live system, and an admin who has already changed it without help.</p>
+<ol>
+<li>Run the launch checks. Publish stays disabled until all pass:
+   - Every stage has an owning department and a role that can advance it.
+   - No rule loops back on itself.
+   - All capacity units are mapped to types.
+   - Imported records are in and every doubtful pair is decided.
+   - Every user has a personal login; no shared accounts.
+   - Sensitive fields are masked for the roles that must not see them.
+   - Every role's menu has been previewed.
+   - The step 17 test passed.
+   - For a client that issues tax bills: the billing permit is recorded.</li>
+<li>Review the sandbox-to-production difference with the Client Admin.</li>
+<li>Press Publish.</li>
+<li><strong>The handover test.</strong> The Client Admin makes three live changes while we watch and do not touch: add a field, change a deadline, add a user. All three unaided means we are finished. If not, we stay another half day. A client who has to phone us to add a field will leave.</li>
+</ol>
+<p><strong>Hotel example:</strong> published Sunday 1 Nov 2026. Sunita added "Airport pickup" to Reservation, moved the Prepare-room deadline to 2 hours before arrival, and invited a new housekeeper, all unaided.</p>
+<h3 id="parallel-track-the-tax-billing-permit-any-client-that-issues-bills">Parallel track: the tax billing permit (any client that issues bills)</h3>
+<p>Start on Day 3, as soon as bills are configured in step 11, because it takes longer than the build. In Nepal, each client must be approved by the tax office (IRD) before printing tax bills from the software.</p>
+<ol>
+<li>Give the client an acceptance letter for the approved version of the software.</li>
+<li>Prepare the application pack: setup file, user manual, system design, backup and recovery details, 20 sample bills, an original and a reprint, a sales report, a credit note, a cancelled bill, the audit trail report, proof of a successful test sync.</li>
+<li>The client applies on the taxpayer portal under "Electronic Billing User Permission".</li>
+<li>Record the permit number in 1M-CRM. Without it, Publish keeps billing switched off.</li>
+</ol>
+<p>Confirm the current requirements with a Nepali tax adviser for each client; they change.</p>
+<h2 id="same-method-different-business">Same method, different business</h2>
+<p>The 18 steps do not change between industries; only the answers do. Here is the same build for a trekking operator, "Annapurna Journeys" (a fictional example: 1 office in Pokhara, 22 staff, guides and porters in the field).</p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Hotel Dhaulagiri Courtyard</th>
+<th>Annapurna Journeys</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 Scope</td>
+<td>Bookings, housekeeping, check-in, bills</td>
+<td>Enquiries, trip bookings, permits, guide assignment, bills</td>
+</tr>
+<tr>
+<td>2 Walk</td>
+<td>One past stay, 8 desks</td>
+<td>One past trek: sales, operations, permits desk, guide, porter, accounts</td>
+</tr>
+<tr>
+<td>3 Objects</td>
+<td>Guest, Reservation, Room, Folio, Task</td>
+<td>Traveller, Trip booking, Itinerary day, Guide, Permit, Folio, Task</td>
+</tr>
+<tr>
+<td>4 Blueprint</td>
+<td>Hotel</td>
+<td>Travel operator</td>
+</tr>
+<tr>
+<td>5 Departments</td>
+<td>Property &gt; divisions &gt; departments &gt; teams</td>
+<td>Office &gt; Sales, Operations (Permits, Field team), Accounts</td>
+</tr>
+<tr>
+<td>6 Roles</td>
+<td>11 roles; passport visible to 4</td>
+<td>7 roles; passport visible to Sales, Permits and the manager</td>
+</tr>
+<tr>
+<td>7 Fields</td>
+<td>ETA, WhatsApp number</td>
+<td>Fitness level, insurance number, dietary needs, emergency contact</td>
+</tr>
+<tr>
+<td>8 Identity</td>
+<td>Phone, email, ID</td>
+<td>Passport number first (international travellers), then email, then phone</td>
+</tr>
+<tr>
+<td>9 Record page</td>
+<td>Details / timeline / related</td>
+<td>Same frame: traveller details / timeline / itinerary days, permits, bill</td>
+</tr>
+<tr>
+<td>10 Stages</td>
+<td>Enquiry &gt; Held &gt; Confirmed &gt; Pre-arrival &gt; In-house &gt; Checked out</td>
+<td>Enquiry &gt; Quoted &gt; Deposit paid &gt; Permits issued &gt; On trek &gt; Completed</td>
+</tr>
+<tr>
+<td>11 Capacity</td>
+<td>52 rooms, no double sale</td>
+<td>Guide days and porter days: no guide on two treks the same day</td>
+</tr>
+<tr>
+<td>12 Rules</td>
+<td>24 h before check-in: Prepare room</td>
+<td>14 days before departure: apply for permits; 3 days before: assign guide</td>
+</tr>
+<tr>
+<td>13 Views</td>
+<td>Arrivals today, Room status board</td>
+<td>Departures this week, Permits pending, Guides on trek (calendar)</td>
+</tr>
+<tr>
+<td>14 Menus</td>
+<td>Housekeeper: 3 items on phone</td>
+<td>Guide: today's itinerary, my travellers, report a problem</td>
+</tr>
+<tr>
+<td>15 Import</td>
+<td>5,480 guest rows</td>
+<td>Past traveller list from spreadsheets</td>
+</tr>
+<tr>
+<td>16 Users</td>
+<td>65 staff</td>
+<td>22 staff, including guides who use only the phone app</td>
+</tr>
+<tr>
+<td>17 Test</td>
+<td>Test Sharma, 2 nights</td>
+<td>Test traveller, a 3-day trek</td>
+</tr>
+<tr>
+<td>18 Publish</td>
+<td>Three unaided changes</td>
+<td>Same three changes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="what-changes-and-what-never-does">What changes, and what never does</h3>
+<ul>
+<li><strong>Changes:</strong> the words, the objects, the stages, the deadlines, and which date a rule counts from. A hotel counts from check-in; a trek counts from departure; a clinic counts from the appointment.</li>
+<li><strong>Never changes:</strong> the 18 steps in order; the rule shape (when / then / for / due / escalate); the record page frame; the two safety-net rules; personal logins; bills that cannot be edited; a person confirming every AI draft.</li>
+</ul>
+<h3 id="quick-translations-for-other-industries">Quick translations for other industries</h3>
+<table>
+<thead>
+<tr>
+<th>Industry</th>
+<th>Main record</th>
+<th>Capacity that must never double-book</th>
+<th>A typical handoff rule</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Clinic</td>
+<td>Appointment</td>
+<td>Doctor time slots</td>
+<td>Appointment Confirmed: create Prepare file for Reception, due 1 h before</td>
+</tr>
+<tr>
+<td>Training institute</td>
+<td>Enrolment</td>
+<td>Seats per batch</td>
+<td>Fee paid: create Issue ID card for Admin, due same day</td>
+</tr>
+<tr>
+<td>Distributor</td>
+<td>Order</td>
+<td>Stock per warehouse</td>
+<td>Order Approved: create Pick and pack for Warehouse, due 4 h</td>
+</tr>
+<tr>
+<td>Event venue</td>
+<td>Event booking</td>
+<td>Halls per date</td>
+<td>7 days before event: create Final headcount call for Sales</td>
+</tr>
+<tr>
+<td>Service company</td>
+<td>Job</td>
+<td>Technician hours</td>
+<td>Job completed: create Invoice for Accounts, due same day</td>
+</tr>
+</tbody>
+</table>
+<h2 id="templates">Templates</h2>
+<p>Copy these into a new doc for each client and fill them in the room. Each one is the input for a later step.</p>
+<h3 id="t1-scope-sheet-step-1-feeds-every-step">T1. Scope sheet (step 1, feeds every step)</h3>
+<table>
+<thead>
+<tr>
+<th>Question</th>
+<th>Answer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>What breaks today (incidents, with dates)</td>
+<td></td>
+</tr>
+<tr>
+<td>Success in 90 days (numbers)</td>
+<td></td>
+</tr>
+<tr>
+<td>In scope from day one</td>
+<td></td>
+</tr>
+<tr>
+<td>Phase two, named and dated</td>
+<td></td>
+</tr>
+<tr>
+<td>Does the client issue tax bills? (yes means start the permit track)</td>
+<td></td>
+</tr>
+<tr>
+<td>Who inherits the system (one name)</td>
+<td></td>
+</tr>
+<tr>
+<td>Go-live date</td>
+<td></td>
+</tr>
+<tr>
+<td>Signed by (sponsor) and date</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="t2-process-walk-step-2-feeds-steps-10-and-12">T2. Process walk (step 2, feeds steps 10 and 12)</h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Desk</th>
+<th>What happened to this transaction</th>
+<th>How they were told</th>
+<th>Delay</th>
+<th>Becomes (rule / deadline / nothing)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="t3-vocabulary-step-3-feeds-steps-7-and-8">T3. Vocabulary (step 3, feeds steps 7 and 8)</h3>
+<table>
+<thead>
+<tr>
+<th>Staff say</th>
+<th>Object</th>
+<th>English label</th>
+<th>Nepali label</th>
+<th>Recognised by</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Deliberately absent: ...</p>
+<h3 id="t4-permission-matrix-step-6-one-per-object">T4. Permission matrix (step 6), one per object</h3>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Department</th>
+<th>View</th>
+<th>Add</th>
+<th>Edit</th>
+<th>Delete</th>
+<th>Record scope</th>
+<th>Hidden or masked fields</th>
+<th>Stage moves allowed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="t5-stage-sheet-step-10">T5. Stage sheet (step 10)</h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Stage</th>
+<th>State the record is in</th>
+<th>Owning department</th>
+<th>Form</th>
+<th>Deadline</th>
+<th>Moved in by</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>exit</td>
+<td>Cancelled</td>
+<td></td>
+<td></td>
+<td>Reason form</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="t6-rule-sheet-step-12-one-row-per-handoff-from-t2">T6. Rule sheet (step 12), one row per handoff from T2</h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>When (trigger)</th>
+<th>And (condition)</th>
+<th>Then (action)</th>
+<th>For (role or department)</th>
+<th>Due</th>
+<th>Blocked by</th>
+<th>Escalate to, after</th>
+<th>From T2 row</th>
+<th>Read aloud to</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>SN1</td>
+<td>Any task late</td>
+<td></td>
+<td>Notify</td>
+<td>Duty manager</td>
+<td>Now</td>
+<td></td>
+<td>GM, 30 min</td>
+<td>Safety net</td>
+<td></td>
+</tr>
+<tr>
+<td>SN2</td>
+<td>Hold reaches expiry</td>
+<td></td>
+<td>Release; notify</td>
+<td>Owner</td>
+<td>Now</td>
+<td></td>
+<td></td>
+<td>Safety net</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="t7-views-and-menus-steps-13-and-14">T7. Views and menus (steps 13 and 14)</h3>
+<table>
+<thead>
+<tr>
+<th>Question the role asks daily</th>
+<th>View name</th>
+<th>Object</th>
+<th>Type</th>
+<th>Filter</th>
+<th>Roles</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Menu items, in order (My Work is always first)</th>
+<th>User slots</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="t8-test-run-log-step-17">T8. Test run log (step 17)</h3>
+<table>
+<thead>
+<tr>
+<th>Stage action</th>
+<th>Done by (name, role)</th>
+<th>Device</th>
+<th>Result</th>
+<th>Defect and fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>Pass / Defect</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="before-you-publish">Before you publish</h2>
+<h3 id="launch-checklist">Launch checklist</h3>
+<ul>
+<li>☐ Scope sheet signed; phase-two items dated</li>
+<li>☐ Every walk row (T2) points to a rule, a deadline or "nothing"</li>
+<li>☐ Every object has English and Nepali names</li>
+<li>☐ Legal entities with PAN; fiscal year set</li>
+<li>☐ Every staff member has one home unit</li>
+<li>☐ Every stage has an owner and a role that can move records into it</li>
+<li>☐ ID and other sensitive fields masked or hidden for roles without a need</li>
+<li>☐ Identity rule tested with a repeat, a shared phone and a common name</li>
+<li>☐ Record page previewed as the busiest and the most restricted role</li>
+<li>☐ Capacity set; the database refuses a double sale</li>
+<li>☐ Tax rule, bill series and payment methods set (clients that bill)</li>
+<li>☐ Every rule read aloud and dry-run; the two safety nets present</li>
+<li>☐ Every role's menu previewed</li>
+<li>☐ Import totals add up; doubtful pairs decided; cutover plan signed</li>
+<li>☐ Every user has a personal login; no shared accounts</li>
+<li>☐ Test transaction passed with real staff on their own devices</li>
+<li>☐ Billing permit recorded (clients that bill)</li>
+<li>☐ Client admin made three changes unaided</li>
+</ul>
+<h3 id="mistakes-that-sink-implementations">Mistakes that sink implementations</h3>
+<table>
+<thead>
+<tr>
+<th>Mistake</th>
+<th>What it costs</th>
+<th>How to avoid it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Skipping the process walk (step 2)</td>
+<td>Rules that match the ideal process, not the real one; staff ignore the system</td>
+<td>Walk to every desk with one real transaction</td>
+</tr>
+<tr>
+<td>Scope "everything the old system does"</td>
+<td>Weeks of configuration nobody uses</td>
+<td>Ask what was used last week; date the rest as phase two</td>
+</tr>
+<tr>
+<td>Auto-merging similar names</td>
+<td>Two strangers' histories blended, found months later</td>
+<td>Merge only on exact identifiers; a person decides the rest</td>
+</tr>
+<tr>
+<td>Shared logins</td>
+<td>No audit trail; deadline reports meaningless; tax risk</td>
+<td>Refuse, every time; offer shared device with personal PIN instead</td>
+</tr>
+<tr>
+<td>Too many stages</td>
+<td>Staff can't tell who owns the record</td>
+<td>4-7 stages; actions are tasks, not stages</td>
+</tr>
+<tr>
+<td>Assigning tasks to named people</td>
+<td>Work stops when someone is on leave</td>
+<td>Assign to roles or department queues</td>
+</tr>
+<tr>
+<td>No escalation</td>
+<td>Late tasks are discovered by the guest</td>
+<td>Keep the late-task safety net for every client</td>
+</tr>
+<tr>
+<td>Skipping the real-staff test (step 17)</td>
+<td>Defects found by customers on Monday</td>
+<td>Never cut step 17, even when late</td>
+</tr>
+<tr>
+<td>Client admin only watching</td>
+<td>They call us for every small change and leave within a year</td>
+<td>They type in steps 3, 6, 14, 16 and 18</td>
+</tr>
+<tr>
+<td>Phone screens with typing or many taps</td>
+<td>Housekeepers and porters stop using it</td>
+<td>One main action, two taps, two languages, no typing</td>
+</tr>
+</tbody>
+</table></article></div>
+</body></html>

@@ -323,3 +323,21 @@ button{font:inherit;cursor:pointer}
 @media print{.proto-strip,.proto-panel,.proto-states{display:none!important}body{background:#fff}.sheet,.bill{box-shadow:none;border:0}}
 .proto-panel .plain{background:var(--pine-soft);border-left:3px solid var(--pine);border-radius:4px;padding:10px 12px;margin:0 0 14px;font-size:14px;line-height:1.5}
 .proto-panel .plain b{display:block;font:500 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--pine);margin-bottom:4px}
+/* playbook page */
+.guidepage{background:var(--wash)}
+.guide-wrap{display:flex;gap:32px;max-width:1180px;margin:0 auto;padding:28px 24px 80px;align-items:flex-start}
+.guide-toc{position:sticky;top:64px;width:220px;flex-shrink:0;display:flex;flex-direction:column;gap:2px;font-size:13px}
+.guide-toc b{font:500 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin-bottom:6px}
+.guide-toc a{color:var(--ink-2);text-decoration:none;padding:4px 8px;border-radius:4px}
+.guide-toc a:hover{background:var(--line-soft);color:var(--ink)}
+.guide{flex:1;min-width:0;max-width:860px;background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:36px 44px;font-size:15px;line-height:1.6}
+.guide h1{font-size:32px;margin-bottom:4px}
+.guide h2{font:600 24px/1.3 var(--serif);margin:40px 0 10px;padding-top:16px;border-top:1px solid var(--line-soft)}
+.guide h3{font-size:16px;margin:24px 0 6px}
+.guide p,.guide ul,.guide ol,.guide blockquote{margin:0 0 12px}
+.guide blockquote{border-left:3px solid var(--pine);background:var(--pine-soft);padding:8px 14px;border-radius:4px}
+.guide img{max-width:100%;border:1px solid var(--line);border-radius:6px;margin:8px 0}
+.guide table{width:100%;border-collapse:collapse;font-size:13px;margin:8px 0 16px;display:block;overflow-x:auto}
+.guide th{text-align:left;font:500 11px var(--mono);letter-spacing:.05em;text-transform:uppercase;color:var(--ink-3);background:var(--wash);padding:8px 10px;border-bottom:1px solid var(--line)}
+.guide td{padding:8px 10px;border-bottom:1px solid var(--line-soft);vertical-align:top}
+@media (max-width:900px){.guide-toc{display:none}.guide{padding:24px 18px}}
